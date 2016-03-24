@@ -1,0 +1,102 @@
+﻿/*Body*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote 
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    background-color: rgb(237, 237, 237);
+    font-family: "Arial", Helvetica, sans-serif;
+    font-size: 12px;
+}
+/*Page*/
+.wrapper
+{
+    width: 1024px;
+    margin: auto;
+}
+/*Home Page*/
+.content
+{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-height: 400px;
+}
+/*Menu*/
+.menu
+{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    margin: 0px 0px 10px;
+    padding: 0px;
+    height: 40px;
+    color: rgb(255, 255, 255);;
+    border-radius: 5px 5px 5px 5px;
+}
+.navigation_first_item
+{
+    border-left: 0px;
+    border-radius: 5px 0px 0px 5px;
+}
+.navitem_s
+{
+    float: left;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+}
+.menu ul
+{
+
+}
+.menu ul li
+{
+    float: left;
+    display: block;
+    list-style: none;
+    border-right: 1px solid rgb(105, 105, 105);
+    border-left: 1px solid rgb(105, 105, 105);
+}
+.menu ul li.navigation_first_item:hover
+{
+    border-radius: 5px 0px 0px 5px;
+}
+.menu ul li a
+{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 40px;
+    padding: 8px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.menu ul li:hover 
+{
+    background-color: rgb(105, 105, 105);
+    border-right: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+}
+.clear
+{
+    clear: both;
+}
+/*Footer*/
+.footer 
+{
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+}
+.footer h2
+{
+    padding: 15px;
+    text-align: center;
+}

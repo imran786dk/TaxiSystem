@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Images\Taxi-Sign-icon.png" />
     <Content Include="Styles\main.css" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />

@@ -17,8 +17,8 @@
         <div class="wrapper">
             <div class="menu">
                 <ul>
-                    <li><a href="Default.aspx">Home</a></li>
-                    <li><a href="#">Solution</a></li>
+                    <li><a href="Default.aspx">TaxiSystem</a></li>
+                    <li><a href="#">Solutions</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -30,7 +30,7 @@
             </div>
             <div class="clear"></div>
             <div class="footer">
-                <h2>Copyright@TaxiSystem.com</h2>
+                <h2>Copyright &copy 2016 TaxiSystem. All right reserved.</h2>
             </div>
         </div>
     </form>

@@ -57,7 +57,7 @@
             <tr>
                 <td class="auto-style14">CPR:</td>
                 <td class="auto-style15">
-                    <asp:TextBox ID="TextBox20" runat="server" Width="150px" OnTextChanged="TextBox20_TextChanged"></asp:TextBox>
+                    <asp:TextBox ID="TextBox20" runat="server" Width="150px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -97,15 +97,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style14">Tlf 1:</td>
+                <td class="auto-style14">Tlf:</td>
                 <td class="auto-style15">
                     <asp:TextBox ID="TextBox27" runat="server" Width="150px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style14">Tlf 2:</td>
-                <td class="auto-style15">
-                    <asp:TextBox ID="TextBox28" runat="server" Width="150px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -173,12 +167,12 @@
                 <td class="auto-style17">
                     <asp:DropDownList ID="DropDownList1" runat="server">
                         <asp:ListItem Selected="True">Nej</asp:ListItem>
-                        <asp:ListItem Enabled="False">Ja</asp:ListItem>
+                        <asp:ListItem>Ja</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
         </table>
-         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click1" style="height: 26px" />
+         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" style="height: 26px" />
         <br />
         <br />
         <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" />

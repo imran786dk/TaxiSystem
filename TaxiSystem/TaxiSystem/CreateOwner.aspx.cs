@@ -36,10 +36,9 @@ namespace TaxiSystem
             string city = TextBox1.Text;
             string country = TextBox25.Text;
             string tel1 = TextBox27.Text;
-            string tel2 = TextBox28.Text;
             string email = TextBox29.Text;
 
-            TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel1, tel2, email);
+            TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email);
 
         }
     }

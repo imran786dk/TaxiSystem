@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace TaxiSystem
 {
@@ -31,7 +28,6 @@ namespace TaxiSystem
 
         public static void CreateOwner(TaxiOwner taxiOwnwer)
         {
-
             using (SqlConnection con = new SqlConnection(conString))
             {
                 using (SqlCommand cmd = new SqlCommand("spCreateTaxiOwner", con))
@@ -49,11 +45,10 @@ namespace TaxiSystem
                     cmd.Parameters.Add("@salt", SqlDbType.VarChar).Value = taxiOwnwer.salt;
                     cmd.Parameters.Add("@createDate", SqlDbType.DateTime).Value = taxiOwnwer.createDate;
                     cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiOwnwer.type;
-                    cmd.Parameters.Add("@status", SqlDbType.Int).Value = taxiOwnwer.status;
                     cmd.Parameters.Add("@companyName", SqlDbType.VarChar).Value = taxiOwnwer.companyName;
                     cmd.Parameters.Add("@cvrNo", SqlDbType.VarChar).Value = taxiOwnwer.cvrNo;
-                    cmd.Parameters.Add("@tel1", SqlDbType.VarChar).Value = taxiOwnwer.tel1;
-                    cmd.Parameters.Add("@tel2", SqlDbType.VarChar).Value = taxiOwnwer.tel2;
+                    cmd.Parameters.Add("@tel", SqlDbType.VarChar).Value = taxiOwnwer.tel;
+
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -63,7 +58,6 @@ namespace TaxiSystem
 
         public static void CreateDriver(TaxiDriver taxiDriver)
         {
-
             using (SqlConnection con = new SqlConnection(conString))
             {
                 using (SqlCommand cmd = new SqlCommand("spCreateTaxiDriver", con))
@@ -77,13 +71,11 @@ namespace TaxiSystem
                     cmd.Parameters.Add("@city", SqlDbType.VarChar).Value = taxiDriver.city;
                     cmd.Parameters.Add("@country", SqlDbType.VarChar).Value = taxiDriver.country;
                     cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = taxiDriver.email;
-                    cmd.Parameters.Add("@tel1", SqlDbType.Int).Value = taxiDriver.tel1;
-                    cmd.Parameters.Add("@tel2", SqlDbType.Int).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@tel", SqlDbType.Int).Value = taxiDriver.tel;
                     cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = taxiDriver.password;
                     cmd.Parameters.Add("@salt", SqlDbType.VarChar).Value = taxiDriver.salt;
                     cmd.Parameters.Add("@createDate", SqlDbType.DateTime).Value = taxiDriver.createDate;
                     cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiDriver.type;
-                    cmd.Parameters.Add("@status", SqlDbType.Int).Value = taxiDriver.status;
                     cmd.Parameters.Add("@cprNo", SqlDbType.Int).Value = taxiDriver.cprNo;
                     cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.Int).Value = taxiDriver.drivingLicenseNo;
                     cmd.Parameters.Add("@taxiDriverNo", SqlDbType.Int).Value = taxiDriver.taxiDriverNo;
@@ -100,5 +92,55 @@ namespace TaxiSystem
             }
         }
 
+        public static User SelectUser(string email)       
+        {
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetUser", con))
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+
+                    con.Open();
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        if (dt.Rows.Count == 1)
+                        {
+                            DataRow row = dt.Rows[0];
+
+                            User user = new User();
+
+                            user.fName = row["FirstName"].ToString();
+                            user.lName = row["LastName"].ToString();
+                            user.street = row["Street"].ToString();
+                            user.zipCode = Int32.Parse(row["ZipCode"].ToString());
+                            user.city = row["City"].ToString();
+                            user.country = row["Country"].ToString();
+                            user.tel = Int32.Parse(row["Tel"].ToString());
+                            user.email = row["Email"].ToString();
+                            user.createDate = row["CreateDate"].();
+                            user.password = row["Password"].ToString();
+                            user.salt = row["PasswordSalt"].ToString();
+                            user.type = Int32.Parse(row["Type"].ToString());
+
+                            return user;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }

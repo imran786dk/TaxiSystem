@@ -34,8 +34,7 @@ namespace TaxiSystem
             string zipCode = TextBox24.Text;
             string city = TextBox1.Text;
             string country = TextBox25.Text;
-            string tel1 = TextBox27.Text;
-            string tel2 = TextBox28.Text;
+            string tel = TextBox27.Text;
             string email = TextBox29.Text;
             string drivingLicenseNo = TextBox2.Text;
             string taxiDriverNo = TextBox3.Text;
@@ -46,7 +45,7 @@ namespace TaxiSystem
             string taxPercent = TextBox6.Text;
             string taxDeductions = TextBox5.Text;
 
-            TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel1, tel2, email,
+            TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
                 drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, payCheckEmail, pensionPercent, taxPercent, taxDeductions);
 
         }

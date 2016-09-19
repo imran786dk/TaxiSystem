@@ -4,7 +4,7 @@ namespace TaxiSystem
 {
     public class TaxiDriverHandler
     {
-        public static void AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel1, string tel2, string email, 
+        public static void AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel, string email, 
             string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string payCheckEmail, string pensionPercent, string taxPercent, string taxDeductions)
         {
             TaxiDriver taxiDriver = new TaxiDriver();
@@ -16,8 +16,7 @@ namespace TaxiSystem
             taxiDriver.zipCode = Int32.Parse(zipCode);
             taxiDriver.city = city;
             taxiDriver.country = country;
-            taxiDriver.tel1 = Int32.Parse(tel1);
-            taxiDriver.tel2 = Int32.Parse(tel2);
+            taxiDriver.tel = Int32.Parse(tel);
             taxiDriver.drivingLicenseNo = Int32.Parse(drivingLicenseNo);
             taxiDriver.taxiDriverNo = Int32.Parse(taxiDriverNo);
             taxiDriver.taxiDriverExp = DateTime.Parse(taxiDriverExp);
@@ -29,8 +28,7 @@ namespace TaxiSystem
 
             string plainPassword = PasswordHandler.RandomPassword();
             taxiDriver.createDate = DateTime.Now;
-            taxiDriver.status = 1;
-            taxiDriver.type = 3;
+            taxiDriver.type = 2;
 
 
             taxiDriver.salt = PasswordHandler.CreateSalt();

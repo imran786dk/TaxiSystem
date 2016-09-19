@@ -69,6 +69,7 @@
     <Content Include="CreateDriver.aspx" />
     <Content Include="CreateOwner.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\TaxiSystem.png" />
     <Content Include="Login.aspx" />
     <Content Include="Styles\main.css" />
@@ -87,8 +88,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\LoginHandler.cs" />
     <Compile Include="BusinessLogic\TaxiDriver.cs" />
     <Compile Include="BusinessLogic\TaxiOwnerHandler.cs" />
+    <Compile Include="BusinessLogic\User.cs" />
     <Compile Include="CreateDriver.aspx.cs">
       <DependentUpon>CreateDriver.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,6 +116,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\EmailHandler.cs" />
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

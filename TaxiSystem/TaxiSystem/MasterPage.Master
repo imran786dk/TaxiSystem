@@ -21,7 +21,7 @@
                     <li><a href="#">Produkt</a></li>
                     <li><a href="#">Priser</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Log på</a></li>
+                    <li><a href="Login.aspx">Log på</a></li>
                 </ul>
             </div>
             <div class="clear"></div>

@@ -85,15 +85,6 @@ namespace TaxiSystem {
         protected global::System.Web.UI.WebControls.TextBox TextBox27;
         
         /// <summary>
-        /// TextBox28 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox28;
-        
-        /// <summary>
         /// TextBox29 control.
         /// </summary>
         /// <remarks>

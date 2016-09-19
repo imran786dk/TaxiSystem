@@ -13,5 +13,22 @@ namespace TaxiSystem
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string email = TextBox20.Text;
+            string password = TextBox9.Text;
+
+            if (LoginHandler.LoginAccess(email, password) == true)
+            {
+                Session["New"] = email;
+
+                Response.Redirect("CreateDriver.aspx");
+            }
+            else
+            {
+                Label1.Text = "Invalid credentials!";
+            }
+        }
     }
 }

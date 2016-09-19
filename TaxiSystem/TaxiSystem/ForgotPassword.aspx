@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TaxiSystem.Login" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="TaxiSystem.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server"><style type="text/css">
         .auto-style10 {
             width: 1528px;
             height: 1593px;
@@ -20,15 +18,8 @@
             float: left;
         }
 
-        .auto-style13 {
-            position: relative;
-            top: 340px;
-            left: 40px;
-            width: 75px;
-        }
-
         .autostyle15 {
-            width: 150px;
+            width: 200px;
         }
 
         .auto-style14 {
@@ -47,7 +38,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-    <h3>Log på med din email og din personlige adgangskode</h3>
+    <h3>Få tilsendt en ny adgangskode til din email</h3>
     <div class="auto-style10">
         <table class="auto-style12">
             <tr>
@@ -60,21 +51,7 @@
                     <asp:TextBox ID="TextBox20" runat="server" Width="150px"></asp:TextBox>
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style14">Adgangskode:</td>
-                <td class="auto-style15">
-                    <asp:TextBox ID="TextBox9" runat="server" Width="150px"></asp:TextBox>
-                </td>
-            </tr>
-             <tr>
-                 <td class="auto-style14"><a href="ForgotPassword.aspx">Glemt adgangskode?</a></td>
-                 <td class="auto-style15">                   
-                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                </td>
-
-                
-             </tr>
         </table>
-        <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Log på" OnClick="Button2_Click" />
+        <asp:Button class="auto-style15" ID="Button2" runat="server" Text="Send adgangskode" OnClick="Button2_Click" Width="117px" />
     </div>
 </asp:Content>

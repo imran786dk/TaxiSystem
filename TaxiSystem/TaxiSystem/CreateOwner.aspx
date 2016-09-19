@@ -100,15 +100,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style14">Tlf 1:</td>
+                <td class="auto-style14">Tlf:</td>
                 <td class="auto-style15">
                     <asp:TextBox ID="TextBox27" runat="server" Width="150px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style14">Tlf 2:</td>
-                <td class="auto-style15">
-                    <asp:TextBox ID="TextBox28" runat="server" Width="150px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

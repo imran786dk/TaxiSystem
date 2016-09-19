@@ -21,20 +21,11 @@ namespace TaxiSystem
             taxiDriver.taxiDriverNo = Int32.Parse(taxiDriverNo);
             taxiDriver.taxiDriverExp = DateTime.Parse(taxiDriverExp);
             taxiDriver.bankAccount = Int32.Parse(bankAccount);
-            taxiDriver.payCheckEmail = payCheckEmail;
             taxiDriver.pensionPercent = Double.Parse(pensionPercent);
             taxiDriver.taxPercent = Double.Parse(taxPercent);
             taxiDriver.taxDeductions = Double.Parse(taxDeductions);
 
-            string plainPassword = PasswordHandler.RandomPassword();
             taxiDriver.createDate = DateTime.Now;
-            taxiDriver.type = 2;
-
-
-            taxiDriver.salt = PasswordHandler.CreateSalt();
-            taxiDriver.password = PasswordHandler.CreateSHA256Hash(taxiDriver.salt, plainPassword);
-
-            EmailHandler.PasswordMail(plainPassword, email);
 
             DbHelper.CreateDriver(taxiDriver);
 

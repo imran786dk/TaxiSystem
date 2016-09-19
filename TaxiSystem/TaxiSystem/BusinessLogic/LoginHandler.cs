@@ -7,41 +7,23 @@ namespace TaxiSystem
 {
     public class LoginHandler
     {
-        public static bool LoginAccess(string email, string password)
+        public static TaxiOwner CheckLogin(String email, String password)
         {
-            if (CheckPassword(email, password) == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+            TaxiOwner taxiOwner = DbHelper.SelectUser(email);
 
-        public static bool CheckPassword(String email, String password)
-        {
-            User user = GetUser(email);
-
-            string dbPassword = user.password;
-            string salt = user.salt;
+            string dbPassword = taxiOwner.password;
+            string salt = taxiOwner.salt;
             string passwordToCheck = PasswordHandler.CreateSHA256Hash(salt, password);
 
             if (dbPassword == passwordToCheck)
             {
-                return true;
+                return taxiOwner;
+
             }
             else
             {
-                return false;
+                return null;
             }
         }
-
-        public static User GetUser(string email)
-        {
-            return DbHelper.SelectUser(email);
-        }
-    }
-
-    
+    }   
 }

@@ -8,7 +8,10 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -35,10 +38,17 @@ namespace TaxiSystem
             string zipCode = TextBox24.Text;
             string city = TextBox1.Text;
             string country = TextBox25.Text;
-            string tel1 = TextBox27.Text;
+            string tel = TextBox27.Text;
             string email = TextBox29.Text;
 
-            TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email);
+            if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
+            {
+                Label1.Text = "Brugeren er gemt.";
+            }
+            else
+            {
+                Label1.Text = "Brugeren blev ikke gemt.";
+            }
 
         }
     }

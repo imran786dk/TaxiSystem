@@ -19,16 +19,10 @@ namespace TaxiSystem
             string email = TextBox20.Text;
             string password = TextBox9.Text;
 
-            if (LoginHandler.LoginAccess(email, password) == true)
-            {
-                Session["New"] = email;
+            User user = LoginHandler.CheckLogin(email, password);
 
-                Response.Redirect("CreateDriver.aspx");
-            }
-            else
-            {
-                Label1.Text = "Invalid credentials!";
-            }
+            Response.Redirect("AccountOwner.aspx");
+
         }
     }
 }

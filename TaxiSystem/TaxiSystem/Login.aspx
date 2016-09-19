@@ -13,8 +13,8 @@
             border-style: solid;
             border-width: 3px;
             padding: 1px 4px;
-            width: 300px;
-            margin-top: 300px;
+            width: 350px;
+            margin-top: 100px;
             margin-left: 300px;
             display: inline-block;
             float: left;
@@ -22,7 +22,7 @@
 
         .auto-style13 {
             position: relative;
-            top: 340px;
+            top: 200px;
             left: 40px;
             width: 75px;
         }

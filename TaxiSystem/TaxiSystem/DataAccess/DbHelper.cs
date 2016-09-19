@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace TaxiSystem
 {
@@ -72,8 +73,6 @@ namespace TaxiSystem
                     cmd.Parameters.Add("@country", SqlDbType.VarChar).Value = taxiDriver.country;
                     cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = taxiDriver.email;
                     cmd.Parameters.Add("@tel", SqlDbType.Int).Value = taxiDriver.tel;
-                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = taxiDriver.password;
-                    cmd.Parameters.Add("@salt", SqlDbType.VarChar).Value = taxiDriver.salt;
                     cmd.Parameters.Add("@createDate", SqlDbType.DateTime).Value = taxiDriver.createDate;
                     cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiDriver.type;
                     cmd.Parameters.Add("@cprNo", SqlDbType.Int).Value = taxiDriver.cprNo;
@@ -92,55 +91,47 @@ namespace TaxiSystem
             }
         }
 
-        public static User SelectUser(string email)       
+        public static TaxiOwner SelectUser(string email)
         {
+            TaxiOwner taxiOwner = new TaxiOwner();
 
             using (SqlConnection con = new SqlConnection(conString))
             {
+
                 using (SqlCommand cmd = new SqlCommand("spGetUser", con))
                 {
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
-
-                    con.Open();
-
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
-                        DataTable dt = new DataTable();
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                        sda.Fill(dt);
+                        cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
 
-                        if (dt.Rows.Count == 1)
+                        DataTable table = new DataTable();
+
+                        da.Fill(table);
+
+                        if (table.Rows.Count == 1)
                         {
-                            DataRow row = dt.Rows[0];
+                            DataRow row = table.Rows[0];
 
-                            User user = new User();
+                            taxiOwner.fName = row["FirstName"].ToString();
+                            taxiOwner.lName = row["LastName"].ToString();
+                            taxiOwner.street = row["Street"].ToString();
+                            taxiOwner.zipCode = Convert.ToInt32(row["ZipCode"]);
+                            taxiOwner.city = row["City"].ToString();
+                            taxiOwner.country = row["Country"].ToString();
+                            taxiOwner.tel = Convert.ToInt32(row["Tel"]);
+                            taxiOwner.email = row["Email"].ToString();
+                            taxiOwner.createDate = Convert.ToDateTime(row["CreateDate"]);
+                            taxiOwner.type = Convert.ToInt32(row["Type"]);
 
-                            user.fName = row["FirstName"].ToString();
-                            user.lName = row["LastName"].ToString();
-                            user.street = row["Street"].ToString();
-                            user.zipCode = Int32.Parse(row["ZipCode"].ToString());
-                            user.city = row["City"].ToString();
-                            user.country = row["Country"].ToString();
-                            user.tel = Int32.Parse(row["Tel"].ToString());
-                            user.email = row["Email"].ToString();
-                            user.createDate = row["CreateDate"].();
-                            user.password = row["Password"].ToString();
-                            user.salt = row["PasswordSalt"].ToString();
-                            user.type = Int32.Parse(row["Type"].ToString());
-
-                            return user;
-                        }
-                        else
-                        {
-                            return null;
                         }
                     }
                 }
             }
 
+            return taxiOwner;
         }
+
     }
 }

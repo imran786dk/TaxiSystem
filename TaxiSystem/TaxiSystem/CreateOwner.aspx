@@ -111,6 +111,12 @@
                     <asp:TextBox ID="TextBox29" runat="server" Width="150px"></asp:TextBox>
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style14"></td>
+                <td class="auto-style15">
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
             </table>
         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" />
         <br />

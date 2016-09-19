@@ -4,7 +4,7 @@ namespace TaxiSystem
 {
     public class TaxiOwnerHandler
     {
-        public static void AddOwner(string cvrNo, string companyName, string fName, string lName, string street, string zipCode, string city,string country, string tel, string email)
+        public static bool AddOwner(string cvrNo, string companyName, string fName, string lName, string street, string zipCode, string city,string country, string tel, string email)
         {
             TaxiOwner taxiOwner = new TaxiOwner();
 
@@ -21,7 +21,7 @@ namespace TaxiSystem
 
             string plainPassword = PasswordHandler.RandomPassword();
             taxiOwner.createDate = DateTime.Now;
-            taxiOwner.type = 1;
+            taxiOwner.type = 2;
 
 
             taxiOwner.salt = PasswordHandler.CreateSalt();
@@ -29,7 +29,15 @@ namespace TaxiSystem
 
             EmailHandler.PasswordMail(plainPassword, email);
 
-            DbHelper.CreateOwner(taxiOwner);
+            try
+            {
+                DbHelper.CreateOwner(taxiOwner);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
             
         }
     }

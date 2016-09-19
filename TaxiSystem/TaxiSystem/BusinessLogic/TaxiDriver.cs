@@ -29,6 +29,6 @@ namespace TaxiSystem
         public string payCheckEmail { get; set; }
         public double pensionPercent { get; set; }
         public double taxPercent { get; set; }
-        public double taxDetuctions { get; set; }
+        public double taxDeductions { get; set; }
     }
 }

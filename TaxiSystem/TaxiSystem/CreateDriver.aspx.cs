@@ -49,6 +49,9 @@ namespace TaxiSystem
             string taxPercent = TextBox6.Text;
             string taxDeductions = TextBox5.Text;
 
+            TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel1, tel2, email,
+                drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, payCheckEmail, pensionPercent, taxPercent, taxDeductions);
+
         }
     }
 }

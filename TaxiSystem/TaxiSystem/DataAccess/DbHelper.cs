@@ -85,14 +85,14 @@ namespace TaxiSystem
                     cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiDriver.type;
                     cmd.Parameters.Add("@status", SqlDbType.Int).Value = taxiDriver.status;
                     cmd.Parameters.Add("@cprNo", SqlDbType.Int).Value = taxiDriver.cprNo;
-                    cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.Int).Value = taxiDriver.tel1;
-                    cmd.Parameters.Add("@taxiDriverNo", SqlDbType.Int).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@taxiDriverExp", SqlDbType.DateTime).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@bankAccount", SqlDbType.Int).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@payCheckEmail", SqlDbType.VarChar).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@pensionPercent", SqlDbType.Float).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@taxPercent", SqlDbType.Float).Value = taxiDriver.tel2;
-                    cmd.Parameters.Add("@taxDetuctions", SqlDbType.Float).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.Int).Value = taxiDriver.drivingLicenseNo;
+                    cmd.Parameters.Add("@taxiDriverNo", SqlDbType.Int).Value = taxiDriver.taxiDriverNo;
+                    cmd.Parameters.Add("@taxiDriverExp", SqlDbType.DateTime).Value = taxiDriver.taxiDriverExp;
+                    cmd.Parameters.Add("@bankAccount", SqlDbType.Int).Value = taxiDriver.bankAccount;
+                    cmd.Parameters.Add("@payCheckEmail", SqlDbType.VarChar).Value = taxiDriver.payCheckEmail;
+                    cmd.Parameters.Add("@pensionPercent", SqlDbType.Float).Value = taxiDriver.pensionPercent;
+                    cmd.Parameters.Add("@taxPercent", SqlDbType.Float).Value = taxiDriver.taxPercent;
+                    cmd.Parameters.Add("@taxDeductions", SqlDbType.Float).Value = taxiDriver.taxDeductions;
 
                     con.Open();
                     cmd.ExecuteNonQuery();

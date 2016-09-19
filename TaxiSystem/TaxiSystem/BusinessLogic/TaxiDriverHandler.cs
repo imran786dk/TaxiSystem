@@ -8,7 +8,7 @@ namespace TaxiSystem
     public class TaxiDriverHandler
     {
         public static void AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel1, string tel2, string email, 
-            string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string payCheckEmail, string pensionPercent, string taxPercent, string taxDetuctions)
+            string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string payCheckEmail, string pensionPercent, string taxPercent, string taxDeductions)
         {
             TaxiDriver taxiDriver = new TaxiDriver();
 
@@ -28,7 +28,7 @@ namespace TaxiSystem
             taxiDriver.payCheckEmail = payCheckEmail;
             taxiDriver.pensionPercent = Double.Parse(pensionPercent);
             taxiDriver.taxPercent = Double.Parse(taxPercent);
-            taxiDriver.taxDetuctions = Double.Parse(taxDetuctions);
+            taxiDriver.taxDeductions = Double.Parse(taxDeductions);
 
             string plainPassword = PasswordHandler.RandomPassword();
             taxiDriver.createDate = DateTime.Now;

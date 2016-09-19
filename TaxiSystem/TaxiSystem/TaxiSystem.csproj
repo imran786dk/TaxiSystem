@@ -69,6 +69,7 @@
     <Content Include="CreateDriver.aspx" />
     <Content Include="CreateOwner.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\TaxiSystem.png" />
     <Content Include="Login.aspx" />
     <Content Include="Styles\main.css" />
     <Content Include="packages.config" />
@@ -142,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

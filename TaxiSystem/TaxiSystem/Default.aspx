@@ -3,7 +3,12 @@
     Home - TaxiSystem
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-    Under Contruction!!!
+
+    <div style="display: flex; justify-content: center;">
+  <img src="http://www.impact2day.org/main/wp-content/uploads/2016/01/Website-Under-Construction1.jpg" style="width: 50%; height: 50%;" />
+</div>
+
 </asp:Content>

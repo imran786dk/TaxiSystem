@@ -18,9 +18,10 @@
             <div class="menu">
                 <ul>
                     <li><a href="Default.aspx">TaxiSystem</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Produkt</a></li>
+                    <li><a href="#">Priser</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Log på</a></li>
                 </ul>
             </div>
             <div class="clear"></div>

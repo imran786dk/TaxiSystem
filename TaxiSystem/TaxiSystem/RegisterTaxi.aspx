@@ -18,14 +18,11 @@
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
             <br />
-            Internt nr.:<br />
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <br />
-            <br />
             Status:<br />
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="StatusName" DataValueField="StatusName">
                 <asp:ListItem></asp:ListItem>
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [StatusName] FROM [Status]"></asp:SqlDataSource>
             <br />
         </div>
     </form>

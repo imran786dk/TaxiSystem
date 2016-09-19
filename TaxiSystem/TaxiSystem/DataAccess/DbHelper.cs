@@ -5,9 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using TaxiSystem.BusinessLogic;
 
-namespace TaxiSystem.DataAccess
+namespace TaxiSystem
 {
     public class DbHelper
     {
@@ -30,16 +29,70 @@ namespace TaxiSystem.DataAccess
             }
         }
 
-        public static void CreateUser(User user)
+        public static void CreateOwner(TaxiOwner taxiOwnwer)
         {
 
             using (SqlConnection con = new SqlConnection(conString))
             {
-                using (SqlCommand cmd = new SqlCommand("Test_Insert", con))
+                using (SqlCommand cmd = new SqlCommand("spCreateTaxiOwner", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = user.Email;
+                    cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = taxiOwnwer.fName;
+                    cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = taxiOwnwer.lName;
+                    cmd.Parameters.Add("@street", SqlDbType.VarChar).Value = taxiOwnwer.street;
+                    cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = taxiOwnwer.zipCode;
+                    cmd.Parameters.Add("@city", SqlDbType.VarChar).Value = taxiOwnwer.city;
+                    cmd.Parameters.Add("@country", SqlDbType.VarChar).Value = taxiOwnwer.country;
+                    cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = taxiOwnwer.email;
+                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = taxiOwnwer.password;
+                    cmd.Parameters.Add("@salt", SqlDbType.VarChar).Value = taxiOwnwer.salt;
+                    cmd.Parameters.Add("@createDate", SqlDbType.DateTime).Value = taxiOwnwer.createDate;
+                    cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiOwnwer.type;
+                    cmd.Parameters.Add("@status", SqlDbType.Int).Value = taxiOwnwer.status;
+                    cmd.Parameters.Add("@companyName", SqlDbType.VarChar).Value = taxiOwnwer.companyName;
+                    cmd.Parameters.Add("@cvrNo", SqlDbType.VarChar).Value = taxiOwnwer.cvrNo;
+                    cmd.Parameters.Add("@tel1", SqlDbType.VarChar).Value = taxiOwnwer.tel1;
+                    cmd.Parameters.Add("@tel2", SqlDbType.VarChar).Value = taxiOwnwer.tel2;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void CreateDriver(TaxiDriver taxiDriver)
+        {
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spCreateTaxiDriver", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = taxiDriver.fName;
+                    cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = taxiDriver.lName;
+                    cmd.Parameters.Add("@street", SqlDbType.VarChar).Value = taxiDriver.street;
+                    cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = taxiDriver.zipCode;
+                    cmd.Parameters.Add("@city", SqlDbType.VarChar).Value = taxiDriver.city;
+                    cmd.Parameters.Add("@country", SqlDbType.VarChar).Value = taxiDriver.country;
+                    cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = taxiDriver.email;
+                    cmd.Parameters.Add("@tel1", SqlDbType.Int).Value = taxiDriver.tel1;
+                    cmd.Parameters.Add("@tel2", SqlDbType.Int).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = taxiDriver.password;
+                    cmd.Parameters.Add("@salt", SqlDbType.VarChar).Value = taxiDriver.salt;
+                    cmd.Parameters.Add("@createDate", SqlDbType.DateTime).Value = taxiDriver.createDate;
+                    cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiDriver.type;
+                    cmd.Parameters.Add("@status", SqlDbType.Int).Value = taxiDriver.status;
+                    cmd.Parameters.Add("@cprNo", SqlDbType.Int).Value = taxiDriver.cprNo;
+                    cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.Int).Value = taxiDriver.tel1;
+                    cmd.Parameters.Add("@taxiDriverNo", SqlDbType.Int).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@taxiDriverExp", SqlDbType.DateTime).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@bankAccount", SqlDbType.Int).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@payCheckEmail", SqlDbType.VarChar).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@pensionPercent", SqlDbType.Float).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@taxPercent", SqlDbType.Float).Value = taxiDriver.tel2;
+                    cmd.Parameters.Add("@taxDetuctions", SqlDbType.Float).Value = taxiDriver.tel2;
 
                     con.Open();
                     cmd.ExecuteNonQuery();

@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace TaxiSystem.BusinessLogic
+namespace TaxiSystem
 {
     public class PasswordHandler
     {
@@ -29,6 +29,21 @@ namespace TaxiSystem.BusinessLogic
             byte[] hash = sha256Hash.ComputeHash(bytes);
 
             return Convert.ToBase64String(hash);
+        }
+
+        public static string RandomPassword()               //Generates a random password of 8 characters
+        {
+
+            int lengthOfPassword = 8;
+            string valid = "abcdefghijklmnozABCDEFGHIJKLMNOZ1234567890";
+            StringBuilder strB = new StringBuilder(100);
+            Random random = new Random();
+            while (0 < lengthOfPassword--)
+            {
+                strB.Append(valid[random.Next(valid.Length)]);
+            }
+            return strB.ToString();
+
         }
     }
 }

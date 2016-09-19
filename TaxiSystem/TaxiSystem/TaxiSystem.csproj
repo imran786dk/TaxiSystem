@@ -66,8 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateDriver.aspx" />
+    <Content Include="CreateOwner.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="RegisterDriver.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Styles\main.css" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
@@ -84,9 +86,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\TaxiDriver.cs" />
+    <Compile Include="BusinessLogic\TaxiOwnerHandler.cs" />
+    <Compile Include="CreateDriver.aspx.cs">
+      <DependentUpon>CreateDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateDriver.aspx.designer.cs">
+      <DependentUpon>CreateDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateOwner.aspx.cs">
+      <DependentUpon>CreateOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateOwner.aspx.designer.cs">
+      <DependentUpon>CreateOwner.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\DbHelper.cs" />
     <Compile Include="BusinessLogic\PasswordHandler.cs" />
-    <Compile Include="BusinessLogic\UserHandler.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,8 +111,16 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessLogic\EmailHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -104,15 +129,7 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="BusinessLogic\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterDriver.aspx.cs">
-      <DependentUpon>RegisterDriver.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RegisterDriver.aspx.designer.cs">
-      <DependentUpon>RegisterDriver.aspx</DependentUpon>
-    </Compile>
     <Compile Include="RegisterTaxi.aspx.cs">
       <DependentUpon>RegisterTaxi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -120,6 +137,8 @@
     <Compile Include="RegisterTaxi.aspx.designer.cs">
       <DependentUpon>RegisterTaxi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessLogic\TaxiOwner.cs" />
+    <Compile Include="BusinessLogic\TaxiDriverHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

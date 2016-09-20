@@ -16,6 +16,6 @@ namespace TaxiSystem
         public string tel { get; set; }
         public string email { get; set; }
         public int type { get; set; }
-
+        public string createDate { get; set; }
     }
 }

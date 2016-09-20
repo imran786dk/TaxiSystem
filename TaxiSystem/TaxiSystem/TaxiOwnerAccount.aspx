@@ -9,5 +9,5 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-    <div><h3 class="auto-style1">Velkommen&nbsp; til din personlige side. Brug menuen til venstre til at navigere.</h3></div>
+    <div><h3 class="auto-style1">Velkommen til din personlige side. Brug menuen til venstre til at navigere.</h3></div>
 </asp:Content>

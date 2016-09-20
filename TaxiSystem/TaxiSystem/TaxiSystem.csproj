@@ -78,7 +78,6 @@
     <Content Include="Images\TaxiSystem.png" />
     <Content Include="Inactivity.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="MenuCode.txt" />
     <Content Include="Styles\CreateDriver.css" />
     <Content Include="Styles\Main.css" />
     <Content Include="packages.config" />
@@ -100,7 +99,11 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\AccountHandler.cs" />
     <Compile Include="BusinessLogic\LoginHandler.cs" />
+    <Compile Include="BusinessLogic\Shift.cs" />
+    <Compile Include="BusinessLogic\ShiftHandler.cs" />
+    <Compile Include="BusinessLogic\Taxi.cs" />
     <Compile Include="BusinessLogic\TaxiDriver.cs" />
+    <Compile Include="BusinessLogic\TaxiHandler.cs" />
     <Compile Include="TaxiOwnerAccount.aspx.cs">
       <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

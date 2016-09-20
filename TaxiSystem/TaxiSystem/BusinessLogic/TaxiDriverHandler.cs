@@ -4,7 +4,7 @@ namespace TaxiSystem
 {
     public class TaxiDriverHandler
     {
-        public static bool AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel, string email, 
+        public static bool AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel, string email,
             string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string pensionPercent, string taxPercent, string taxDeductions)
         {
             TaxiDriver taxiDriver = new TaxiDriver();
@@ -26,6 +26,7 @@ namespace TaxiSystem
             taxiDriver.taxPercent = Double.Parse(taxPercent);
             taxiDriver.taxDeductions = Double.Parse(taxDeductions);
             taxiDriver.type = 3;
+            taxiDriver.createDate = DateTime.Now.ToShortDateString();
 
             try
             {

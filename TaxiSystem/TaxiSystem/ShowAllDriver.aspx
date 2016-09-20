@@ -10,10 +10,10 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     <div class="auto-style1">
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="#000000" Height="224px">
+        <br />
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="Black" Height="224px">
     <AlternatingRowStyle BackColor="White" ForeColor="#000000" />
     <Columns>
-        <asp:CommandField ShowSelectButton="True" />
         <asp:BoundField DataField="CPR" HeaderText="CPR" SortExpression="CPR" />
         <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
         <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
@@ -30,6 +30,7 @@
         <asp:BoundField DataField="Træk %" HeaderText="Træk %" SortExpression="Træk %" />
         <asp:BoundField DataField="Pension %" HeaderText="Pension %" SortExpression="Pension %" />
         <asp:BoundField DataField="Konto" HeaderText="Konto" SortExpression="Konto" />
+        <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
     </Columns>
         <EditRowStyle BackColor="#4775D1" />
     <FooterStyle BackColor="#24478F" ForeColor="White" Font-Bold="True" />

@@ -19,6 +19,7 @@ namespace TaxiSystem
             taxiOwner.tel = tel;
             taxiOwner.email = email;
             taxiOwner.type = 2;
+            taxiOwner.createDate = DateTime.Now.ToShortDateString();
 
             string plainPassword = PasswordHandler.RandomPassword();
             taxiOwner.salt = PasswordHandler.CreateSalt();

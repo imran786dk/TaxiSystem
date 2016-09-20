@@ -4,31 +4,38 @@ namespace TaxiSystem
 {
     public class TaxiDriverHandler
     {
-        public static void AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel, string email, 
-            string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string payCheckEmail, string pensionPercent, string taxPercent, string taxDeductions)
+        public static bool AddDriver(string cprNo, string fName, string lName, string street, string zipCode, string city, string country, string tel, string email, 
+            string drivingLicenseNo, string taxiDriverNo, string taxiDriverExp, string bankAccount, string pensionPercent, string taxPercent, string taxDeductions)
         {
             TaxiDriver taxiDriver = new TaxiDriver();
 
-            taxiDriver.cprNo = Int32.Parse(cprNo);
+            taxiDriver.cprNo = cprNo;
             taxiDriver.fName = fName;
             taxiDriver.lName = lName;
             taxiDriver.street = street;
-            taxiDriver.zipCode = Int32.Parse(zipCode);
+            taxiDriver.zipCode = zipCode;
             taxiDriver.city = city;
             taxiDriver.country = country;
-            taxiDriver.tel = Int32.Parse(tel);
-            taxiDriver.drivingLicenseNo = Int32.Parse(drivingLicenseNo);
-            taxiDriver.taxiDriverNo = Int32.Parse(taxiDriverNo);
-            taxiDriver.taxiDriverExp = DateTime.Parse(taxiDriverExp);
-            taxiDriver.bankAccount = Int32.Parse(bankAccount);
+            taxiDriver.tel = tel;
+            taxiDriver.email = email;
+            taxiDriver.drivingLicenseNo = drivingLicenseNo;
+            taxiDriver.taxiDriverNo = taxiDriverNo;
+            taxiDriver.taxiDriverExp = taxiDriverExp;
+            taxiDriver.bankAccount = bankAccount;
             taxiDriver.pensionPercent = Double.Parse(pensionPercent);
             taxiDriver.taxPercent = Double.Parse(taxPercent);
             taxiDriver.taxDeductions = Double.Parse(taxDeductions);
+            taxiDriver.type = 3;
 
-            taxiDriver.createDate = DateTime.Now;
-
-            DbHelper.CreateDriver(taxiDriver);
-
+            try
+            {
+                DbHelper.CreateDriver(taxiDriver);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

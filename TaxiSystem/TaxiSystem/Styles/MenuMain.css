@@ -16,7 +16,7 @@ body {
 }
 /*Home Page*/
 .content {
-    width: 100%;
+    width: 85%;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
     border-radius: 5px 5px 5px 5px;
@@ -26,6 +26,15 @@ body {
     min-height: 400px;
 }
 
+.side-content {
+    width: 5%;
+    background-color: rgb(36, 71, 143);
+    border: 1px solid rgb(36, 71, 143);
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-height: 400px;
 }
 /*Menu*/
 .menu {

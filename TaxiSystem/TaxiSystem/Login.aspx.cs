@@ -21,7 +21,14 @@ namespace TaxiSystem
 
             User user = LoginHandler.CheckLogin(email, password);
 
-            Response.Redirect("AccountOwner.aspx");
+            if (user != null)
+            {
+                Response.Redirect("AccountOwner.aspx");
+            }
+            else
+            {
+                Label1.Text = "Forkert email eller adgangskode";
+            }
 
         }
     }

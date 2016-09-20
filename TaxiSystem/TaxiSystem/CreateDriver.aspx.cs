@@ -8,7 +8,10 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                Calendar1.Visible = false;
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -36,18 +39,48 @@ namespace TaxiSystem
             string country = TextBox25.Text;
             string tel = TextBox27.Text;
             string email = TextBox29.Text;
-            string drivingLicenseNo = TextBox2.Text;
-            string taxiDriverNo = TextBox3.Text;
-            string taxiDriverExp = TextBox4.Text;
+            string drivingLicenseNo = TextBox9.Text;
+            string taxiDriverNo = TextBox10.Text;
+            string taxiDriverExp = TextBox11.Text;
             string bankAccount = TextBox7.Text;
-            string payCheckEmail = DropDownList1.SelectedValue;
             string pensionPercent = TextBox8.Text;
             string taxPercent = TextBox6.Text;
             string taxDeductions = TextBox5.Text;
 
-            TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
-                drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, payCheckEmail, pensionPercent, taxPercent, taxDeductions);
+            if(TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
+                drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, pensionPercent, taxPercent, taxDeductions) == true)
+            {
+                Label1.Text = "Chaufføren er gemt";
+            }
+            else
+            {
+                Label1.Text = "Chaufføren blev ikke gemt";
+            }
 
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            if (Calendar1.Visible)
+            {
+                Calendar1.Visible = false;
+            }
+            else
+            {
+                Calendar1.Visible = true;
+            }
+            
+        }
+
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            TextBox11.Text = Calendar1.SelectedDate.ToShortDateString();
+            Calendar1.Visible = false;
         }
     }
 }

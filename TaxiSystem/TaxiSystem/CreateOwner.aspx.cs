@@ -8,10 +8,7 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Email"] == null)
-            {
-                Response.Redirect("Inactivity.aspx");
-            }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -43,11 +40,11 @@ namespace TaxiSystem
 
             if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
             {
-                Label1.Text = "Brugeren er gemt.";
+                Label1.Text = "Brugeren er gemt";
             }
             else
             {
-                Label1.Text = "Brugeren blev ikke gemt.";
+                Label1.Text = "Brugeren blev ikke gemt";
             }
 
         }

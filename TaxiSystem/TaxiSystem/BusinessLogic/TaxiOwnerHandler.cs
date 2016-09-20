@@ -8,22 +8,19 @@ namespace TaxiSystem
         {
             TaxiOwner taxiOwner = new TaxiOwner();
 
-            taxiOwner.cvrNo = Int32.Parse(cvrNo);
+            taxiOwner.cvrNo = cvrNo;
             taxiOwner.companyName = companyName;
             taxiOwner.fName = fName;
             taxiOwner.lName = lName;
             taxiOwner.street = street;
-            taxiOwner.zipCode = Int32.Parse(zipCode);
+            taxiOwner.zipCode = zipCode;
             taxiOwner.city = city;
             taxiOwner.country = country;
-            taxiOwner.tel = Int32.Parse(tel);
+            taxiOwner.tel = tel;
             taxiOwner.email = email;
-
-            string plainPassword = PasswordHandler.RandomPassword();
-            taxiOwner.createDate = DateTime.Now;
             taxiOwner.type = 2;
 
-
+            string plainPassword = PasswordHandler.RandomPassword();
             taxiOwner.salt = PasswordHandler.CreateSalt();
             taxiOwner.password = PasswordHandler.CreateSHA256Hash(taxiOwner.salt, plainPassword);
 

@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace TaxiSystem
 {
-    public partial class AccountOwner : System.Web.UI.Page
+    public partial class ShowAllTaxi : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
         {
 
         }

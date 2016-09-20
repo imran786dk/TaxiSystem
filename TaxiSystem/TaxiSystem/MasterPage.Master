@@ -8,7 +8,7 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    <link href="Styles/main.css" rel="stylesheet" />
+    <link href="Styles/Main.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -21,7 +21,7 @@
                     <li><a href="#">Produkt</a></li>
                     <li><a href="#">Priser</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="Login.aspx">Log på</a></li>
+                    <li><a href="Login.aspx">Din konto</a></li>
                 </ul>
             </div>
             <div class="clear"></div>

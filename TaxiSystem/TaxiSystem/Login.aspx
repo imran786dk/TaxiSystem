@@ -19,29 +19,29 @@
                text-align: left;
                height: 27px;
            }
-           .auto-style25 {
-               width: 100px;
-               height: 30px;
-           }
-           .auto-style26 {
-               width: 171px;
-               text-align: left;
-               height: 30px;
-           }
            .auto-style27 {
                width: 44px;
                height: 15px;
                position: absolute;
-               left: 837px;
-               top: 344px;
+               left: 829px;
+               top: 374px;
            }
        .auto-style28 {
         height: 25px;
         position: absolute;
-        left: 710px;
-        top: 344px;
+        left: 708px;
+        top: 370px;
         width: 90px;
     }
+           .auto-style29 {
+               width: 100px;
+               height: 31px;
+           }
+           .auto-style30 {
+               width: 171px;
+               text-align: left;
+               height: 31px;
+           }
        </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
@@ -65,8 +65,8 @@
                 </td>
             </tr>
              <tr>
-                 <td class="auto-style25"></td>
-                 <td class="auto-style26">   
+                 <td class="auto-style29"></td>
+                 <td class="auto-style30">   
                      <a href="ForgotPassword.aspx">Glemt adgangskode?</a>                
                      
                 </td>

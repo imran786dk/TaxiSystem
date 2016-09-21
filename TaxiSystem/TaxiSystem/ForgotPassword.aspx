@@ -14,7 +14,7 @@
                margin-left: 300px;
                display: inline-block;
                float: left;
-               height: 25px;
+               height: 42px;
                position: absolute;
                left: 100px;
                top: 100px;
@@ -23,8 +23,8 @@
                height: 44px;
                width: 75px;
                position: absolute;
-               left: 710px;
-               top: 281px;
+               left: 708px;
+               top: 267px;
            }
            .auto-style19 {
                height: 27px;
@@ -34,24 +34,12 @@
                height: 27px;
                width: 200px;
            }
-           .auto-style21 {
-               position: relative;
-               top: 5px;
-               left: 5px;
-               width: 100px;
-               right: 293px;
-               height: 27px;
-           }
            </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <h3 class="auto-style13">Få tilsendt en ny adgangskode til din email</h3>
     <div class="auto-style10">
         <table class="auto-style17">
-            <tr>
-                <td class="auto-style21">Bruger oplysniger:
-                </td>
-            </tr>
             <tr>
                 <td class="auto-style19">Email:</td>
                 <td class="auto-style20">

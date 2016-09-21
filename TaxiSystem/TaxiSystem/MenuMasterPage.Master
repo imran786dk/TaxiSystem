@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MenuMasterPage.master.cs" Inherits="TaxiSystem.MenuMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MenuMasterPage.Master.cs" Inherits="TaxiSystem.MasterPageOwnerAccount" %>
 
 <!DOCTYPE html>
 
@@ -27,7 +27,7 @@
             <div class="clear"></div>
             <div class="side-content">
                 <asp:ContentPlaceHolder ID="sideContent" runat="server">
-                    <asp:Menu ID="Menu1" runat="server" BackColor="#24478F" DynamicHorizontalOffset="2" Font-Names="Arial" Font-Size="11" ForeColor="White" StaticSubMenuIndent="10px">
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#24478F" DynamicHorizontalOffset="2" Font-Names="Arial" Font-Size="11pt" ForeColor="White" StaticSubMenuIndent="10px">
                         <DynamicHoverStyle BackColor="#4775D1" ForeColor="White" />
                         <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                         <DynamicMenuStyle BackColor="#24478F" />
@@ -40,7 +40,7 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="Taxi" Value="Taxi">
                                 <asp:MenuItem Text="Vis taxi" Value="Vis taxi"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret taxi" Value="Opret taxi"></asp:MenuItem>
+                                <asp:MenuItem Text="Opret taxi" Value="Opret taxi" NavigateUrl="~/CreateTaxi.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Chauffør" Value="Chauffør">
                                 <asp:MenuItem Text="Vis chauffør" Value="Vis chauffør" NavigateUrl="~/ShowAllDriver.aspx"></asp:MenuItem>
@@ -48,7 +48,7 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="Vagt" Value="Vagt">
                                 <asp:MenuItem Text="Vis vagt" Value="Vis vagt"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret vagt" Value="Opret vagt"></asp:MenuItem>
+                                <asp:MenuItem Text="Opret vagt" Value="Opret vagt" NavigateUrl="~/CreateShift.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#4775D1" ForeColor="White" />
@@ -69,3 +69,4 @@
     </form>
 </body>
 </html>
+

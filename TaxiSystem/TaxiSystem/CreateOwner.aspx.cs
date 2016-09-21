@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -40,13 +41,21 @@ namespace TaxiSystem
 
             if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
             {
+                Label1.ForeColor = Color.Black;
                 Label1.Text = "Brugeren er gemt";
             }
             else
             {
+                Label1.ForeColor = Color.Red;
                 Label1.Text = "Brugeren blev ikke gemt";
             }
 
         }
+
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+        }
+
     }
 }

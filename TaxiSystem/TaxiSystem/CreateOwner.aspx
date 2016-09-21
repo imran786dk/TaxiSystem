@@ -18,7 +18,7 @@
             margin-left: 40px;
             display: inline-block;
             float: left;
-            height: 351px;
+            height: 360px;
             position: absolute;
             left: 300px;
             top: 100px;
@@ -28,24 +28,15 @@
             width: 150px;
         }
 
-        .auto-style14 {
-            width: 90px;
-        }
-
-        .auto-style15 {
-            width: 180px;
-            text-align: left;
-        }
-
         .auto-style16 {
-            width: 90px;
+            width: 100px;
             text-align: left;
         }
 
         .auto-style20 {
-            left: 338px;
-            top: 530px;
-            width: 75px;
+            left: 342px;
+            top: 525px;
+            width: 90px;
             height: 25px;
             position: absolute;
         }
@@ -53,97 +44,109 @@
         .auto-style21 {
             height: 25px;
             position: absolute;
-            left: 665px;
-            top: 530px;
-            width: 75px;
+            left: 649px;
+            top: 525px;
+            width: 90px;
             }
         .auto-style22 {
             width: 31px;
             height: 15px;
             position: absolute;
-            left: 805px;
-            top: 535px;
+            left: 776px;
+            top: 529px;
         }
+    .auto-style23 {
+        width: 100px;
+        height: 27px;
+    }
+    .auto-style24 {
+        width: 205px;
+        text-align: left;
+        height: 27px;
+    }
+    .auto-style25 {
+        height: 27px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-    <h3>Indtast vognmand oplyninger (Alle felter markeret med * skal udfyldes)</h3>
+    <h3>Opret vognmand (Alle felter markeret med * skal udfyldes)</h3>
     <div class="auto-style10">
         <table class="auto-style12">
 
             <tr>
-                <td class="auto-style16">Personlige oplysninger:
+                <td class="auto-style16">Vognmand oplysninger:
                 </td>
             </tr>
             <tr>
-                <td class="auto-style14">CVR:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">CVR:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Firma:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Firma:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Fornavn:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Fornavn:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox21" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Efternavn:</td>
-                <td class="auto-style15">
-                    <asp:TextBox ID="TextBox22" runat="server" Width="199px"></asp:TextBox>
+                <td class="auto-style23">Efternavn:</td>
+                <td class="auto-style24">
+                    <asp:TextBox ID="TextBox22" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Vej:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Vej:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox23" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Post nr.:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Post nr.:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox24" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">By:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">By:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Land:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Land:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox25" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Tlf:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Tlf:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox27" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             <tr>
-                <td class="auto-style14">Email:</td>
-                <td class="auto-style15">
+                <td class="auto-style23">Email:</td>
+                <td class="auto-style24">
                     <asp:TextBox ID="TextBox29" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td>*</td>
+                <td class="auto-style25">*</td>
             </tr>
             </table>
         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" />
@@ -152,6 +155,4 @@
         <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style21" />
         <asp:Label ID="Label1" runat="server" CssClass="auto-style22" Text=""></asp:Label>
     </div>
-
-
 </asp:Content>

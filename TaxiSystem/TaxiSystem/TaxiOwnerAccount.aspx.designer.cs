@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TaxiSystem.BusinessLogic
+namespace TaxiSystem
 {
 
 

@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace TaxiSystem
 {
-    public partial class CreateDriver : System.Web.UI.Page
+    public partial class CreateShift : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 Calendar1.Visible = false;
             }
         }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             ClearInputs(Page.Controls);
@@ -26,39 +30,40 @@ namespace TaxiSystem
                     ((TextBox)ctrl).Text = string.Empty;
                 ClearInputs(ctrl.Controls);
             }
-
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string cprNo = TextBox20.Text;
-            string fName = TextBox21.Text;
-            string lName = TextBox22.Text;
-            string street = TextBox23.Text;
-            string zipCode = TextBox24.Text;
-            string city = TextBox1.Text;
-            string country = TextBox25.Text;
-            string tel = TextBox27.Text;
-            string email = TextBox29.Text;
-            string drivingLicenseNo = TextBox9.Text;
+            string date = TextBox11.Text;
+            string permissionNo = TextBox9.Text;
             string taxiDriverNo = TextBox10.Text;
-            string taxiDriverExp = TextBox11.Text;
-            string bankAccount = TextBox7.Text;
-            string pensionPercent = TextBox8.Text;
-            string taxPercent = TextBox6.Text;
-            string taxDeductions = TextBox5.Text;
+            string drivingBookNo = TextBox2.Text;
+            string drivingBookPage = TextBox3.Text;
+            string units = TextBox20.Text;
+            string trips = TextBox21.Text;
+            string mileage = TextBox22.Text;
+            string occupiedMileage = TextBox23.Text;
+            string controlMileage = TextBox24.Text;
+            string vehicleMileage = TextBox1.Text;
+            string withoutMeter = TextBox5.Text;
+            string errorTrips = TextBox6.Text;
+            string onAccount = TextBox8.Text;
 
-            if(TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
-                drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, pensionPercent, taxPercent, taxDeductions) == true)
+            if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage, 
+                occupiedMileage, controlMileage, vehicleMileage, withoutMeter, errorTrips, onAccount) == true)
             {
                 Label1.ForeColor = Color.Black;
-                Label1.Text = "Chaufføren er gemt";
+                Label1.Text = "Vagten er gemt";
             }
             else
             {
                 Label1.ForeColor = Color.Red;
-                Label1.Text = "Chaufføren blev ikke gemt";
+                Label1.Text = "Vagten blev ikke gemt";
             }
+        }
+
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        {
 
         }
 
@@ -72,18 +77,13 @@ namespace TaxiSystem
             {
                 Calendar1.Visible = true;
             }
-            
-        }
-
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
-        {
 
         }
-
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             TextBox11.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
         }
+
     }
 }

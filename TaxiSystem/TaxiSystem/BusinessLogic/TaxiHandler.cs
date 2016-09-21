@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TaxiSystem.BusinessLogic
+namespace TaxiSystem
 {
     public class TaxiHandler
     {

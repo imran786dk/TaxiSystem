@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TaxiSystem.BusinessLogic
+namespace TaxiSystem
 {
     public partial class TaxiOwnerAccount : System.Web.UI.Page
     {

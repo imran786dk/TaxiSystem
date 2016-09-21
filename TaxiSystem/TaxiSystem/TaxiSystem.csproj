@@ -66,7 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TaxiOwnerAccount.aspx" />
+    <Content Include="CreateShift.aspx" />
+    <Content Include="CreateTaxi.aspx" />
+    <Content Include="Styles\CreateShift.css" />
     <Content Include="CreateDriver.aspx" />
     <Content Include="CreateOwner.aspx" />
     <Content Include="Default.aspx" />
@@ -93,7 +95,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Styles\MenuMain.css" />
-    <Content Include="TestSite.aspx" />
+    <Content Include="TaxiOwnerAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +106,19 @@
     <Compile Include="BusinessLogic\Taxi.cs" />
     <Compile Include="BusinessLogic\TaxiDriver.cs" />
     <Compile Include="BusinessLogic\TaxiHandler.cs" />
-    <Compile Include="TaxiOwnerAccount.aspx.cs">
-      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
+    <Compile Include="CreateShift.aspx.cs">
+      <DependentUpon>CreateShift.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TaxiOwnerAccount.aspx.designer.cs">
-      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
+    <Compile Include="CreateShift.aspx.designer.cs">
+      <DependentUpon>CreateShift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTaxi.aspx.cs">
+      <DependentUpon>CreateTaxi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTaxi.aspx.designer.cs">
+      <DependentUpon>CreateTaxi.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\TaxiOwnerHandler.cs" />
     <Compile Include="BusinessLogic\User.cs" />
@@ -185,12 +194,12 @@
     <Compile Include="ShowAllDriver.aspx.designer.cs">
       <DependentUpon>ShowAllDriver.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestSite.aspx.cs">
-      <DependentUpon>TestSite.aspx</DependentUpon>
+    <Compile Include="TaxiOwnerAccount.aspx.cs">
+      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestSite.aspx.designer.cs">
-      <DependentUpon>TestSite.aspx</DependentUpon>
+    <Compile Include="TaxiOwnerAccount.aspx.designer.cs">
+      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -10,10 +10,12 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     <div class="auto-style1">
+        <h3>Dine chauffører</h3>
         <br />
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="Black" Height="224px">
     <AlternatingRowStyle BackColor="White" ForeColor="#000000" />
     <Columns>
+        <asp:CommandField ShowSelectButton="True" />
         <asp:BoundField DataField="CPR" HeaderText="CPR" SortExpression="CPR" />
         <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
         <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />

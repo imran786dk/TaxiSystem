@@ -23,14 +23,14 @@
                width: 44px;
                height: 15px;
                position: absolute;
-               left: 829px;
-               top: 374px;
+               left: 832px;
+               top: 384px;
            }
        .auto-style28 {
         height: 25px;
         position: absolute;
-        left: 708px;
-        top: 370px;
+        left: 709px;
+        top: 380px;
         width: 90px;
     }
            .auto-style29 {
@@ -42,12 +42,26 @@
                text-align: left;
                height: 31px;
            }
+           .auto-style31 {
+               border-style: solid;
+               border-width: 3px;
+               padding: 1px 4px;
+               width: 400px;
+               margin-top: 100px;
+               margin-left: 300px;
+               display: inline-block;
+               float: left;
+               height: 155px;
+               position: absolute;
+               left: 100px;
+               top: 100px;
+           }
        </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <h3>Log på med din email og din personlig adgangskode</h3>
     <div class="auto-style10">
-        <table class="auto-style17">
+        <table class="auto-style31">
             <tr>
                 <td class="auto-style21">Login oplysniger:
                 </td>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,6 +17,27 @@ namespace TaxiSystem
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+
+            if (Page.IsValid)
+            {
+                string email = TextBox20.Text;
+
+                if (ForgotPasswordHandler.SendNewPassword(email) == true)
+                {
+                    Label1.ForeColor = Color.Black;
+                    Label1.Text = "Email er sendt";
+                }
+                else
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Email er ikke gyldig";
+                }
+            }
+            else
+            {
+                Label1.ForeColor = Color.Red;
+                Label1.Text = "Email skal udfyldes";
+            }
 
         }
     }

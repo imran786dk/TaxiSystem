@@ -34,32 +34,42 @@ namespace TaxiSystem
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string date = TextBox11.Text;
-            string permissionNo = TextBox9.Text;
-            string taxiDriverNo = TextBox10.Text;
-            string drivingBookNo = TextBox2.Text;
-            string drivingBookPage = TextBox3.Text;
-            string units = TextBox20.Text;
-            string trips = TextBox21.Text;
-            string mileage = TextBox22.Text;
-            string occupiedMileage = TextBox23.Text;
-            string controlMileage = TextBox24.Text;
-            string vehicleMileage = TextBox1.Text;
-            string withoutMeter = TextBox5.Text;
-            string errorTrips = TextBox6.Text;
-            string onAccount = TextBox8.Text;
-
-            if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage, 
-                occupiedMileage, controlMileage, vehicleMileage, withoutMeter, errorTrips, onAccount) == true)
+            if (Page.IsValid)
             {
-                Label1.ForeColor = Color.Black;
-                Label1.Text = "Vagten er gemt";
+
+                string date = TextBox11.Text;
+                string permissionNo = TextBox9.Text;
+                string taxiDriverNo = TextBox10.Text;
+                string drivingBookNo = TextBox2.Text;
+                string drivingBookPage = TextBox3.Text;
+                string units = TextBox20.Text;
+                string trips = TextBox21.Text;
+                string mileage = TextBox22.Text;
+                string occupiedMileage = TextBox23.Text;
+                string controlMileage = TextBox24.Text;
+                string vehicleMileage = TextBox1.Text;
+                string withoutMeter = TextBox5.Text;
+                string errorTrips = TextBox6.Text;
+                string onAccount = TextBox8.Text;
+
+                if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage,
+                    occupiedMileage, controlMileage, vehicleMileage, withoutMeter, errorTrips, onAccount) == true)
+                {
+                    Label1.ForeColor = Color.Black;
+                    Label1.Text = "Vagten er gemt";
+                }
+                else
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Vagten blev ikke gemt";
+                }
             }
             else
             {
                 Label1.ForeColor = Color.Red;
-                Label1.Text = "Vagten blev ikke gemt";
+                Label1.Text = "Et eller flere felter skal udfyldes";
             }
+
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

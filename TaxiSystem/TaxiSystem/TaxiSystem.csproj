@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\AccountHandler.cs" />
+    <Compile Include="BusinessLogic\ForgotPasswordHandler.cs" />
     <Compile Include="BusinessLogic\LoginHandler.cs" />
     <Compile Include="BusinessLogic\Shift.cs" />
     <Compile Include="BusinessLogic\ShiftHandler.cs" />

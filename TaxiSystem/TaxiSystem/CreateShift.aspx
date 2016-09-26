@@ -69,40 +69,47 @@
             left: 300px;
             top: 577px;
         }
-    .auto-style60 {
-        height: 25px;
-        left: 650px;
-        top: 772px;
-        width: 90px;
-        position: absolute;
-    }
-    .auto-style61 {
-        height: 25px;
-        top: 772px;
-        width: 90px;
-        position: absolute;
-        left: 342px;
-    }
-    .auto-style63 {
-        width: 200px;
-        height: 16px;
-    }
-    .auto-style65 {
-        width: 100px;
-        height: 19px;
-    }
-    .auto-style66 {
-        width: 100px;
-        height: 16px;
-    }
-    .auto-style67 {
-        width: 100px;
-        height: 27px;
-    }
-    .auto-style68 {
-        width: 200px;
-        height: 27px;
-    }
+
+        .auto-style60 {
+            height: 25px;
+            left: 650px;
+            top: 772px;
+            width: 90px;
+            position: absolute;
+        }
+
+        .auto-style61 {
+            height: 25px;
+            top: 772px;
+            width: 90px;
+            position: absolute;
+            left: 342px;
+        }
+
+        .auto-style63 {
+            width: 200px;
+            height: 16px;
+        }
+
+        .auto-style65 {
+            width: 100px;
+            height: 19px;
+        }
+
+        .auto-style66 {
+            width: 100px;
+            height: 16px;
+        }
+
+        .auto-style67 {
+            width: 100px;
+            height: 27px;
+        }
+
+        .auto-style68 {
+            width: 200px;
+            height: 27px;
+        }
     </style>
 </asp:Content>
 
@@ -114,15 +121,17 @@
                 <td class="auto-style58">
                     <table class="auto-style55">
                         <tr>
-                            <td class="auto-style65">Vagt oplysninger:
+                            <td class="auto-style65">Stam oplysninger:
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style66">Vagt dato:</td>
                             <td class="auto-style63">
-                                <asp:TextBox ID="TextBox11" runat="server" Width="200px"></asp:TextBox>
-                                <td class="auto-style66">*
-                                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" /></td>
+                                <asp:TextBox ID="TextBox11" runat="server" Width="160px"></asp:TextBox>
+                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False" />
+                            </td>
+                            <td class="auto-style66">*<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -130,28 +139,36 @@
                             <td class="auto-style68">
                                 <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
                             </td>
-                            <td class="auto-style67">*</td>
+                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox9" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td class="auto-style67">Førerkort nr.:</td>
                             <td class="auto-style68">
                                 <asp:TextBox ID="TextBox10" runat="server" Width="200px"></asp:TextBox>
                             </td>
-                            <td class="auto-style67">*</td>
+                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox10" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td class="auto-style67">Trafikbog nr.:</td>
                             <td class="auto-style68">
                                 <asp:TextBox ID="TextBox2" runat="server" Width="200px"></asp:TextBox>
                             </td>
-                            <td class="auto-style67">*</td>
+                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox2" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
                             <td class="auto-style67">Trafikbog side.:</td>
                             <td class="auto-style68">
                                 <asp:TextBox ID="TextBox3" runat="server" Width="200px"></asp:TextBox>
                             </td>
-                            <td class="auto-style67">*</td>
+                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox3" ForeColor="Red">
+                            </asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -172,7 +189,7 @@
         <table class="auto-style54">
 
             <tr>
-                <td class="auto-style26">Vagt oplysninger:
+                <td class="auto-style26">Taximeter oplysninger:
                 </td>
                 <td class="auto-style24"></td>
             </tr>
@@ -181,49 +198,61 @@
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox20" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Ture:</td>
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox21" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox21" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Km:</td>
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox22" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox22" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Besatte:</td>
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox23" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox23" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Kontrol:</td>
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox24" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox24" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Taxi km:</td>
                 <td class="auto-style37">
                     <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style14">*</td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox1" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
         </table>
 
 
         <table class="auto-style59">
             <tr>
-                <td class="auto-style14">Vagt oplysninger:
+                <td class="auto-style14">Andre oplysninger:
                 </td>
             </tr>
             <tr>
@@ -253,7 +282,7 @@
         <br />
         <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style60" />
 
-        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style61" />
+        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style61" CausesValidation="False" />
         <asp:Label ID="Label1" runat="server" CssClass="auto-style51" Text=""></asp:Label>
 
     </div>

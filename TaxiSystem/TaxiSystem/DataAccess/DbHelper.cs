@@ -189,5 +189,23 @@ namespace TaxiSystem
             return taxiOwner;
         }
 
+        public static void ChangePassword(string email, string password, string salt)
+        {
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spChangeEmail", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
+                    cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = password;
+                    cmd.Parameters.Add("@PasswordSalt", SqlDbType.NVarChar).Value = salt;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

@@ -17,24 +17,32 @@ namespace TaxiSystem
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string licensePlate = TextBox20.Text;
-            string permissionNo = TextBox9.Text;
-            string units = TextBox21.Text;
-            string trips = TextBox22.Text;
-            string mileage = TextBox23.Text;
-            string occupiedMileage = TextBox24.Text;
-            string controlMileage = TextBox1.Text;
-            string vehicleMileage = TextBox25.Text;
-
-            if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage,occupiedMileage, controlMileage, vehicleMileage ) == true)
+            if (Page.IsValid)
             {
-                Label1.ForeColor = Color.Black;
-                Label1.Text = "Taxien er gemt";
+                string licensePlate = TextBox20.Text;
+                string permissionNo = TextBox9.Text;
+                string units = TextBox21.Text;
+                string trips = TextBox22.Text;
+                string mileage = TextBox23.Text;
+                string occupiedMileage = TextBox24.Text;
+                string controlMileage = TextBox1.Text;
+                string vehicleMileage = TextBox25.Text;
+
+                if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage) == true)
+                {
+                    Label1.ForeColor = Color.Black;
+                    Label1.Text = "Taxien er gemt";
+                }
+                else
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Taxien blev ikke gemt";
+                }
             }
             else
             {
                 Label1.ForeColor = Color.Red;
-                Label1.Text = "Taxien blev ikke gemt";
+                Label1.Text = "Et eller flere felter skal udfyldes";
             }
         }
 

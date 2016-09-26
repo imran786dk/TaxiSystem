@@ -65,15 +65,15 @@
         height: 27px;
     }
     .auto-style25 {
-        height: 27px;
-    }
+            height: 27px;
+            width: 87px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <h3>Opret vognmand (Alle felter markeret med * skal udfyldes)</h3>
     <div class="auto-style10">
         <table class="auto-style12">
-
             <tr>
                 <td class="auto-style16">Vognmand oplysninger:
                 </td>
@@ -83,73 +83,91 @@
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox20" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Firma:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25"></td>
             </tr>
             <tr>
                 <td class="auto-style23">Fornavn:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox21" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox21" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Efternavn:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox22" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox22" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Vej:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox23" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox23" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Post nr.:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox24" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox24" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">By:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox1" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Land:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox25" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox25" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Tlf:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox27" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox27" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style23">Email:</td>
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox29" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*</td>
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox25" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                </td>
             </tr>
             </table>
-        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" />
+        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" CausesValidation="False"/>
         <br />
         <br />
         <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style21" />

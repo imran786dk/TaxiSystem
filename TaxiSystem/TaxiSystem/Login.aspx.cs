@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,19 +16,29 @@ namespace TaxiSystem
         }
 
         protected void Button2_Click(object sender, EventArgs e)
-        {
-            string email = TextBox20.Text;
-            string password = TextBox9.Text;
+        {           
 
-            User user = LoginHandler.CheckLogin(email, password);
-
-            if (user != null)
+            if (Page.IsValid)
             {
-                Response.Redirect("AccountOwner.aspx");
+                string email = TextBox20.Text;
+                string password = TextBox9.Text;
+
+                User user = LoginHandler.CheckLogin(email, password);
+
+                if (user != null)
+                {
+                    Response.Redirect("AccountOwner.aspx");
+                }
+                else
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Forkert email eller adgangskode";
+                }
             }
             else
             {
-                Label1.Text = "Forkert email eller adgangskode";
+                Label1.ForeColor = Color.Red;
+                Label1.Text = "Du har ikke ufyldt et eller flere felter";
             }
 
         }

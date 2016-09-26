@@ -31,33 +31,42 @@ namespace TaxiSystem
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string cprNo = TextBox20.Text;
-            string fName = TextBox21.Text;
-            string lName = TextBox22.Text;
-            string street = TextBox23.Text;
-            string zipCode = TextBox24.Text;
-            string city = TextBox1.Text;
-            string country = TextBox25.Text;
-            string tel = TextBox27.Text;
-            string email = TextBox29.Text;
-            string drivingLicenseNo = TextBox9.Text;
-            string taxiDriverNo = TextBox10.Text;
-            string taxiDriverExp = TextBox11.Text;
-            string bankAccount = TextBox7.Text;
-            string pensionPercent = TextBox8.Text;
-            string taxPercent = TextBox6.Text;
-            string taxDeductions = TextBox5.Text;
-
-            if(TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
-                drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, pensionPercent, taxPercent, taxDeductions) == true)
+            if (Page.IsValid)
             {
-                Label1.ForeColor = Color.Black;
-                Label1.Text = "Chaufføren er gemt";
+                string cprNo = TextBox20.Text;
+                string fName = TextBox21.Text;
+                string lName = TextBox22.Text;
+                string street = TextBox23.Text;
+                string zipCode = TextBox24.Text;
+                string city = TextBox1.Text;
+                string country = TextBox25.Text;
+                string tel = TextBox27.Text;
+                string email = TextBox29.Text;
+                string drivingLicenseNo = TextBox9.Text;
+                string taxiDriverNo = TextBox10.Text;
+                string taxiDriverExp = TextBox11.Text;
+                string bankAccount = TextBox7.Text;
+                string pensionPercent = TextBox8.Text;
+                string taxPercent = TextBox6.Text;
+                string taxDeductions = TextBox5.Text;
+
+
+                if (TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
+                    drivingLicenseNo, taxiDriverNo, taxiDriverExp, bankAccount, pensionPercent, taxPercent, taxDeductions) == true)
+                {
+                    Label1.ForeColor = Color.Black;
+                    Label1.Text = "Chaufføren er gemt";
+                }
+                else
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Chaufføren blev ikke gemt";
+                }
             }
             else
             {
                 Label1.ForeColor = Color.Red;
-                Label1.Text = "Chaufføren blev ikke gemt";
+                Label1.Text = "Et eller flere felter skal udfyldes";
             }
 
         }

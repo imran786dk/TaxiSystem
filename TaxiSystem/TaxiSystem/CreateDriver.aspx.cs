@@ -17,6 +17,7 @@ namespace TaxiSystem
         protected void Button1_Click(object sender, EventArgs e)
         {
             ClearInputs(Page.Controls);
+            DropDownList1.SelectedIndex = 0;
         }
         void ClearInputs(ControlCollection ctrls)
         {
@@ -39,7 +40,7 @@ namespace TaxiSystem
                 string street = TextBox23.Text;
                 string zipCode = TextBox24.Text;
                 string city = TextBox1.Text;
-                string country = TextBox25.Text;
+                string country = DropDownList1.SelectedValue;
                 string tel = TextBox27.Text;
                 string email = TextBox29.Text;
                 string drivingLicenseNo = TextBox9.Text;
@@ -94,5 +95,6 @@ namespace TaxiSystem
             TextBox11.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
         }
+
     }
 }

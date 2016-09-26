@@ -48,7 +48,7 @@
             <tr>
                 <td class="auto-style19">Email:</td>
                 <td class="auto-style20">
-                    <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox20" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ForeColor="Red" ControlToValidate="TextBox20"></asp:RequiredFieldValidator>
                 </td>
             </tr>

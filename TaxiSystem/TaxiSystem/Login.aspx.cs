@@ -38,7 +38,7 @@ namespace TaxiSystem
             else
             {
                 Label1.ForeColor = Color.Red;
-                Label1.Text = "Du har ikke ufyldt et eller flere felter";
+                Label1.Text = "Et eller flere felter skal udfyldes";
             }
 
         }

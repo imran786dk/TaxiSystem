@@ -22,7 +22,7 @@ namespace TaxiSystem
             {
                 string email = TextBox20.Text;
 
-                if (ForgotPasswordHandler.SendNewPassword(email) == true)
+                if (PasswordHandler.SendNewPassword(email) == true)
                 {
                     Label1.ForeColor = Color.Black;
                     Label1.Text = "Email er sendt";

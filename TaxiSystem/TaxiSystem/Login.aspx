@@ -69,7 +69,7 @@
             <tr>
                 <td class="auto-style23">Email:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox20" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ForeColor="Red" ControlToValidate="TextBox20">
                     </asp:RequiredFieldValidator>
                 </td>
@@ -77,7 +77,7 @@
             <tr>
                 <td class="auto-style23">Adgangskode:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox9" runat="server" Width="200px" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal udfyldes" ForeColor="Red" ControlToValidate="TextBox9">
                     </asp:RequiredFieldValidator>
                 </td>

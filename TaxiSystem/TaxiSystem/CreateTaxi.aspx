@@ -65,7 +65,7 @@
             <tr>
                 <td class="auto-style14">Enheder:</td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBox21" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox21" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox21" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -74,7 +74,7 @@
             <tr>
                 <td class="auto-style14">Ture:</td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBox22" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox22" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox22" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -83,7 +83,7 @@
             <tr>
                 <td class="auto-style14">Km:</td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBox23" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox23" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox23" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -92,7 +92,7 @@
             <tr>
                 <td class="auto-style14">Besatte km.:</td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBox24" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox24" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox24" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -101,7 +101,7 @@
             <tr>
                 <td class="auto-style14">Kontrol km:</td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox1" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -110,7 +110,7 @@
             <tr>
                 <td class="auto-style14">Taxi km:</td>
                 <td class="auto-style16">
-                    <asp:TextBox ID="TextBox25" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox25" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox25" ForeColor="Red">
                                           </asp:RequiredFieldValidator>

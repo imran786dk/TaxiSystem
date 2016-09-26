@@ -81,7 +81,7 @@
             <tr>
                 <td class="auto-style23">CVR:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox20" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox20" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox20" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -124,7 +124,7 @@
             <tr>
                 <td class="auto-style23">Post nr.:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox24" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox24" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox24" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -142,16 +142,19 @@
             <tr>
                 <td class="auto-style23">Land:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox25" runat="server" Width="200px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="200px" CausesValidation="False">
+                        <asp:ListItem Selected="True" Value="0">Vælg land</asp:ListItem>
+                        <asp:ListItem>Danmark</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
-                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox25" ForeColor="Red">
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="DropDownList1" InitialValue="0" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style23">Tlf:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox27" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Phone"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox27" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -160,9 +163,9 @@
             <tr>
                 <td class="auto-style23">Email:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox29" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox29" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox25" ForeColor="Red">
+                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox29" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>

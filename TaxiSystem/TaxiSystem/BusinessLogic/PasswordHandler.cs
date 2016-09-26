@@ -42,5 +42,26 @@ namespace TaxiSystem
             return strB.ToString();
 
         }
+
+        public static bool SendNewPassword(string email)
+        {
+
+            string plainPassword = RandomPassword();
+            string salt = CreateSalt();
+            string password = CreateSHA256Hash(salt, plainPassword);
+
+            EmailHandler.PasswordMail(plainPassword, email);
+
+            try
+            {
+                DbHelper.ChangePassword(email, password, salt);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
     }
 }

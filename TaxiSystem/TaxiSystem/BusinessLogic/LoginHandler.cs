@@ -7,7 +7,7 @@ namespace TaxiSystem
 {
     public class LoginHandler
     {
-        public static int GetType(String email)
+        public static int GetType(string email)
         {
 
             int type = DbHelper.SelectType(email);
@@ -15,7 +15,7 @@ namespace TaxiSystem
                 return type;   
         }
 
-        public static TaxiOwner TaxiOwnerLogin(String email, String password)
+        public static TaxiOwner TaxiOwnerLogin(string email, string password)
         {
             TaxiOwner taxiOwner = DbHelper.SelectTaxiOwner(email);
 
@@ -34,7 +34,7 @@ namespace TaxiSystem
             }
         }
 
-        public static TaxiDriver TaxiDriverLogin(String email, String password)
+        public static TaxiDriver TaxiDriverLogin(string email, string password)
         {
             TaxiDriver taxiDriver = DbHelper.SelectTaxiDriver(email);
 

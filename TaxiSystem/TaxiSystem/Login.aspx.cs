@@ -33,14 +33,13 @@ namespace TaxiSystem
 
                 int type = LoginHandler.GetType(email);
 
-                if(type == 2)
+                if (type == 2)
                 {
                     TaxiOwner taxiOwner = LoginHandler.TaxiOwnerLogin(email, password);
 
-                    Session["TaxiOwner"] = taxiOwner.userId;
-
                     if (taxiOwner != null)
                     {
+                        Session["TaxiOwner"] = taxiOwner.userId;
                         Response.Redirect("AccountTaxiOwner.aspx");
                     }
                     else
@@ -53,10 +52,10 @@ namespace TaxiSystem
                 {
                     TaxiDriver taxiDriver = LoginHandler.TaxiDriverLogin(email, password);
 
-                    Session["TaxiDriver"] = taxiDriver.userId;
-
                     if (taxiDriver != null)
-                    { 
+                    {
+
+                        Session["TaxiDriver"] = taxiDriver.userId;
                         Response.Redirect("AccountTaxiDriver.aspx");
                     }
                     else

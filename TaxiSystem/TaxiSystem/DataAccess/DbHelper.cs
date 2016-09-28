@@ -522,7 +522,7 @@ namespace TaxiSystem
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spChangeEmail", con))
+                    using (SqlCommand cmd = new SqlCommand("spUpdatePassword", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 

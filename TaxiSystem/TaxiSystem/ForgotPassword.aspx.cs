@@ -25,7 +25,7 @@ namespace TaxiSystem
                 if (PasswordHandler.SendNewPassword(email) == true)
                 {
                     Label1.ForeColor = Color.Black;
-                    Label1.Text = "Email er sendt";
+                    Label1.Text = "Ny kode er sendt";
                 }
                 else
                 {

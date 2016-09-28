@@ -136,7 +136,7 @@ namespace TaxiSystem
 
             TaxiDriver taxiDriver = TaxiDriverHandler.getTaxiDriver(userId);
 
-            TextBox28.Text = taxiDriver.fName + "" + taxiDriver.lName;
+            TextBox28.Text = taxiDriver.fName + " " + taxiDriver.lName;
         }
 
         protected void Button3_Click(object sender, EventArgs e)

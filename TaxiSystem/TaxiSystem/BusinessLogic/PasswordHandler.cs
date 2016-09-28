@@ -9,7 +9,7 @@ namespace TaxiSystem
         public const int SaltByteSize = 32;
         public string salt = CreateSalt();
 
-        public static string CreateSalt()                           
+        public static string CreateSalt()
 
         {
             RNGCryptoServiceProvider csprng = new RNGCryptoServiceProvider();
@@ -28,7 +28,7 @@ namespace TaxiSystem
             return Convert.ToBase64String(hash);
         }
 
-        public static string RandomPassword()               
+        public static string RandomPassword()
         {
 
             int lengthOfPassword = 8;
@@ -50,12 +50,16 @@ namespace TaxiSystem
             string salt = CreateSalt();
             string password = CreateSHA256Hash(salt, plainPassword);
 
-            EmailHandler.PasswordMail(plainPassword, email);
-
             try
             {
+                if (DbHelper.CheckEmail(email) == false)
+                {
+                    EmailHandler.PasswordMail(plainPassword, email);
+                }
+
                 DbHelper.ChangePassword(email, password, salt);
                 return true;
+
             }
             catch
             {

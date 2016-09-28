@@ -42,7 +42,7 @@
 </asp:GridView>
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [CPR], [Fornavn], [Efternavn], [Vej], [Post], [By], [Land], [Tlf], [Email], [Kørekort], [Førerkort], [Førerkort udløb] AS Førerkort_udløb, [Oprettet] FROM [vTaxiDriver] WHERE ([Bruger Id] = @Bruger_Id)">
     <SelectParameters>
-        <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiOwner" Type="Int32" />
+        <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiDriver" Type="Int32" />
     </SelectParameters>
         </asp:SqlDataSource>
 </div>

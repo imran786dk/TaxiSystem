@@ -38,9 +38,9 @@
     <SortedDescendingCellStyle BackColor="#CAC9C9" />
     <SortedDescendingHeaderStyle BackColor="#000065" />
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Dato], [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Uden meter] AS Uden_meter, [Fejlture], [A conto] AS A_conto, [Vogn Km] AS Vogn_Km FROM [vShift] WHERE ([Fornavn] = @Fornavn)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Dato], [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Uden meter] AS Uden_meter, [Fejlture], [A conto] AS A_conto, [Vogn Km] AS Vogn_Km FROM [vShift] WHERE ([Bruger Id] = @Bruger_Id)">
     <SelectParameters>
-        <asp:SessionParameter Name="Fornavn" SessionField="TaxiDriver" Type="String" />
+        <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiDriver" Type="Int32" />
     </SelectParameters>
         </asp:SqlDataSource>
 </div>

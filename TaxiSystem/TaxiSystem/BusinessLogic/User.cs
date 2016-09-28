@@ -7,6 +7,7 @@ namespace TaxiSystem
 {
     public class User
     {
+        public int userId { get; set; }
         public string fName { get; set; }
         public string lName { get; set; }
         public string street { get; set; }

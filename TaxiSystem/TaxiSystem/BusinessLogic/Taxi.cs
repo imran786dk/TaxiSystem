@@ -7,6 +7,7 @@ namespace TaxiSystem
 {
     public class Taxi
     {
+        public int taxiId { get; set; }
         public string licensePlate { get; set; }
         public string permissionNo { get; set; }
         public int units { get; set; }
@@ -16,7 +17,7 @@ namespace TaxiSystem
         public int controlMileage { get; set; }
         public int vehicleMileage { get; set; }
         public string createDate { get; set; }
-        public int taxiOwnerId { get; set; }
+        public int userId { get; set; }
 
     }
 }

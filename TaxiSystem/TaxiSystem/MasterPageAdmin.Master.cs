@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TaxiSystem
 {
-    public partial class TaxiDriverAccount : System.Web.UI.Page
+    public partial class MasterPageAdmin : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAdmin.master.cs" Inherits="TaxiSystem.MasterPageAdmin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link href="Styles/Menumain.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="menu">
+                <ul>
+                    <li><a href="Default.aspx">TaxiSystem</a></li>
+                    <li><a href="#">Produkt</a></li>
+                    <li><a href="#">Priser</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="Login.aspx">Din konto</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="side-content">
+                <asp:ContentPlaceHolder ID="sideContent" runat="server">
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#24478F" DynamicHorizontalOffset="2" Font-Names="Arial" Font-Size="11pt" ForeColor="White" StaticSubMenuIndent="10px">
+                        <DynamicHoverStyle BackColor="#4775D1" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#24478F" />
+                        <DynamicSelectedStyle BackColor="#24478F" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/AccountAdmin.aspx" Text="Start" Value="Start"></asp:MenuItem>
+                            <asp:MenuItem Text="Vognmand" Value="Vagt">
+                                <asp:MenuItem Text="Vis vognmænd" Value="Vis vognmænd" NavigateUrl="~/ShowAllOwner.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CreateOwner.aspx" Text="Opret vognmand" Value="Opret vognmand"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#4775D1" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#24478F" />
+                    </asp:Menu>
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="clear"></div>
+            <div class="footer">
+                <h2>Copyright &copy 2016 TaxiSystem. All Right Reserved.</h2>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

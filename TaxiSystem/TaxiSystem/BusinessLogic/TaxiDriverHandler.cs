@@ -45,5 +45,10 @@ namespace TaxiSystem
             }
 
         }
+
+        public static TaxiDriver getTaxiDriver (int userId)
+        {
+            return DbHelper.SelectTaxiDriverById(userId);
+        }
     }
 }

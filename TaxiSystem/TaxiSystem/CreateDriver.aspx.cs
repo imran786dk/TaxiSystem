@@ -9,7 +9,12 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (Session["TaxiOwner"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
+
+            if (!IsPostBack)
             {
                 Calendar1.Visible = false;
             }
@@ -47,7 +52,7 @@ namespace TaxiSystem
                 string taxiDriverNo = TextBox10.Text;
                 string taxiDriverExp = TextBox11.Text;
 
-                if(LoginHandler.checkEmailAvailability(email) == true)
+                if (LoginHandler.checkEmailAvailability(email) == true)
                 {
                     if (TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
                    drivingLicenseNo, taxiDriverNo, taxiDriverExp) == true)
@@ -60,7 +65,8 @@ namespace TaxiSystem
                         Label1.ForeColor = Color.Red;
                         Label1.Text = "Chaufføren blev ikke gemt";
                     }
-                }else
+                }
+                else
                 {
                     Label1.ForeColor = Color.Red;
                     Label1.Text = "Email er i brug";
@@ -84,7 +90,7 @@ namespace TaxiSystem
             {
                 Calendar1.Visible = true;
             }
-            
+
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

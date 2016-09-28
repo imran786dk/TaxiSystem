@@ -38,6 +38,7 @@
                top: 270px;
                left: 827px;
                z-index: 1;
+               width: 150px;
            }
            </style>
 </asp:Content>

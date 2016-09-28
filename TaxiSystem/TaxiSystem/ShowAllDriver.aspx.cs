@@ -11,7 +11,10 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["TaxiOwner"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
         }
     }
 }

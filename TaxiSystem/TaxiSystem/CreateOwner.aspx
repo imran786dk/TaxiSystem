@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuMasterPage.Master" AutoEventWireup="true" CodeBehind="CreateOwner.aspx.cs" Inherits="TaxiSystem.CreateOwner" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="CreateOwner.aspx.cs" Inherits="TaxiSystem.CreateOwner" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
@@ -49,7 +49,7 @@
             width: 90px;
             }
         .auto-style22 {
-            width: 31px;
+            width: 150px;
             height: 15px;
             position: absolute;
             left: 776px;
@@ -150,7 +150,7 @@
             <tr>
                 <td class="auto-style23">Tlf:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Phone"></asp:TextBox>
+                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox27" ForeColor="Red">
                                           </asp:RequiredFieldValidator>

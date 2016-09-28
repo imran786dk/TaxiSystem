@@ -12,7 +12,15 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["TaxiOwner"] != null)
+            {
+                Response.Redirect("AccountTaxiOwner.aspx");
+            }
 
+            else if (Session["TaxiDriver"] != null)
+            {
+                Response.Redirect("AccountTaxiDriver.aspx");
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -29,9 +37,11 @@ namespace TaxiSystem
                 {
                     TaxiOwner taxiOwner = LoginHandler.TaxiOwnerLogin(email, password);
 
+                    Session["TaxiOwner"] = taxiOwner.userId;
+
                     if (taxiOwner != null)
                     {
-                        Response.Redirect("TaxiOwnerAccount.aspx");
+                        Response.Redirect("AccountTaxiOwner.aspx");
                     }
                     else
                     {
@@ -43,9 +53,11 @@ namespace TaxiSystem
                 {
                     TaxiDriver taxiDriver = LoginHandler.TaxiDriverLogin(email, password);
 
+                    Session["TaxiDriver"] = taxiDriver.userId;
+
                     if (taxiDriver != null)
-                    {
-                        Response.Redirect("Inactivity.aspx");
+                    { 
+                        Response.Redirect("AccountTaxiDriver.aspx");
                     }
                     else
                     {

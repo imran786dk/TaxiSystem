@@ -11,7 +11,7 @@ namespace TaxiSystem
 {
 
 
-    public partial class TaxiOwnerAccount
+    public partial class AccountTaxiDriver
     {
     }
 }

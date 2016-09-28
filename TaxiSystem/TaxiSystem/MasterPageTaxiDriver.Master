@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MenuMasterPage.Master.cs" Inherits="TaxiSystem.MasterPageOwnerAccount" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageTaxiDriver.master.cs" Inherits="TaxiSystem.MasterPageTaxiDriver" %>
 
 <!DOCTYPE html>
 
@@ -33,23 +33,14 @@
                         <DynamicMenuStyle BackColor="#24478F" />
                         <DynamicSelectedStyle BackColor="#24478F" />
                         <Items>
-                            <asp:MenuItem NavigateUrl="~/TaxiOwnerAccount.aspx" Text="Start" Value="Start"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/AccountTaxiDriver.aspx" Text="Start" Value="Start"></asp:MenuItem>
                             <asp:MenuItem Text="Mine oplysninger" Value="Mine oplysninger">
-                                <asp:MenuItem Text="Vis oplysninger" Value="Vis oplysninger"></asp:MenuItem>
-                                <asp:MenuItem Text="Ret oplysninger" Value="Ret oplysninger"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Taxi" Value="Taxi">
-                                <asp:MenuItem Text="Vis taxi" Value="Vis taxi"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret taxi" Value="Opret taxi" NavigateUrl="~/CreateTaxi.aspx"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Chauffør" Value="Chauffør">
-                                <asp:MenuItem Text="Vis chauffør" Value="Vis chauffør" NavigateUrl="~/ShowAllDriver.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret chauffør" Value="Opret chauffør" NavigateUrl="~/CreateDriver.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Vis oplysninger" Value="Vis oplysninger" NavigateUrl="~/ShowDriverDetail.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Vagt" Value="Vagt">
-                                <asp:MenuItem Text="Vis vagt" Value="Vis vagt"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret vagt" Value="Opret vagt" NavigateUrl="~/CreateShift.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Vis vagter" Value="Vis vagter" NavigateUrl="~/ShowAllDriverShift.aspx"></asp:MenuItem>
                             </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Inactivity.aspx" Text="Log ud" Value="Log ud"></asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#4775D1" ForeColor="White" />
                         <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

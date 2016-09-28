@@ -11,7 +11,10 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpContext.Current.Session.Clear();
+            HttpContext.Current.Session.Abandon();
+            HttpContext.Current.User = null;
+            System.Web.Security.FormsAuthentication.SignOut();
         }
     }
 }

@@ -20,7 +20,7 @@
                height: 27px;
            }
            .auto-style27 {
-               width: 44px;
+               width: 150px;
                height: 15px;
                position: absolute;
                left: 832px;

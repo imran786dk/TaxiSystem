@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Opret chauffør" Language="C#" MasterPageFile="~/MenuMasterPage.Master" AutoEventWireup="true" CodeBehind="CreateDriver.aspx.cs" Inherits="TaxiSystem.CreateDriver" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTaxiOwner.Master" AutoEventWireup="true" CodeBehind="CreateDriver.aspx.cs" Inherits="TaxiSystem.CreateDriver" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
@@ -14,6 +14,7 @@
             position: absolute;
             left: 774px;
             top: 694px;
+            width: 150px;
         }
 
         .auto-style54 {
@@ -351,19 +352,19 @@
                 <td class="auto-style66">
                     <asp:TextBox ID="TextBox1" runat="server" Width="200px" ReadOnly="true"></asp:TextBox>
                 </td>
-                <td class="auto-style65">&nbsp;</td>
+                <td class="auto-style65"></td>
             </tr>
             <tr>
                 <td class="auto-style65">Land:</td>
                 <td class="auto-style66">
                     <asp:TextBox ID="TextBox30" runat="server" Width="200px" ReadOnly="true"></asp:TextBox>
                 </td>
-                <td class="auto-style65">&nbsp;</td>
+                <td class="auto-style65"></td>
             </tr>
             <tr>
                 <td class="auto-style65">Tlf:</td>
                 <td class="auto-style66">
-                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Phone"></asp:TextBox>
+                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox27" ForeColor="Red">
                 </asp:RequiredFieldValidator>

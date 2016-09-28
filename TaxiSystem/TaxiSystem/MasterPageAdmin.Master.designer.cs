@@ -10,7 +10,7 @@
 namespace TaxiSystem {
     
     
-    public partial class MasterPageOwnerAccount {
+    public partial class MasterPageAdmin {
         
         /// <summary>
         /// title control.

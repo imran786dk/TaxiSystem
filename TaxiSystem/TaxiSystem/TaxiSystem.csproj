@@ -66,11 +66,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountAdmin.aspx" />
+    <Content Include="AccountTaxiDriver.aspx" />
     <Content Include="AccountTaxiOwner.aspx" />
+    <Content Include="CreateDriver.aspx" />
     <Content Include="CreateShift.aspx" />
     <Content Include="CreateTaxi.aspx" />
+    <Content Include="ShowAllDriverShift.aspx" />
+    <Content Include="ShowAllOwner.aspx" />
+    <Content Include="ShowAllShift.aspx" />
+    <Content Include="ShowAllTaxi.aspx" />
+    <Content Include="ShowDriverDetail.aspx" />
+    <Content Include="ShowOwnerDetail.aspx" />
     <Content Include="Styles\CreateShift.css" />
-    <Content Include="CreateDriver.aspx" />
     <Content Include="CreateOwner.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForgotPassword.aspx" />
@@ -85,7 +93,9 @@
     <Content Include="Styles\Main.css" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
-    <Content Include="MenuMasterPage.Master" />
+    <Content Include="MasterPageAdmin.Master" />
+    <Content Include="MasterPageTaxiDriver.Master" />
+    <Content Include="MasterPageTaxiOwner.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -96,11 +106,23 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Styles\MenuMain.css" />
-    <Content Include="TaxiDriverAccount.aspx" />
-    <Content Include="TaxiOwnerAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountAdmin.aspx.cs">
+      <DependentUpon>AccountAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountAdmin.aspx.designer.cs">
+      <DependentUpon>AccountAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountTaxiDriver.aspx.cs">
+      <DependentUpon>AccountTaxiDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountTaxiDriver.aspx.designer.cs">
+      <DependentUpon>AccountTaxiDriver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AccountTaxiOwner.aspx.cs">
       <DependentUpon>AccountTaxiOwner.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,22 +137,6 @@
     <Compile Include="BusinessLogic\Taxi.cs" />
     <Compile Include="BusinessLogic\TaxiDriver.cs" />
     <Compile Include="BusinessLogic\TaxiHandler.cs" />
-    <Compile Include="CreateShift.aspx.cs">
-      <DependentUpon>CreateShift.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateShift.aspx.designer.cs">
-      <DependentUpon>CreateShift.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateTaxi.aspx.cs">
-      <DependentUpon>CreateTaxi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateTaxi.aspx.designer.cs">
-      <DependentUpon>CreateTaxi.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessLogic\TaxiOwnerHandler.cs" />
-    <Compile Include="BusinessLogic\User.cs" />
     <Compile Include="CreateDriver.aspx.cs">
       <DependentUpon>CreateDriver.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,12 +144,28 @@
     <Compile Include="CreateDriver.aspx.designer.cs">
       <DependentUpon>CreateDriver.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateShift.aspx.cs">
+      <DependentUpon>CreateShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateShift.aspx.designer.cs">
+      <DependentUpon>CreateShift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogic\TaxiOwnerHandler.cs" />
+    <Compile Include="BusinessLogic\User.cs" />
     <Compile Include="CreateOwner.aspx.cs">
       <DependentUpon>CreateOwner.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CreateOwner.aspx.designer.cs">
       <DependentUpon>CreateOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTaxi.aspx.cs">
+      <DependentUpon>CreateTaxi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTaxi.aspx.designer.cs">
+      <DependentUpon>CreateTaxi.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DbHelper.cs" />
     <Compile Include="BusinessLogic\PasswordHandler.cs" />
@@ -186,12 +208,26 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="MenuMasterPage.Master.cs">
-      <DependentUpon>MenuMasterPage.Master</DependentUpon>
+    <Compile Include="MasterPageAdmin.Master.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuMasterPage.Master.designer.cs">
-      <DependentUpon>MenuMasterPage.Master</DependentUpon>
+    <Compile Include="MasterPageAdmin.Master.designer.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageTaxiDriver.Master.cs">
+      <DependentUpon>MasterPageTaxiDriver.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageTaxiDriver.Master.designer.cs">
+      <DependentUpon>MasterPageTaxiDriver.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageTaxiOwner.Master.cs">
+      <DependentUpon>MasterPageTaxiOwner.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageTaxiOwner.Master.designer.cs">
+      <DependentUpon>MasterPageTaxiOwner.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BusinessLogic\TaxiOwner.cs" />
@@ -203,21 +239,50 @@
     <Compile Include="ShowAllDriver.aspx.designer.cs">
       <DependentUpon>ShowAllDriver.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TaxiDriverAccount.aspx.cs">
-      <DependentUpon>TaxiDriverAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TaxiDriverAccount.aspx.designer.cs">
-      <DependentUpon>TaxiDriverAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TaxiOwnerAccount.aspx.cs">
-      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TaxiOwnerAccount.aspx.designer.cs">
-      <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BusinessLogic\UserHandler.cs" />
+    <Compile Include="BusinessLogic\TestHandler.cs" />
+    <Compile Include="ShowAllDriverShift.aspx.cs">
+      <DependentUpon>ShowAllDriverShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllDriverShift.aspx.designer.cs">
+      <DependentUpon>ShowAllDriverShift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllOwner.aspx.cs">
+      <DependentUpon>ShowAllOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllOwner.aspx.designer.cs">
+      <DependentUpon>ShowAllOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllShift.aspx.cs">
+      <DependentUpon>ShowAllShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllShift.aspx.designer.cs">
+      <DependentUpon>ShowAllShift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllTaxi.aspx.cs">
+      <DependentUpon>ShowAllTaxi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllTaxi.aspx.designer.cs">
+      <DependentUpon>ShowAllTaxi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowDriverDetail.aspx.cs">
+      <DependentUpon>ShowDriverDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowDriverDetail.aspx.designer.cs">
+      <DependentUpon>ShowDriverDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowOwnerDetail.aspx.cs">
+      <DependentUpon>ShowOwnerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowOwnerDetail.aspx.designer.cs">
+      <DependentUpon>ShowOwnerDetail.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

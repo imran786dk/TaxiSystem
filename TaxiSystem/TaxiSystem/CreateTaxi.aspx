@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MenuMasterPage.Master" AutoEventWireup="true" CodeBehind="CreateTaxi.aspx.cs" Inherits="TaxiSystem.CreateTaxi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTaxiOwner.Master" AutoEventWireup="true" CodeBehind="CreateTaxi.aspx.cs" Inherits="TaxiSystem.CreateTaxi" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -120,7 +121,7 @@
         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" style="width: 90px; height: 25px; position: absolute; left: 341px; top: 465px" CausesValidation="False"/>
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" style="width: 44px; height: 15px; position: absolute; left: 770px; top: 467px"></asp:Label>
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" style="width: 150px; height: 15px; position: absolute; left: 770px; top: 467px"></asp:Label>
         <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style21" style="width: 90px; height: 25px; position: absolute; left: 649px; top: 464px" />
     </div>
 

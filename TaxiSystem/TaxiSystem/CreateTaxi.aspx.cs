@@ -12,13 +12,18 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["TaxiOwner"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
+                int userId = (int) Session["TaxiOwner"];
+
                 string licensePlate = TextBox20.Text;
                 string permissionNo = TextBox9.Text;
                 string units = TextBox21.Text;
@@ -28,15 +33,24 @@ namespace TaxiSystem
                 string controlMileage = TextBox1.Text;
                 string vehicleMileage = TextBox25.Text;
 
-                if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage) == true)
+                if (TaxiHandler.checkTaxi(permissionNo) == true)
                 {
-                    Label1.ForeColor = Color.Black;
-                    Label1.Text = "Taxien er gemt";
+
+                    if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage, userId) == true)
+                    {
+                        Label1.ForeColor = Color.Black;
+                        Label1.Text = "Taxien er gemt";
+                    }
+                    else
+                    {
+                        Label1.ForeColor = Color.Red;
+                        Label1.Text = "Taxien blev ikke gemt";
+                    }
                 }
                 else
                 {
                     Label1.ForeColor = Color.Red;
-                    Label1.Text = "Taxien blev ikke gemt";
+                    Label1.Text = "Taxien findes allerede";
                 }
             }
             else

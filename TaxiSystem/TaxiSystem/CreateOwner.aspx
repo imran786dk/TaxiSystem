@@ -124,10 +124,13 @@
             <tr>
                 <td class="auto-style23">Post nr.:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox24" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
+                   <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ZipCode" DataValueField="ZipCode" AppendDataBoundItems="True" Width="200px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="0">Vælg postnr.</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [ZipCode] FROM [tblZipCode]"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox24" ForeColor="Red">
-                                          </asp:RequiredFieldValidator>
+                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal vælges" ControlToValidate="DropDownList2" InitialValue="0" ForeColor="Red">
+                </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -135,21 +138,14 @@
                 <td class="auto-style24">
                     <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox1" ForeColor="Red">
-                                          </asp:RequiredFieldValidator>
-                </td>
+                <td class="auto-style25">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style23">Land:</td>
                 <td class="auto-style24">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="200px" CausesValidation="False">
-                        <asp:ListItem Selected="True" Value="0">Vælg land</asp:ListItem>
-                        <asp:ListItem>Danmark</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBox30" runat="server" Width="200px"></asp:TextBox>
                 </td>
-                <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="DropDownList1" InitialValue="0" ForeColor="Red">
-                                          </asp:RequiredFieldValidator>
-                </td>
+                <td class="auto-style25">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style23">Tlf:</td>
@@ -167,6 +163,8 @@
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox29" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ugyldig email" ForeColor="Red" Controltovalidate="TextBox29" 
+                        Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             </table>

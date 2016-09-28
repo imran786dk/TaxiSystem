@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountTaxiOwner.aspx" />
     <Content Include="CreateShift.aspx" />
     <Content Include="CreateTaxi.aspx" />
     <Content Include="Styles\CreateShift.css" />
@@ -95,10 +96,18 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Styles\MenuMain.css" />
+    <Content Include="TaxiDriverAccount.aspx" />
     <Content Include="TaxiOwnerAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountTaxiOwner.aspx.cs">
+      <DependentUpon>AccountTaxiOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountTaxiOwner.aspx.designer.cs">
+      <DependentUpon>AccountTaxiOwner.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BusinessLogic\AccountHandler.cs" />
     <Compile Include="BusinessLogic\LoginHandler.cs" />
     <Compile Include="BusinessLogic\Shift.cs" />
@@ -194,6 +203,13 @@
     <Compile Include="ShowAllDriver.aspx.designer.cs">
       <DependentUpon>ShowAllDriver.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TaxiDriverAccount.aspx.cs">
+      <DependentUpon>TaxiDriverAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaxiDriverAccount.aspx.designer.cs">
+      <DependentUpon>TaxiDriverAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TaxiOwnerAccount.aspx.cs">
       <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,6 +217,7 @@
     <Compile Include="TaxiOwnerAccount.aspx.designer.cs">
       <DependentUpon>TaxiOwnerAccount.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessLogic\UserHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

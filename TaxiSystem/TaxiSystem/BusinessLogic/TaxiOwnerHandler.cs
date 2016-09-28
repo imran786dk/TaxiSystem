@@ -13,7 +13,7 @@ namespace TaxiSystem
             taxiOwner.fName = fName;
             taxiOwner.lName = lName;
             taxiOwner.street = street;
-            taxiOwner.zipCode = zipCode;
+            taxiOwner.zipCode = int.Parse(zipCode);
             taxiOwner.city = city;
             taxiOwner.country = country;
             taxiOwner.tel = tel;
@@ -29,7 +29,7 @@ namespace TaxiSystem
 
             try
             {
-                DbHelper.CreateOwner(taxiOwner);
+                DbHelper.CreateTaxiOwner(taxiOwner);
                 return true;
             }
             catch

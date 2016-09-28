@@ -23,11 +23,35 @@ namespace TaxiSystem
                 string email = TextBox20.Text;
                 string password = TextBox9.Text;
 
-                User user = LoginHandler.CheckLogin(email, password);
+                int type = LoginHandler.GetType(email);
 
-                if (user != null)
+                if(type == 2)
                 {
-                    Response.Redirect("AccountOwner.aspx");
+                    TaxiOwner taxiOwner = LoginHandler.TaxiOwnerLogin(email, password);
+
+                    if (taxiOwner != null)
+                    {
+                        Response.Redirect("TaxiOwnerAccount.aspx");
+                    }
+                    else
+                    {
+                        Label1.ForeColor = Color.Red;
+                        Label1.Text = "Forkert email eller adgangskode";
+                    }
+                }
+                else if (type == 3)
+                {
+                    TaxiDriver taxiDriver = LoginHandler.TaxiDriverLogin(email, password);
+
+                    if (taxiDriver != null)
+                    {
+                        Response.Redirect("Inactivity.aspx");
+                    }
+                    else
+                    {
+                        Label1.ForeColor = Color.Red;
+                        Label1.Text = "Forkert email eller adgangskode";
+                    }
                 }
                 else
                 {

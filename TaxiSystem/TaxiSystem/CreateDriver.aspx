@@ -12,39 +12,23 @@
 
         .auto-style51 {
             position: absolute;
-            left: 773px;
-            top: 862px;
-        }
-
-        .auto-style53 {
-            border-style: solid;
-            border-width: 3px;
-            padding: 1px 4px;
-            width: 400px;
-            margin-top: 40px;
-            margin-left: 40px;
-            display: inline-block;
-            float: left;
-            height: 155px;
-            position: absolute;
-            left: 301px;
-            top: 638px;
-            z-index: 1;
+            left: 774px;
+            top: 694px;
         }
 
         .auto-style54 {
             height: 25px;
-            top: 858px;
+            top: 690px;
             width: 90px;
             position: absolute;
-            left: 343px;
+            left: 341px;
             z-index: 1;
         }
 
         .auto-style56 {
             height: 25px;
-            left: 649px;
-            top: 858px;
+            left: 652px;
+            top: 690px;
             width: 90px;
             position: absolute;
         }
@@ -68,7 +52,7 @@
 
         .auto-style68 {
             width: 1602px;
-            height: 935px;
+            height: 746px;
         }
 
         .auto-style69 {
@@ -92,8 +76,8 @@
             float: left;
             height: 155px;
             position: absolute;
-            left: -455px;
-            top: -37px;
+            left: -456px;
+            top: -24px;
         }
 
         .auto-style74 {
@@ -353,32 +337,28 @@
             <tr>
                 <td class="auto-style65">Post nr.:</td>
                 <td class="auto-style66">
-                    <asp:TextBox ID="TextBox24" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ZipCode" DataValueField="ZipCode" AppendDataBoundItems="True" Width="200px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="0">Vælg postnr.</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [ZipCode] FROM [tblZipCode]"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox24" ForeColor="Red">
+                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Skal vælges" ControlToValidate="DropDownList2" InitialValue="0" ForeColor="Red">
                 </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style65">By:</td>
                 <td class="auto-style66">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="200px" ReadOnly="true"></asp:TextBox>
                 </td>
-                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox1" ForeColor="Red">
-                </asp:RequiredFieldValidator>
-                </td>
+                <td class="auto-style65">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style65">Land:</td>
                 <td class="auto-style66">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Width="200px" CausesValidation="False">
-                        <asp:ListItem Selected="True" Value="0">Vælg land</asp:ListItem>
-                        <asp:ListItem>Danmark</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBox30" runat="server" Width="200px" ReadOnly="true"></asp:TextBox>
                 </td>
-                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="DropDownList1" InitialValue="0" ForeColor="Red">
-                </asp:RequiredFieldValidator>
-                </td>
+                <td class="auto-style65">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style65">Tlf:</td>
@@ -394,7 +374,11 @@
                 <td class="auto-style66">
                     <asp:TextBox ID="TextBox29" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
                 </td>
-                <td class="auto-style65"></td>
+                <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox29" ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ugyldig email" ForeColor="Red" Controltovalidate="TextBox29" 
+                        Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                </td>
             </tr>
         </table>
 
@@ -429,10 +413,12 @@
                             <td class="auto-style79">Førerkorts udløbsdato:</td>
                             <td class="auto-style33">
                                 <asp:TextBox ID="TextBox11" runat="server" Width="161px"></asp:TextBox>
-                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False"/>
-                                <td class="auto-style79">*<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
-                                    </asp:RequiredFieldValidator>
+                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False"/>                              
                                 </td>
+                             <td class="auto-style79">*<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
+                                    </asp:RequiredFieldValidator>
+                                 <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Datoformat skal være dd-mm-yy" ControlToValidate="TextBox11" ForeColor="Red" Display="Dynamic" Type="Date" MinimumValue="01-01-1960" MaximumValue="01-01-2060">
+                            </asp:RangeValidator>
                             </td>
                         </tr>
                     </table>
@@ -454,40 +440,7 @@
 
 
 
-        <table class="auto-style53">
-            <tr>
-                <td class="auto-style78">Lønudbetalings oplysninger:
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style78">Skattefradrag:</td>
-                <td class="auto-style38">
-                    <asp:TextBox ID="TextBox5" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
-                </td>
-                <td class="auto-style78"></td>
-            </tr>
-            <tr>
-                <td class="auto-style78">Skatte %:</td>
-                <td class="auto-style38">
-                    <asp:TextBox ID="TextBox6" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
-                </td>
-                <td class="auto-style78"></td>
-            </tr>
-            <tr>
-                <td class="auto-style78">Pension %:</td>
-                <td class="auto-style38">
-                    <asp:TextBox ID="TextBox8" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
-                </td>
-                <td class="auto-style78"></td>
-            </tr>
-            <tr>
-                <td class="auto-style78">Bankkonto:</td>
-                <td class="auto-style38">
-                    <asp:TextBox ID="TextBox7" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
-                </td>
-                <td class="auto-style78"></td>
-            </tr>
-        </table>
+       
 
         <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style54" CausesValidation="False"/>
         <br />

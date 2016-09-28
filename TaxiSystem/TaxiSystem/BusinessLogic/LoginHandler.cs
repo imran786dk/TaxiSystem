@@ -7,9 +7,17 @@ namespace TaxiSystem
 {
     public class LoginHandler
     {
-        public static TaxiOwner CheckLogin(String email, String password)
+        public static int GetType(String email)
         {
-            TaxiOwner taxiOwner = DbHelper.SelectUser(email);
+
+            int type = DbHelper.SelectType(email);
+
+                return type;   
+        }
+
+        public static TaxiOwner TaxiOwnerLogin(String email, String password)
+        {
+            TaxiOwner taxiOwner = DbHelper.SelectTaxiOwner(email);
 
             string dbPassword = taxiOwner.password;
             string salt = taxiOwner.salt;
@@ -24,6 +32,30 @@ namespace TaxiSystem
             {
                 return null;
             }
+        }
+
+        public static TaxiDriver TaxiDriverLogin(String email, String password)
+        {
+            TaxiDriver taxiDriver = DbHelper.SelectTaxiDriver(email);
+
+            string dbPassword = taxiDriver.password;
+            string salt = taxiDriver.salt;
+            string passwordToCheck = PasswordHandler.CreateSHA256Hash(salt, password);
+
+            if (dbPassword == passwordToCheck)
+            {
+                return taxiDriver;
+
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool checkEmailAvailability(string email)
+        {
+            return DbHelper.CheckEmail(email);
         }
     }   
 }

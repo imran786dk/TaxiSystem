@@ -39,37 +39,48 @@ namespace TaxiSystem
         {
             if (Page.IsValid)
             {
-                string cprNo = TextBox20.Text;
-                string fName = TextBox21.Text;
-                string lName = TextBox22.Text;
-                string street = TextBox23.Text;
-                string zipCode = DropDownList2.SelectedValue;
-                string city = TextBox1.Text;
-                string country = TextBox30.Text;
-                string tel = TextBox27.Text;
-                string email = TextBox29.Text;
-                string drivingLicenseNo = TextBox9.Text;
-                string taxiDriverNo = TextBox10.Text;
-                string taxiDriverExp = TextBox11.Text;
-
-                if (LoginHandler.checkEmailAvailability(email) == true)
+                try
                 {
-                    if (TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
-                   drivingLicenseNo, taxiDriverNo, taxiDriverExp) == true)
+                    string cprNo = TextBox20.Text;
+                    string fName = TextBox21.Text;
+                    string lName = TextBox22.Text;
+                    string street = TextBox23.Text;
+                    string zipCode = DropDownList2.SelectedValue;
+                    string city = TextBox1.Text;
+                    string country = TextBox30.Text;
+                    string tel = TextBox27.Text;
+                    string email = TextBox29.Text;
+                    string drivingLicenseNo = TextBox9.Text;
+                    string taxiDriverNo = TextBox10.Text;
+                    string taxiDriverExp = TextBox11.Text;
+
+                    if (LoginHandler.checkEmailAvailability(email) == true)
                     {
-                        Label1.ForeColor = Color.Black;
-                        Label1.Text = "Chaufføren er gemt";
+                        if (TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
+                       drivingLicenseNo, taxiDriverNo, taxiDriverExp) == true)
+                        {
+                            Label1.ForeColor = Color.Black;
+                            Label1.Text = "Chaufføren er gemt";
+
+                            ClearInputs(Page.Controls);
+                            DropDownList2.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            Label1.ForeColor = Color.Red;
+                            Label1.Text = "Chaufføren blev ikke gemt";
+                        }
                     }
                     else
                     {
                         Label1.ForeColor = Color.Red;
-                        Label1.Text = "Chaufføren blev ikke gemt";
+                        Label1.Text = "Email er i brug";
                     }
                 }
-                else
+                catch
                 {
                     Label1.ForeColor = Color.Red;
-                    Label1.Text = "Email er i brug";
+                    Label1.Text = "Fejl i indtastning";
                 }
             }
             else

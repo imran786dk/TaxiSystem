@@ -41,25 +41,29 @@ namespace TaxiSystem
             }
         }
 
-        public static Shift CalculateShift(string oldUnits,string oldTrips, string oldMileage, string oldOccupiedMileage, string oldControlMileage, string newUnits, string newTrips,
-            string newMileage, string newOccupiedMileage, string newControlMileage)
+        public static Shift CalculateShift(string oldUnits, string oldTrips, string oldMileage, string oldOccupiedMileage, string oldControlMileage, string oldVehicleMileage, string newUnits, string newTrips,
+            string newMileage, string newOccupiedMileage, string newControlMileage, string newVehicleMileage)
         {
 
-            Shift shift = new Shift();
-            try
-            {
-                shift.units = int.Parse(newUnits) - int.Parse(oldUnits);
-                shift.trips = int.Parse(newTrips) - int.Parse(oldTrips);
-                shift.mileage = int.Parse(newMileage) - int.Parse(oldMileage);
-                shift.occupiedMileage = int.Parse(newOccupiedMileage) - int.Parse(oldOccupiedMileage);
-                shift.controlMileage = int.Parse(newControlMileage) - int.Parse(oldControlMileage);
+            int vehicleMileage = int.Parse(newVehicleMileage) - int.Parse(oldVehicleMileage);
 
+            Shift shift = new Shift();
+
+            shift.units = int.Parse(newUnits) - int.Parse(oldUnits);
+            shift.trips = int.Parse(newTrips) - int.Parse(oldTrips);
+            shift.mileage = int.Parse(newMileage) - int.Parse(oldMileage);
+            shift.occupiedMileage = int.Parse(newOccupiedMileage) - int.Parse(oldOccupiedMileage);
+            shift.controlMileage = int.Parse(newControlMileage) - int.Parse(oldControlMileage);
+
+            if (shift.units>=0 && shift.trips>=0 && shift.mileage>=0 && shift.occupiedMileage>=0 && shift.controlMileage>=0 && vehicleMileage>=0 )
+            {
                 return shift;
             }
-            catch
+            else
             {
                 return null;
             }
+
         }
     }
 }

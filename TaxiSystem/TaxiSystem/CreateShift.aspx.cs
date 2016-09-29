@@ -45,43 +45,72 @@ namespace TaxiSystem
         {
             if (Page.IsValid)
             {
-
-                string date = TextBox11.Text;
-                string taxiId = DropDownList1.SelectedValue;
-                string userId = DropDownList2.SelectedValue;
-                string drivingBookNo = TextBox2.Text;
-                string drivingBookPage = TextBox3.Text;
-                string units = TextBox4.Text;
-                string trips = TextBox7.Text;
-                string mileage = TextBox12.Text;
-                string occupiedMileage = TextBox13.Text;
-                string controlMileage = TextBox14.Text;
-                string vehicleMileage = TextBox1.Text;
-                string withoutMeter = TextBox5.Text;
-                string errorTrips = TextBox6.Text;
-                string onAccount = TextBox8.Text;
-
-                string newUnits = TextBox20.Text;
-                string newTrips = TextBox21.Text;
-                string newMileage = TextBox22.Text;
-                string newOccupiedMileage = TextBox23.Text;
-                string newControlMileage = TextBox24.Text;
-
-                if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage,
-                    occupiedMileage, controlMileage, vehicleMileage, withoutMeter, errorTrips, onAccount, taxiId, userId) == true)
+                try
                 {
-                    if (TaxiHandler.updateTaxi(taxiId, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, vehicleMileage) == true)
+                    string oldUnits = TextBox9.Text;
+                    string oldTrips = TextBox10.Text;
+                    string oldMileage = TextBox16.Text;
+                    string oldOccupiedMileage = TextBox17.Text;
+                    string oldControlMileage = TextBox18.Text;
+                    string oldVehicleMileage = TextBox19.Text;
+
+                    string newUnits = TextBox20.Text;
+                    string newTrips = TextBox21.Text;
+                    string newMileage = TextBox22.Text;
+                    string newOccupiedMileage = TextBox23.Text;
+                    string newControlMileage = TextBox24.Text;
+                    string newVehicleMileage = TextBox1.Text;
+
+                    Shift shift = ShiftHandler.CalculateShift(oldUnits, oldTrips, oldMileage, oldOccupiedMileage,
+                                  oldControlMileage, oldVehicleMileage, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage);
+
+                    TextBox4.Text = shift.units.ToString();
+                    TextBox7.Text = shift.trips.ToString();
+                    TextBox12.Text = shift.mileage.ToString();
+                    TextBox13.Text = shift.occupiedMileage.ToString();
+                    TextBox14.Text = shift.controlMileage.ToString();
+
+                    string date = TextBox11.Text;
+                    string taxiId = DropDownList1.SelectedValue;
+                    string userId = DropDownList2.SelectedValue;
+                    string drivingBookNo = TextBox2.Text;
+                    string drivingBookPage = TextBox3.Text;
+
+                    string withoutMeter = TextBox5.Text;
+                    string errorTrips = TextBox6.Text;
+                    string onAccount = TextBox8.Text;
+
+                    if (TaxiHandler.updateTaxi(taxiId, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage) == true)
                     {
+                        string units = TextBox4.Text;
+                        string trips = TextBox7.Text;
+                        string mileage = TextBox12.Text;
+                        string occupiedMileage = TextBox13.Text;
+                        string controlMileage = TextBox14.Text;
 
-                        Label1.ForeColor = Color.Black;
-                        Label1.Text = "Vagten er gemt";
+                        if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage,
+                        occupiedMileage, controlMileage, newVehicleMileage, withoutMeter, errorTrips, onAccount, taxiId, userId) == true)
+                        {
+                            Label1.ForeColor = Color.Black;
+                            Label1.Text = "Vagten er gemt";
+
+                            ClearInputs(Page.Controls);
+
+                            DropDownList1.SelectedIndex = 0;
+                            DropDownList2.SelectedIndex = 0;
+                        }
+
                     }
-
+                    else
+                    {
+                        Label1.ForeColor = Color.Red;
+                        Label1.Text = "Vagten blev ikke gemt";
+                    }
                 }
-                else
+                catch
                 {
                     Label1.ForeColor = Color.Red;
-                    Label1.Text = "Vagten blev ikke gemt";
+                    Label1.Text = "Fejl i indtastning";
                 }
             }
             else
@@ -141,28 +170,41 @@ namespace TaxiSystem
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if(Page.IsValid)
+            if (Page.IsValid)
             {
-                string oldUnits = TextBox9.Text;
-                string oldTrips = TextBox10.Text;
-                string oldMileage = TextBox16.Text;
-                string oldOccupiedMileage = TextBox17.Text;
-                string oldControlMileage = TextBox18.Text;
+                try
+                {
+                    string oldUnits = TextBox9.Text;
+                    string oldTrips = TextBox10.Text;
+                    string oldMileage = TextBox16.Text;
+                    string oldOccupiedMileage = TextBox17.Text;
+                    string oldControlMileage = TextBox18.Text;
+                    string oldVehicleMileage = TextBox19.Text;
 
-                string newUnits = TextBox20.Text;
-                string newTrips = TextBox21.Text;
-                string newMileage = TextBox22.Text;
-                string newOccupiedMileage = TextBox23.Text;
-                string newControlMileage = TextBox24.Text;
+                    string newUnits = TextBox20.Text;
+                    string newTrips = TextBox21.Text;
+                    string newMileage = TextBox22.Text;
+                    string newOccupiedMileage = TextBox23.Text;
+                    string newControlMileage = TextBox24.Text;
+                    string newVehicleMileage = TextBox1.Text;
 
-                Shift shift = ShiftHandler.CalculateShift(oldUnits, oldTrips, oldMileage, oldOccupiedMileage, 
-                    oldControlMileage, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage);
+                    Shift shift = ShiftHandler.CalculateShift(oldUnits, oldTrips, oldMileage, oldOccupiedMileage,
+                        oldControlMileage, oldVehicleMileage, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage);
 
-                TextBox4.Text = shift.units.ToString();
-                TextBox7.Text = shift.trips.ToString();
-                TextBox12.Text = shift.mileage.ToString();
-                TextBox13.Text = shift.occupiedMileage.ToString();
-                TextBox14.Text = shift.controlMileage.ToString();
+                    TextBox4.Text = shift.units.ToString();
+                    TextBox7.Text = shift.trips.ToString();
+                    TextBox12.Text = shift.mileage.ToString();
+                    TextBox13.Text = shift.occupiedMileage.ToString();
+                    TextBox14.Text = shift.controlMileage.ToString();
+
+                    Label1.ForeColor = Color.Black;
+                    Label1.Text = "Klar til at gemme vagten";
+                }
+                catch
+                {
+                    Label1.ForeColor = Color.Red;
+                    Label1.Text = "Fejl i indtastning";
+                }
 
             }
         }

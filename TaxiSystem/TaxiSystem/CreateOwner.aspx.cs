@@ -32,35 +32,46 @@ namespace TaxiSystem
             
             if (Page.IsValid)
             {
-                string cvrNo = TextBox20.Text;
-                string companyName = TextBox9.Text;
-                string fName = TextBox21.Text;
-                string lName = TextBox22.Text;
-                string street = TextBox23.Text;
-                string zipCode = DropDownList2.SelectedValue;
-                string city = TextBox1.Text;
-                string country = TextBox30.Text;
-                string tel = TextBox27.Text;
-                string email = TextBox29.Text;
-
-                if(LoginHandler.checkEmailAvailability(email) == true)
+                try
                 {
-                    if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
+                    string cvrNo = TextBox20.Text;
+                    string companyName = TextBox9.Text;
+                    string fName = TextBox21.Text;
+                    string lName = TextBox22.Text;
+                    string street = TextBox23.Text;
+                    string zipCode = DropDownList2.SelectedValue;
+                    string city = TextBox1.Text;
+                    string country = TextBox30.Text;
+                    string tel = TextBox27.Text;
+                    string email = TextBox29.Text;
+
+                    if (LoginHandler.checkEmailAvailability(email) == true)
                     {
-                        Label1.ForeColor = Color.Black;
-                        Label1.Text = "Brugeren er gemt";
+                        if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
+                        {
+                            Label1.ForeColor = Color.Black;
+                            Label1.Text = "Brugeren er gemt";
+
+                            ClearInputs(Page.Controls);
+                            DropDownList2.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            Label1.ForeColor = Color.Red;
+                            Label1.Text = "Brugeren blev ikke gemt";
+                        }
                     }
                     else
                     {
                         Label1.ForeColor = Color.Red;
-                        Label1.Text = "Brugeren blev ikke gemt";
+                        Label1.Text = "Email er i brug";
                     }
                 }
-                else
+                catch
                 {
                     Label1.ForeColor = Color.Red;
-                    Label1.Text = "Email er i brug";
-                }             
+                    Label1.Text = "Fejl i indtastning";
+                }         
             }
             else
             {

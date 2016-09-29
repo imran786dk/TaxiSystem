@@ -7,7 +7,6 @@ namespace TaxiSystem
 
         public static void PasswordMail(string password, string email )
         {
-
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 

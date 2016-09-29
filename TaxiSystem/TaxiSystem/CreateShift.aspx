@@ -208,7 +208,7 @@
                                     </SelectParameters>
                                 </asp:SqlDataSource>
                             </td>
-                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal vælges" ControlToValidate="DropDownList1" IntialValue="0" ForeColor="Red">
+                            <td class="auto-style67">*<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal vælges" ControlToValidate="DropDownList1" InitialValue="0" ForeColor="Red">
                             </asp:RequiredFieldValidator>
                             </td>
                         </tr>
@@ -333,21 +333,27 @@
                 <td class="auto-style38">
                     <asp:TextBox ID="TextBox5" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
-                <td class="auto-style14"></td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox5" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Fejlture:</td>
                 <td class="auto-style38">
                     <asp:TextBox ID="TextBox6" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
-                <td class="auto-style14"></td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox6" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style14">Aconto:</td>
                 <td class="auto-style38">
                     <asp:TextBox ID="TextBox8" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                 </td>
-                <td class="auto-style14"></td>
+                <td class="auto-style14">*<asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox8" ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </td>
             </tr>
         </table>
 

@@ -22,35 +22,45 @@ namespace TaxiSystem
         {
             if (Page.IsValid)
             {
-                int userId = (int) Session["TaxiOwner"];
-
-                string licensePlate = TextBox20.Text;
-                string permissionNo = TextBox9.Text;
-                string units = TextBox21.Text;
-                string trips = TextBox22.Text;
-                string mileage = TextBox23.Text;
-                string occupiedMileage = TextBox24.Text;
-                string controlMileage = TextBox1.Text;
-                string vehicleMileage = TextBox25.Text;
-
-                if (TaxiHandler.checkTaxi(permissionNo) == true)
+                try
                 {
+                    int userId = (int)Session["TaxiOwner"];
 
-                    if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage, userId) == true)
+                    string licensePlate = TextBox20.Text;
+                    string permissionNo = TextBox9.Text;
+                    string units = TextBox21.Text;
+                    string trips = TextBox22.Text;
+                    string mileage = TextBox23.Text;
+                    string occupiedMileage = TextBox24.Text;
+                    string controlMileage = TextBox1.Text;
+                    string vehicleMileage = TextBox25.Text;
+
+                    if (TaxiHandler.checkTaxi(permissionNo) == true)
                     {
-                        Label1.ForeColor = Color.Black;
-                        Label1.Text = "Taxien er gemt";
+
+                        if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage, userId) == true)
+                        {
+                            Label1.ForeColor = Color.Black;
+                            Label1.Text = "Taxien er gemt";
+
+                            ClearInputs(Page.Controls);
+                        }
+                        else
+                        {
+                            Label1.ForeColor = Color.Red;
+                            Label1.Text = "Taxien blev ikke gemt";
+                        }
                     }
                     else
                     {
                         Label1.ForeColor = Color.Red;
-                        Label1.Text = "Taxien blev ikke gemt";
+                        Label1.Text = "Taxien findes allerede";
                     }
                 }
-                else
+                catch
                 {
                     Label1.ForeColor = Color.Red;
-                    Label1.Text = "Taxien findes allerede";
+                    Label1.Text = "Fejl i indtastning";
                 }
             }
             else

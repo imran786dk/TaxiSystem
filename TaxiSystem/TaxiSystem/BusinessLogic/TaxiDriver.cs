@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TaxiSystem
+﻿namespace TaxiSystem
 {
     public class TaxiDriver: User
     {

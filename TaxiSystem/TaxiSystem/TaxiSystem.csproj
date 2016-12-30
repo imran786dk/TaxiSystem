@@ -69,10 +69,18 @@
     <Content Include="AccountAdmin.aspx" />
     <Content Include="AccountTaxiDriver.aspx" />
     <Content Include="AccountTaxiOwner.aspx" />
+    <Content Include="Bootstrap2.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CreateDriver.aspx" />
     <Content Include="CreateShift.aspx" />
     <Content Include="CreateTaxi.aspx" />
+    <Content Include="Images\background1.jpg" />
+    <Content Include="Images\background2.png" />
+    <Content Include="Images\background3.jpg" />
+    <Content Include="Images\bogholderi.jpg" />
+    <Content Include="Images\dantaxilogo.png" />
+    <Content Include="Images\image1.jpg" />
+    <Content Include="Images\taxi1.jpg" />
     <Content Include="Priser.aspx" />
     <Content Include="Product.aspx" />
     <Content Include="ShowAllDriverShift.aspx" />
@@ -87,7 +95,15 @@
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\Calendar.png" />
     <Content Include="ShowAllDriver.aspx" />
+    <Content Include="Styles\css\bootstrap-theme.css" />
+    <Content Include="Styles\css\bootstrap-theme.min.css" />
+    <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\bootstrap.min.css" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Styles\ForgotPassword.css" />
+    <Content Include="Styles\js\bootstrap.js" />
+    <Content Include="Styles\js\bootstrap.min.js" />
+    <Content Include="Styles\js\npm.js" />
     <Content Include="Styles\Login.css" />
     <Content Include="Images\TaxiSystem.png" />
     <Content Include="Inactivity.aspx" />
@@ -99,6 +115,15 @@
     <Content Include="MasterPageAdmin.Master" />
     <Content Include="MasterPageTaxiDriver.Master" />
     <Content Include="MasterPageTaxiOwner.Master" />
+    <Content Include="Bootstrap.aspx" />
+    <Content Include="Styles\css\bootstrap-theme.css.map" />
+    <Content Include="Styles\css\bootstrap-theme.min.css.map" />
+    <Content Include="Styles\css\bootstrap.css.map" />
+    <Content Include="Styles\css\bootstrap.min.css.map" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,6 +157,13 @@
     </Compile>
     <Compile Include="AccountTaxiOwner.aspx.designer.cs">
       <DependentUpon>AccountTaxiOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap2.aspx.cs">
+      <DependentUpon>Bootstrap2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap2.aspx.designer.cs">
+      <DependentUpon>Bootstrap2.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\AccountHandler.cs" />
     <Compile Include="BusinessLogic\LoginHandler.cs" />
@@ -306,6 +338,13 @@
     </Compile>
     <Compile Include="ShowOwnerDetail.aspx.designer.cs">
       <DependentUpon>ShowOwnerDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap.aspx.cs">
+      <DependentUpon>Bootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap.aspx.designer.cs">
+      <DependentUpon>Bootstrap.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

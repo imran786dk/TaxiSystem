@@ -80,8 +80,12 @@
     <Content Include="Images\bogholderi.jpg" />
     <Content Include="Images\dantaxilogo.png" />
     <Content Include="Images\image1.jpg" />
+    <Content Include="Images\receptionist.jpg" />
     <Content Include="Images\taxi1.jpg" />
-    <Content Include="Priser.aspx" />
+    <Content Include="Images\TaxiSystemWhite.png" />
+    <Content Include="Prices.aspx">
+      <BrowseToURL>~/Prices.aspx</BrowseToURL>
+    </Content>
     <Content Include="Product.aspx" />
     <Content Include="ShowAllDriverShift.aspx" />
     <Content Include="ShowAllOwner.aspx" />
@@ -271,12 +275,12 @@
     <Compile Include="MasterPageTaxiOwner.Master.designer.cs">
       <DependentUpon>MasterPageTaxiOwner.Master</DependentUpon>
     </Compile>
-    <Compile Include="Priser.aspx.cs">
-      <DependentUpon>Priser.aspx</DependentUpon>
+    <Compile Include="Prices.aspx.cs">
+      <DependentUpon>Prices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Priser.aspx.designer.cs">
-      <DependentUpon>Priser.aspx</DependentUpon>
+    <Compile Include="Prices.aspx.designer.cs">
+      <DependentUpon>Prices.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>

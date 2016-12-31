@@ -16,12 +16,12 @@ namespace TaxiSystem
 
             if (Page.IsValid)
             {
-                string email = TextBox20.Value;
+                string email = TextBox20.Text;
 
                 if (PasswordHandler.SendNewPassword(email) == true)
                 {
                     Label1.ForeColor = Color.Black;
-                    Label1.Text = "Ny adgangskode er sendt";
+                    Label1.Text = "Ny kode er sendt";
                 }
                 else
                 {

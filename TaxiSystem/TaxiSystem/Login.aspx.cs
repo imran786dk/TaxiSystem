@@ -24,8 +24,8 @@ namespace TaxiSystem
 
             if (Page.IsValid)
             {
-                string email = TextBox20.Value;
-                string password = TextBox9.Value;
+                string email = TextBox20.Text;
+                string password = TextBox9.Text;
 
                 int type = LoginHandler.GetType(email);
 

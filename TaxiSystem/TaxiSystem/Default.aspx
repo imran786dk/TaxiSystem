@@ -84,7 +84,7 @@
                     <div class="carousel-caption">
                         <h1>Ingen større startomkostninger og lave priser</h1>
                         <p>Kontakt os for at høre om dine muligheder</p>
-                        <p><a href="Contact.aspx" class="btn btn-primary btn-sm">Kontakt</a></p>
+                        <p><a href="Contact.aspx" class="btn btn-primary btn-lg">Kontakt</a></p>
                     </div>
                 </div>
                 <div class="item">

@@ -65,8 +65,8 @@
 
     <div class="container">
         <div class="jumbotron">
-            <span id="websiteTitle">Enkelt og effektivt</span>
-            <p id="websiteSlogan">Vi har løsningen til netop din vognmandsforretning</p>
+            <span id="websiteTitle">Enkelt og nemt</span>
+            <p id="websiteSlogan">Vi har lønsystemet til din vognmandsforretning</p>
         </div>
     </div>
     <div class="container">
@@ -82,7 +82,7 @@
                 <div class="item active">
                     <div class="slide1"></div>
                     <div class="carousel-caption">
-                        <h1>Lave priser og hurtig opstart</h1>
+                        <h1>Ingen større startomkostninger og lave priser</h1>
                         <p>Kontakt os for at høre om dine muligheder</p>
                         <p><a href="Contact.aspx" class="btn btn-primary btn-sm">Kontakt</a></p>
                     </div>
@@ -91,14 +91,14 @@
                     <div class="slide2"></div>
                     <div class="carousel-caption">
                         <h1>En eller flere taxier?</h1>
-                        <p>Vi har løsningen til netop dit behov</p>
+                        <p>Vi har løsningen til alle behov</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="slide3"></div>
                     <div class="carousel-caption">
                         <h1>Træt af at rode med tal?</h1>
-                        <p>Få overblik og gør dit hverdag</p>
+                        <p>Få overblik og gør dit regnskab lettere</p>
                     </div>
                 </div>
             </div>

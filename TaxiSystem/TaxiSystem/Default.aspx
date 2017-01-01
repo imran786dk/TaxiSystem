@@ -66,7 +66,7 @@
     <div class="container">
         <div class="jumbotron">
             <span id="websiteTitle">Enkelt og nemt</span>
-            <p id="websiteSlogan">Vi har IT-systemet til din vognmandsforretning</p>
+            <p id="websiteSlogan">Vi har IT-løsningen til din vognmandsforretning</p>
         </div>
     </div>
     <div class="container">

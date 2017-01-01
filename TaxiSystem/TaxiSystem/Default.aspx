@@ -82,7 +82,7 @@
                 <div class="item active">
                     <div class="slide1"></div>
                     <div class="carousel-caption">
-                        <h1>Ingen større startomkostninger og lave priser</h1>
+                        <h1>Ingen startomkostninger og lave priser</h1>
                         <p>Kontakt os for at høre om dine muligheder</p>
                         <p><a href="Contact.aspx" class="btn btn-primary btn-lg">Kontakt</a></p>
                     </div>

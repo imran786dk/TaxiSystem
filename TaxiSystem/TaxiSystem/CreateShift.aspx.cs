@@ -12,10 +12,10 @@ namespace TaxiSystem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["TaxiOwner"] == null)
-            {
-                Response.Redirect("Inactivity.aspx");
-            }
+            //if (Session["TaxiOwner"] == null)
+            //{
+            //    Response.Redirect("Inactivity.aspx");
+            //}
 
             if (!IsPostBack)
             {
@@ -149,11 +149,11 @@ namespace TaxiSystem
 
             Taxi taxi = TaxiHandler.getTaxi(taxiId);
 
-            TextBox15.Text = taxi.units.ToString();
-            TextBox25.Text = taxi.trips.ToString();
-            TextBox26.Text = taxi.mileage.ToString();
-            TextBox27.Text = taxi.occupiedMileage.ToString();
-            TextBox30.Text = taxi.controlMileage.ToString();
+            TextBox31.Text = taxi.units.ToString();
+            TextBox32.Text = taxi.trips.ToString();
+            TextBox33.Text = taxi.mileage.ToString();
+            TextBox34.Text = taxi.occupiedMileage.ToString();
+            TextBox35.Text = taxi.controlMileage.ToString();
             permissionNo = taxi.permissionNo;
             oldVehicleMileage = taxi.mileage;
         }

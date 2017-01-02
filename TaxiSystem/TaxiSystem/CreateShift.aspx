@@ -109,7 +109,7 @@
                             <td class="auto-style90">&nbsp; Vagt dato:</td>
                             <td class="auto-style93">
                                 <asp:TextBox ID="TextBox11" runat="server" Width="121px"></asp:TextBox>
-                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False" Height="18px" Width="18px"/>
+                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False" Height="18px" Width="18px" />
                             </td>
                             <td class="auto-style97">*<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
                             </asp:RequiredFieldValidator>
@@ -180,7 +180,6 @@
             </tr>
         </table>
 
-
         <table class="auto-style59">
             <tr>
                 <td class="auto-style90">&nbsp; Uden taximeter:</td>
@@ -223,8 +222,8 @@
         <br />
         <br />
 
-        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; float: left; position: absolute; left: 671px; top: 558px" />
-        <asp:Button runat="server" ID="Button3" CssClass="btn btn-success" OnClick="Button3_Click" Text="Beregn" style="width: 68px; height: 36px; float: left; position: absolute; left: 670px; top: 623px" />
+        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" Style="width: 68px; height: 36px; float: left; position: absolute; left: 671px; top: 558px" />
+        <asp:Button runat="server" ID="Button3" CssClass="btn btn-success" OnClick="Button3_Click" Text="Beregn" Style="width: 68px; height: 36px; float: left; position: absolute; left: 670px; top: 623px" />
 
         <table class="auto-style76">
             <tr>
@@ -290,10 +289,10 @@
                 </td>
             </tr>
         </table>
-        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; float: left; position: absolute; left: 777px; top: 623px" />
+        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" Style="width: 68px; height: 36px; float: left; position: absolute; left: 777px; top: 623px" />
 
         <asp:Label ID="Label1" runat="server" CssClass="auto-style51" Text=""></asp:Label>
-   </div>
+    </div>
 
 </asp:Content>
 

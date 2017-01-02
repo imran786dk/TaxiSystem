@@ -37,11 +37,11 @@ namespace TaxiSystem
             }
         }
 
-        public static Shift CalculateShift(string oldUnits, string oldTrips, string oldMileage, string oldOccupiedMileage, string oldControlMileage, string oldVehicleMileage, string newUnits, string newTrips,
+        public static Shift CalculateShift(string oldUnits, string oldTrips, string oldMileage, string oldOccupiedMileage, string oldControlMileage, int oldVehicleMileage, string newUnits, string newTrips,
             string newMileage, string newOccupiedMileage, string newControlMileage, string newVehicleMileage)
         {
 
-            int vehicleMileage = int.Parse(newVehicleMileage) - int.Parse(oldVehicleMileage);
+            int vehicleMileage = int.Parse(newVehicleMileage) - oldVehicleMileage;
 
             Shift shift = new Shift();
 

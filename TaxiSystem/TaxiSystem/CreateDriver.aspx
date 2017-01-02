@@ -12,26 +12,9 @@
 
         .auto-style51 {
             position: absolute;
-            left: 774px;
-            top: 694px;
+            left: 756px;
+            top: 703px;
             width: 150px;
-        }
-
-        .auto-style54 {
-            height: 25px;
-            top: 690px;
-            width: 90px;
-            position: absolute;
-            left: 341px;
-            z-index: 1;
-        }
-
-        .auto-style56 {
-            height: 25px;
-            left: 652px;
-            top: 690px;
-            width: 90px;
-            position: absolute;
         }
 
         .auto-style57 {
@@ -414,7 +397,7 @@
                             <td class="auto-style79">Førerkorts udløbsdato:</td>
                             <td class="auto-style33">
                                 <asp:TextBox ID="TextBox11" runat="server" Width="161px"></asp:TextBox>
-                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False"/>                              
+                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False" Height="18px" Width="18px"/>                              
                                 </td>
                              <td class="auto-style79">*<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
                                     </asp:RequiredFieldValidator>
@@ -425,15 +408,14 @@
                     </table>
                 </td>
                 <td class="auto-style50">
-                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="Black" BorderWidth="3px" Font-Names="Arial" Font-Size="9pt" ForeColor="White" Height="180px" NextPrevFormat="ShortMonth" Width="330px" BorderStyle="Solid" CellSpacing="1" Font-Bold="True" OnSelectionChanged="Calendar1_SelectionChanged">
-                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#24478F" Height="8pt" />
-                        <DayStyle BackColor="#24478F" />
-                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="140px" NextPrevFormat="FullMonth" Width="295px" Font-Bold="True" OnSelectionChanged="Calendar1_SelectionChanged">
+                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                         <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#4775D1" ForeColor="White" />
+                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                         <SelectorStyle BorderColor="#4775D1" />
-                        <TitleStyle BackColor="#24478F" Font-Bold="True" Font-Size="12pt" ForeColor="White" BorderStyle="Solid" Height="12pt" />
-                        <TodayDayStyle BackColor="White" ForeColor="#24478F" />
+                        <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderColor="Black" BorderWidth="4px" />
+                        <TodayDayStyle BackColor="#CCCCCC" />
                     </asp:Calendar>
                 </td>
             </tr>
@@ -442,12 +424,15 @@
 
 
        
-
-        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style54" CausesValidation="False"/>
         <br />
         <br />
-        <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style56"/>
         <asp:Label ID="Label1" runat="server" CssClass="auto-style51" Text=""></asp:Label>
+
+
+
+       
+        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; float: left; position: absolute; left: 342px; top: 688px"/>
+        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; float: left; position: absolute; left: 666px; top: 688px"/>
     </div>
 
 </asp:Content>

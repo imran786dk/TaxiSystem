@@ -33,27 +33,12 @@
             text-align: left;
         }
 
-        .auto-style20 {
-            left: 342px;
-            top: 525px;
-            width: 90px;
-            height: 25px;
-            position: absolute;
-        }
-
-        .auto-style21 {
-            height: 25px;
-            position: absolute;
-            left: 649px;
-            top: 525px;
-            width: 90px;
-            }
         .auto-style22 {
             width: 150px;
             height: 15px;
             position: absolute;
-            left: 776px;
-            top: 529px;
+            left: 758px;
+            top: 539px;
         }
     .auto-style23 {
         width: 100px;
@@ -168,10 +153,10 @@
                 </td>
             </tr>
             </table>
-        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" CausesValidation="False"/>
         <br />
         <br />
-        <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style21" />
         <asp:Label ID="Label1" runat="server" CssClass="auto-style22" Text=""></asp:Label>
+        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; float: left; position: absolute; left: 342px; top: 524px"/>
+        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; float: left; position: absolute; left: 671px; top: 524px"/>
     </div>
 </asp:Content>

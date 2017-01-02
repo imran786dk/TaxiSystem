@@ -118,11 +118,11 @@
                 </td>
             </tr>
             </table>
-        <asp:Button class="auto-style13" ID="Button1" runat="server" Text="Ryd felter" OnClick="Button1_Click" CssClass="auto-style20" style="width: 90px; height: 25px; position: absolute; left: 341px; top: 465px" CausesValidation="False"/>
+        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; position: absolute; left: 342px; top: 465px"/>
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" style="width: 150px; height: 15px; position: absolute; left: 770px; top: 467px"></asp:Label>
-        <asp:Button class="auto-style13" ID="Button2" runat="server" Text="Gem" OnClick="Button2_Click" CssClass="auto-style21" style="width: 90px; height: 25px; position: absolute; left: 649px; top: 464px" />
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" style="width: 150px; height: 15px; position: absolute; left: 759px; top: 482px"></asp:Label>
+        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; position: absolute; left: 668px; top: 465px"/>
     </div>
 
 

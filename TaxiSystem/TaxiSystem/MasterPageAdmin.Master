@@ -4,6 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <link rel="stylesheet" type="text/css" href="Styles/css/bootstrap.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" />
     <title>
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
@@ -17,7 +21,8 @@
         <div class="wrapper">
             <div class="menu">
                 <ul>
-                    <li><a href="Default.aspx">TaxiSystem</a></li>
+                    <li><a href="Default.aspx">
+                        <img src="Images/TaxiSystemWhite.png" alt="Logo" /></a></li>
                     <li><a href="#">Produkt</a></li>
                     <li><a href="#">Priser</a></li>
                     <li><a href="#">Kontakt</a></li>
@@ -56,4 +61,6 @@
         </div>
     </form>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </html>

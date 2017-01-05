@@ -41,23 +41,24 @@ namespace TaxiSystem
             {
                 try
                 {
-                    string cprNo = TextBox20.Text;
-                    string fName = TextBox21.Text;
-                    string lName = TextBox22.Text;
-                    string street = TextBox23.Text;
-                    string zipCode = DropDownList2.SelectedValue;
-                    string city = TextBox1.Text;
-                    string country = TextBox30.Text;
-                    string tel = TextBox27.Text;
-                    string email = TextBox29.Text;
-                    string drivingLicenseNo = TextBox9.Text;
-                    string taxiDriverNo = TextBox10.Text;
-                    string taxiDriverExp = TextBox11.Text;
+                    TaxiDriver driver = new TaxiDriver();
 
-                    if (LoginHandler.checkEmailAvailability(email) == true)
+                    driver.cprNo = TextBox20.Text;
+                    driver.fName = TextBox21.Text;
+                    driver.lName = TextBox22.Text;
+                    driver.street = TextBox23.Text;
+                    driver.zipCode = int.Parse(DropDownList2.SelectedValue);
+                    driver.city = TextBox1.Text;
+                    driver.country = TextBox30.Text;
+                    driver.tel = TextBox27.Text;
+                    driver.email = TextBox29.Text;
+                    driver.drivingLicenseNo = TextBox9.Text;
+                    driver.taxiDriverNo = TextBox10.Text;
+                    driver.taxiDriverExp = TextBox11.Text;
+
+                    if (LoginHandler.checkEmailAvailability(driver.email) == true)
                     {
-                        if (TaxiDriverHandler.AddDriver(cprNo, fName, lName, street, zipCode, city, country, tel, email,
-                       drivingLicenseNo, taxiDriverNo, taxiDriverExp) == true)
+                        if (TaxiDriverHandler.AddDriver(driver) == true)
                         {
                             Label1.ForeColor = Color.Black;
                             Label1.Text = "Chaufføren er gemt";

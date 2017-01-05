@@ -2,6 +2,7 @@
 {
     public class LoginHandler
     {
+        //Returns the type of the user
         public static int GetType(string email)
         {
 
@@ -10,28 +11,30 @@
                 return type;   
         }
 
+        //Validates user credentials for taxi owner
         public static TaxiOwner TaxiOwnerLogin(string email, string password)
         {
-            TaxiOwner taxiOwner = DbHelper.SelectTaxiOwner(email);
+                TaxiOwner taxiOwner = TaxiOwnerHandler.GetTaxiOwner(email);
 
-            string dbPassword = taxiOwner.password;
-            string salt = taxiOwner.salt;
-            string passwordToCheck = PasswordHandler.CreateSHA256Hash(salt, password);
+                string dbPassword = taxiOwner.password;
+                string salt = taxiOwner.salt;
+                string passwordToCheck = PasswordHandler.CreateSHA256Hash(salt, password);
 
-            if (dbPassword == passwordToCheck)
-            {
-                return taxiOwner;
+                if (dbPassword == passwordToCheck)
+                {
+                    return taxiOwner;
 
-            }
-            else
-            {
-                return null;
-            }
+                }
+                else
+                {
+                    return null;
+                }
         }
 
+        //Validates user credentials for taxi driver
         public static TaxiDriver TaxiDriverLogin(string email, string password)
         {
-            TaxiDriver taxiDriver = DbHelper.SelectTaxiDriver(email);
+            TaxiDriver taxiDriver = TaxiDriverHandler.GetTaxiDriver(email);
 
             string dbPassword = taxiDriver.password;
             string salt = taxiDriver.salt;
@@ -48,6 +51,7 @@
             }
         }
 
+        //Checks if the email is already used
         public static bool checkEmailAvailability(string email)
         {
             return DbHelper.CheckEmail(email);

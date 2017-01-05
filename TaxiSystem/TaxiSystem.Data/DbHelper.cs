@@ -10,7 +10,8 @@ namespace TaxiSystem
 
         public static string conString = ConfigurationManager.ConnectionStrings["TaxiSystemCS"].ConnectionString;
 
-        public static bool TestConnection()
+        //Returns true if data connection is open
+        public static bool Connection()
         {
             using (SqlConnection con = new SqlConnection(conString))
             {
@@ -26,7 +27,8 @@ namespace TaxiSystem
             }
         }
 
-        public static void CreateTaxiOwner(TaxiOwner taxiOwner)
+        //Creates a taxi owner
+        public static void CreateTaxiOwner(TaxiOwner owner)
         {
             using (SqlConnection con = new SqlConnection(conString))
             {
@@ -36,18 +38,18 @@ namespace TaxiSystem
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = taxiOwner.fName;
-                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = taxiOwner.lName;
-                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = taxiOwner.street;
-                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = taxiOwner.zipCode;
-                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = taxiOwner.email;
-                        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = taxiOwner.password;
-                        cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = taxiOwner.salt;
-                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiOwner.type;
-                        cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = taxiOwner.companyName;
-                        cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = taxiOwner.cvrNo;
-                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = taxiOwner.tel;
-                        cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = taxiOwner.createDate;
+                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = owner.fName;
+                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = owner.lName;
+                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = owner.street;
+                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = owner.zipCode;
+                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = owner.email;
+                        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = owner.password;
+                        cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = owner.salt;
+                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = owner.type;
+                        cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = owner.companyName;
+                        cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = owner.cvrNo;
+                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
+                        cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = owner.createDate;
 
 
                         con.Open();
@@ -61,7 +63,40 @@ namespace TaxiSystem
             }
         }
 
-        public static void CreateTaxiDriver(TaxiDriver taxiDriver)
+        //Updates a taxi owner
+        public static void UpdateTaxiOwner(TaxiOwner owner)
+        {
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spUpdateTaxiOwner", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@userId", SqlDbType.Int).Value = owner.userId;
+                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = owner.fName;
+                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = owner.lName;
+                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = owner.street;
+                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = owner.zipCode;
+                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = owner.email;
+                        cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = owner.companyName;
+                        cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = owner.cvrNo;
+                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+        //Creates a taxi driver
+        public static void CreateTaxiDriver(TaxiDriver driver)
         {
             using (SqlConnection con = new SqlConnection(conString))
             {
@@ -71,20 +106,20 @@ namespace TaxiSystem
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = taxiDriver.fName;
-                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = taxiDriver.lName;
-                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = taxiDriver.street;
-                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = taxiDriver.zipCode;
-                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = taxiDriver.email;
-                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = taxiDriver.tel;
-                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = taxiDriver.type;
-                        cmd.Parameters.Add("@cprNo", SqlDbType.NVarChar).Value = taxiDriver.cprNo;
-                        cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.NVarChar).Value = taxiDriver.drivingLicenseNo;
-                        cmd.Parameters.Add("@taxiDriverNo", SqlDbType.NVarChar).Value = taxiDriver.taxiDriverNo;
-                        cmd.Parameters.Add("@taxiDriverExp", SqlDbType.NVarChar).Value = taxiDriver.taxiDriverExp;
-                        cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = taxiDriver.createDate;
-                        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = taxiDriver.password;
-                        cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = taxiDriver.salt;
+                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = driver.fName;
+                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = driver.lName;
+                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = driver.street;
+                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = driver.zipCode;
+                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = driver.email;
+                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = driver.tel;
+                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = driver.type;
+                        cmd.Parameters.Add("@cprNo", SqlDbType.NVarChar).Value = driver.cprNo;
+                        cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.NVarChar).Value = driver.drivingLicenseNo;
+                        cmd.Parameters.Add("@taxiDriverNo", SqlDbType.NVarChar).Value = driver.taxiDriverNo;
+                        cmd.Parameters.Add("@taxiDriverExp", SqlDbType.NVarChar).Value = driver.taxiDriverExp;
+                        cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = driver.createDate;
+                        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = driver.password;
+                        cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = driver.salt;
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -97,6 +132,40 @@ namespace TaxiSystem
             }
         }
 
+        //Updates a taxi driver
+        public static void UpdateTaxiDriver(TaxiDriver driver)
+        {
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spUpdateTaxiDriver", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@fName", SqlDbType.NVarChar).Value = driver.fName;
+                        cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = driver.lName;
+                        cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = driver.street;
+                        cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = driver.zipCode;
+                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = driver.email;
+                        cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = driver.tel;
+                        cmd.Parameters.Add("@cprNo", SqlDbType.NVarChar).Value = driver.cprNo;
+                        cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.NVarChar).Value = driver.drivingLicenseNo;
+                        cmd.Parameters.Add("@taxiDriverNo", SqlDbType.NVarChar).Value = driver.taxiDriverNo;
+                        cmd.Parameters.Add("@taxiDriverExp", SqlDbType.NVarChar).Value = driver.taxiDriverExp;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+        //Creates a taxi
         public static void CreateTaxi(Taxi taxi)
         {
             using (SqlConnection con = new SqlConnection(conString))
@@ -129,6 +198,7 @@ namespace TaxiSystem
             }
         }
 
+        //Updates taximeter details
         public static void UpdateTaxi(Taxi taxi)
         {
             using (SqlConnection con = new SqlConnection(conString))
@@ -158,6 +228,7 @@ namespace TaxiSystem
             }
         }
 
+        //creates a shift
         public static void CreateShift(Shift shift)
         {
             using (SqlConnection con = new SqlConnection(conString))
@@ -169,7 +240,7 @@ namespace TaxiSystem
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.Add("@drivingBookNo", SqlDbType.NVarChar).Value = shift.drivingBookNo;
-                        cmd.Parameters.Add("@drivingBookPage", SqlDbType.NVarChar).Value = shift.drivingBookPage;
+                        cmd.Parameters.Add("@drivingBookPage", SqlDbType.Int).Value = shift.drivingBookPage;
                         cmd.Parameters.Add("@date", SqlDbType.NVarChar).Value = shift.date;
                         cmd.Parameters.Add("@units", SqlDbType.Int).Value = shift.units;
                         cmd.Parameters.Add("@trips", SqlDbType.Int).Value = shift.trips;
@@ -195,14 +266,16 @@ namespace TaxiSystem
             }
         }
 
+        //Selects a taxi owner by email
         public static TaxiOwner SelectTaxiOwner(string email)
         {
-            TaxiOwner taxiOwner = new TaxiOwner();
 
             using (SqlConnection con = new SqlConnection(conString))
             {
                 try
                 {
+                    TaxiOwner taxiOwner = new TaxiOwner();
+
                     using (SqlCommand cmd = new SqlCommand("spGetTaxiOwner", con))
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -247,14 +320,71 @@ namespace TaxiSystem
             }
         }
 
-        public static TaxiDriver SelectTaxiDriver(string email)
+        //Selects a taxi owner by id
+        public static TaxiOwner SelectTaxiOwnerById(int userId)
         {
-            TaxiDriver taxiDriver = new TaxiDriver();
 
             using (SqlConnection con = new SqlConnection(conString))
             {
                 try
                 {
+                    TaxiOwner taxiOwner = new TaxiOwner();
+
+                    using (SqlCommand cmd = new SqlCommand("spGetTaxiOwnerById", con))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.Add("@userId", SqlDbType.NVarChar).Value = userId;
+
+                            DataTable table = new DataTable();
+
+                            da.Fill(table);
+
+                            if (table.Rows.Count == 1)
+                            {
+                                DataRow row = table.Rows[0];
+
+                                taxiOwner.userId = Convert.ToInt32(row["UserId"]);
+                                taxiOwner.fName = row["FirstName"].ToString();
+                                taxiOwner.lName = row["LastName"].ToString();
+                                taxiOwner.street = row["Street"].ToString();
+                                taxiOwner.zipCode = Convert.ToInt32(row["ZipCode"]);
+                                taxiOwner.city = row["City"].ToString();
+                                taxiOwner.country = row["Country"].ToString();
+                                taxiOwner.tel = row["Tel"].ToString();
+                                taxiOwner.email = row["Email"].ToString();
+                                taxiOwner.type = Convert.ToInt32(row["Type"]);
+                                taxiOwner.companyName = row["CompanyName"].ToString();
+                                taxiOwner.cvrNo = row["CvrNo"].ToString();
+                                taxiOwner.password = row["Password"].ToString();
+                                taxiOwner.salt = row["PasswordSalt"].ToString();
+                                taxiOwner.createDate = row["CreateDate"].ToString();
+
+                            }
+
+                            return taxiOwner;
+                        }
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+        //Selects a taxi driver by email
+        public static TaxiDriver SelectTaxiDriver(string email)
+        {
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                try
+                {
+                    TaxiDriver taxiDriver = new TaxiDriver();
+
                     using (SqlCommand cmd = new SqlCommand("spGetTaxiDriver", con))
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -288,6 +418,7 @@ namespace TaxiSystem
                                 taxiDriver.drivingLicenseNo = row["DrivingLicenseNo"].ToString();
                                 taxiDriver.taxiDriverNo = row["TaxiDriverNo"].ToString();
                                 taxiDriver.taxiDriverExp = row["TaxiDriverExp"].ToString();
+
                             }
 
                             return taxiDriver;
@@ -301,14 +432,16 @@ namespace TaxiSystem
             }
         }
 
+        //Selects a taxi driver by id
         public static TaxiDriver SelectTaxiDriverById(int userId)
         {
-            TaxiDriver taxiDriver = new TaxiDriver();
 
             using (SqlConnection con = new SqlConnection(conString))
             {
                 try
                 {
+                    TaxiDriver taxiDriver = new TaxiDriver();
+
                     using (SqlCommand cmd = new SqlCommand("spGetTaxiDriverById", con))
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -342,6 +475,7 @@ namespace TaxiSystem
                                 taxiDriver.drivingLicenseNo = row["DrivingLicenseNo"].ToString();
                                 taxiDriver.taxiDriverNo = row["TaxiDriverNo"].ToString();
                                 taxiDriver.taxiDriverExp = row["TaxiDriverExp"].ToString();
+
                             }
 
                             return taxiDriver;
@@ -355,14 +489,16 @@ namespace TaxiSystem
             }
         }
 
+        //Selects a taxi
         public static Taxi SelectTaxi(int taxiId)
         {
-            Taxi taxi = new Taxi();
 
             using (SqlConnection con = new SqlConnection(conString))
             {
                 try
                 {
+                    Taxi taxi = new Taxi();
+
                     using (SqlCommand cmd = new SqlCommand("spGetTaxi", con))
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -390,12 +526,14 @@ namespace TaxiSystem
                                 taxi.vehicleMileage = Convert.ToInt32(row["VehicleMileage"]);
                                 taxi.createDate = row["CreateDate"].ToString();
                                 taxi.userId = Convert.ToInt32(row["UserId"]);
+
                             }
 
                             return taxi;
                         }
                     }
                 }
+
                 catch
                 {
                     throw;
@@ -403,6 +541,7 @@ namespace TaxiSystem
             }
         }
 
+        //Selects the type of the user
         public static int SelectType(string email)
         {
             int type = 0;
@@ -441,6 +580,7 @@ namespace TaxiSystem
             }
         }
 
+        //Checks if email is available
         public static bool CheckEmail(string email)
         {
 
@@ -478,6 +618,7 @@ namespace TaxiSystem
             }
         }
 
+        //Checks if permission no is available
         public static bool CheckTaxi(string permissionNo)
         {
 
@@ -515,6 +656,7 @@ namespace TaxiSystem
             }
         }
 
+        //Updates user password and salt
         public static void ChangePassword(string email, string password, string salt)
         {
             using (SqlConnection con = new SqlConnection(conString))
@@ -540,10 +682,9 @@ namespace TaxiSystem
             }
         }
 
-        public static User SelectZipCodeInfo(string zipCode)
+        //Selects city and country by zip code
+        public static DataTable SelectZipCodeInfo(string zipCode)
         {
-            User user = new User();
-
             using (SqlConnection con = new SqlConnection(conString))
             {
                 try
@@ -560,15 +701,7 @@ namespace TaxiSystem
 
                             da.Fill(table);
 
-                            if (table.Rows.Count == 1)
-                            {
-                                DataRow row = table.Rows[0];
-
-                                user.city = row["City"].ToString();
-                                user.country = row["Country"].ToString();
-                            }
-
-                            return user;
+                            return table;
                         }
                     }
                 }

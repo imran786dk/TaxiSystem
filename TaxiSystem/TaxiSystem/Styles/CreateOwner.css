@@ -1,0 +1,27 @@
+﻿.auto-style12 {
+    border-style: solid;
+    border-width: 3px;
+    padding: 1px 4px;
+    width: 350px;
+    float: left;
+    height: 400px;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+.auto-style24 {
+    width: 115px;
+    text-align: left;
+    height: 27px;
+}
+
+.auto-style25 {
+    height: 27px;
+    width: 87px;
+}
+
+.auto-style26 {
+    height: 27px;
+    width: 72px;
+}

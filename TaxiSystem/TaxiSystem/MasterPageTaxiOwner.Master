@@ -21,11 +21,10 @@
         <div class="wrapper">
             <div class="menu">
                 <ul>
-                    <li><a href="Default.aspx">
-                        <img src="Images/TaxiSystemWhite.png" alt="Logo" /></a></li>
-                    <li><a href="#">Produkt</a></li>
-                    <li><a href="#">Priser</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="Default.aspx"><img src="Images/TaxiSystemWhite.png" alt="Logo"/></a></li>
+                    <li><a href="Product.aspx">Produkt</a></li>
+                    <li><a href="Prices.aspx">Priser</a></li>
+                    <li><a href="Contact.aspx">Kontakt</a></li>
                     <li><a href="Login.aspx">Din konto</a></li>
                 </ul>
             </div>
@@ -38,9 +37,9 @@
                         <DynamicMenuStyle BackColor="#24478F" />
                         <DynamicSelectedStyle BackColor="#24478F" />
                         <Items>
-                            <asp:MenuItem NavigateUrl="~/AccountTaxiOwner.aspx" Text="Start" Value="Start"></asp:MenuItem>
                             <asp:MenuItem Text="Mine oplysninger" Value="Mine oplysninger">
                                 <asp:MenuItem Text="Vis oplysninger" Value="Vis oplysninger" NavigateUrl="~/ShowOwnerDetail.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/ChangePasswordOwner.aspx" Text="Skift adgangskode" Value="Skift adgangskode"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Taxi" Value="Taxi">
                                 <asp:MenuItem Text="Vis taxier" Value="Vis taxier" NavigateUrl="~/ShowAllTaxi.aspx"></asp:MenuItem>

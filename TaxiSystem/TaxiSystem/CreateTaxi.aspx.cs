@@ -21,21 +21,22 @@ namespace TaxiSystem
             {
                 try
                 {
-                    int userId = (int)Session["TaxiOwner"];
+                    Taxi taxi = new Taxi();
 
-                    string licensePlate = TextBox20.Text;
-                    string permissionNo = TextBox9.Text;
-                    string units = TextBox21.Text;
-                    string trips = TextBox22.Text;
-                    string mileage = TextBox23.Text;
-                    string occupiedMileage = TextBox24.Text;
-                    string controlMileage = TextBox1.Text;
-                    string vehicleMileage = TextBox25.Text;
+                    taxi.userId = (int)Session["TaxiOwner"];
+                    taxi.licensePlate = TextBox20.Text;
+                    taxi.permissionNo = TextBox9.Text;
+                    taxi.units = int.Parse(TextBox21.Text);
+                    taxi.trips = int.Parse(TextBox22.Text);
+                    taxi.mileage = int.Parse(TextBox23.Text);
+                    taxi.occupiedMileage = int.Parse(TextBox24.Text);
+                    taxi.controlMileage = int.Parse(TextBox1.Text);
+                    taxi.vehicleMileage = int.Parse(TextBox25.Text);
 
-                    if (TaxiHandler.checkTaxi(permissionNo) == true)
+                    if (TaxiHandler.CheckTaxi(taxi.permissionNo) == true)
                     {
 
-                        if (TaxiHandler.AddTaxi(licensePlate, permissionNo, units, trips, mileage, occupiedMileage, controlMileage, vehicleMileage, userId) == true)
+                        if (TaxiHandler.AddTaxi(taxi) == true)
                         {
                             Label1.ForeColor = Color.Black;
                             Label1.Text = "Taxien er gemt";
@@ -71,6 +72,7 @@ namespace TaxiSystem
         {
             ClearInputs(Page.Controls);
         }
+
         void ClearInputs(ControlCollection ctrls)
         {
             foreach (Control ctrl in ctrls)
@@ -79,11 +81,6 @@ namespace TaxiSystem
                     ((TextBox)ctrl).Text = string.Empty;
                 ClearInputs(ctrl.Controls);
             }
-        }
-
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
-        {
-
         }
 
     }

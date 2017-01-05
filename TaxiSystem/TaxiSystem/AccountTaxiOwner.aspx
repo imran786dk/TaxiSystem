@@ -1,16 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTaxiOwner.Master" AutoEventWireup="true" CodeBehind="AccountTaxiOwner.aspx.cs" Inherits="TaxiSystem.AccountTaxiOwner" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Din konto
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-    .auto-style1 {
-        height: 520px;
-    }
-</style>
 </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-    
-    <div class="auto-style1"><h3>Velkommen til din personlige side</h3></div>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h3>Velkommen til din konto</h3>
+        </div>
+
+    </div>
 
 </asp:Content>

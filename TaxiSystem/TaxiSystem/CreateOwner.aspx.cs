@@ -29,25 +29,27 @@ namespace TaxiSystem
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
+
             if (Page.IsValid)
             {
                 try
                 {
-                    string cvrNo = TextBox20.Text;
-                    string companyName = TextBox9.Text;
-                    string fName = TextBox21.Text;
-                    string lName = TextBox22.Text;
-                    string street = TextBox23.Text;
-                    string zipCode = DropDownList2.SelectedValue;
-                    string city = TextBox1.Text;
-                    string country = TextBox30.Text;
-                    string tel = TextBox27.Text;
-                    string email = TextBox29.Text;
+                    TaxiOwner owner = new TaxiOwner();
 
-                    if (LoginHandler.checkEmailAvailability(email) == true)
+                    owner.cvrNo = TextBox20.Text;
+                    owner.companyName = TextBox9.Text;
+                    owner.fName = TextBox21.Text;
+                    owner.lName = TextBox22.Text;
+                    owner.street = TextBox23.Text;
+                    owner.zipCode = int.Parse(DropDownList2.SelectedValue);
+                    owner.city = TextBox1.Text;
+                    owner.country = TextBox30.Text;
+                    owner.tel = TextBox27.Text;
+                    owner.email = TextBox29.Text;
+
+                    if (LoginHandler.checkEmailAvailability(owner.email) == true)
                     {
-                        if (TaxiOwnerHandler.AddOwner(cvrNo, companyName, fName, lName, street, zipCode, city, country, tel, email) == true)
+                        if (TaxiOwnerHandler.AddOwner(owner) == true)
                         {
                             Label1.ForeColor = Color.Black;
                             Label1.Text = "Brugeren er gemt";
@@ -71,7 +73,7 @@ namespace TaxiSystem
                 {
                     Label1.ForeColor = Color.Red;
                     Label1.Text = "Fejl i indtastning";
-                }         
+                }
             }
             else
             {

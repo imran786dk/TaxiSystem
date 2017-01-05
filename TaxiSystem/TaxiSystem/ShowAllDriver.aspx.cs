@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 
 namespace TaxiSystem
 {
@@ -10,6 +11,15 @@ namespace TaxiSystem
             {
                 Response.Redirect("Inactivity.aspx");
             }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridView1.SelectedRow;
+
+            string userId = row.Cells[14].Text;
+            Response.Cookies["driverId"].Value = userId;
+            Response.Redirect("UpdateDriver.aspx");
         }
     }
 }

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using TaxiSystem.Data;
 
 namespace TaxiSystem
 {
     public class PasswordHandler
     {
-        public const int SaltByteSize = 32;
+        public const int SaltByteSize = 32; //Size of salt
         public string salt = CreateSalt();
 
+        //Returns a salt
         public static string CreateSalt()
 
         {
@@ -19,6 +21,7 @@ namespace TaxiSystem
             return Convert.ToBase64String(salt);
         }
 
+        //Returns a new password by prepending the salt to the password before hashing using SHA256
         public static string CreateSHA256Hash(string salt, string password)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(salt + password);
@@ -28,6 +31,7 @@ namespace TaxiSystem
             return Convert.ToBase64String(hash);
         }
 
+        //Returns a random password of 8 characters
         public static string RandomPassword()
         {
 
@@ -42,7 +46,7 @@ namespace TaxiSystem
             return strB.ToString();
 
         }
-
+        //Sends a password
         public static bool SendNewPassword(string email)
         {
 
@@ -52,12 +56,32 @@ namespace TaxiSystem
 
             try
             {
-                if (DbHelper.CheckEmail(email) == false)
+                if (DbHelper.CheckEmail(email) == false && EmailHandler.PasswordMail(plainPassword, email) == true)
                 {
-                    EmailHandler.PasswordMail(plainPassword, email);
+                    DbHelper.ChangePassword(email, password, salt);
                 }
+                return true;
 
-                DbHelper.ChangePassword(email, password, salt);
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        //Updates the password
+        public static bool UpdatePassword(string plainPassword, string email)
+        {
+
+            string salt = CreateSalt();
+            string password = CreateSHA256Hash(salt, plainPassword);
+
+            try
+            {
+                if (EmailHandler.PasswordMail(plainPassword, email) == true)
+                {
+                    DbHelper.ChangePassword(email, password, salt);
+                }
                 return true;
 
             }

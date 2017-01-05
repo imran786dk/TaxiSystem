@@ -4,8 +4,8 @@ namespace TaxiSystem
 {
     public class EmailHandler
     {
-
-        public static void PasswordMail(string password, string email )
+        //Send a mail with password using Gmail settings
+        public static bool PasswordMail(string password, string email )
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
@@ -21,6 +21,7 @@ namespace TaxiSystem
 
             SmtpServer.Send(mail);
 
+            return true;
         }
     }
 }

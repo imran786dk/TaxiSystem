@@ -64,12 +64,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
 
     <div class="container">
+
         <div class="jumbotron">
             <span id="websiteTitle">Enkelt og nemt</span>
             <p id="websiteSlogan">Vi har IT-løsningen til din vognmandsforretning</p>
         </div>
-    </div>
-    <div class="container">
+
         <div id="theCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">

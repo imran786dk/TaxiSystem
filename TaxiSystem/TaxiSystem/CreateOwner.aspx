@@ -1,115 +1,69 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageAdmin.Master" AutoEventWireup="true" CodeBehind="CreateOwner.aspx.cs" Inherits="TaxiSystem.CreateOwner" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Opret vognmand
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style10 {
-            width: 100%;
-            height: 500px;
-        }
-
-        .auto-style12 {
-            border-style: solid;
-            border-width: 3px;
-            padding: 1px 4px;
-            width: 400px;
-            margin-top: 40px;
-            margin-left: 40px;
-            display: inline-block;
-            float: left;
-            height: 360px;
-            position: absolute;
-            left: 300px;
-            top: 100px;
-        }
-
-        .autostyle15 {
-            width: 150px;
-        }
-
-        .auto-style16 {
-            width: 100px;
-            text-align: left;
-        }
-
-        .auto-style22 {
-            width: 150px;
-            height: 15px;
-            position: absolute;
-            left: 758px;
-            top: 539px;
-        }
-    .auto-style23 {
-        width: 100px;
-        height: 27px;
-    }
-    .auto-style24 {
-        width: 205px;
-        text-align: left;
-        height: 27px;
-    }
-    .auto-style25 {
-            height: 27px;
-            width: 87px;
-        }
-    </style>
+    <link href="Styles/CreateOwner.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-    <h3>Opret vognmand (Alle felter markeret med * skal udfyldes)</h3>
-    <div class="auto-style10">
+    
+    <div class="container">
+
+        <div class="page-header">
+            <h3>Opret vognmand (Alle felter med * skal udfyldes)</h3>
+        </div>
+
         <table class="auto-style12">
             <tr>
-                <td class="auto-style16">Vognmand oplysninger:
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style23">CVR:</td>
+                <td class="auto-style26">&nbsp; CVR:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox20" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="TextBox20" runat="server" Width="150px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox20" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">Firma:</td>
+                <td class="auto-style26">&nbsp; Firma:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox9" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox9" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25"></td>
             </tr>
             <tr>
-                <td class="auto-style23">Fornavn:</td>
+                <td class="auto-style26">&nbsp; Fornavn:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox21" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox21" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox21" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">Efternavn:</td>
+                <td class="auto-style26">&nbsp; Efternavn:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox22" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox22" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox22" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">Vej:</td>
+                <td class="auto-style26">&nbsp; Vej:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox23" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox23" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox23" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">Post nr.:</td>
+                <td class="auto-style26">&nbsp; Post nr.:</td>
                 <td class="auto-style24">
-                   <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ZipCode" DataValueField="ZipCode" AppendDataBoundItems="True" Width="200px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                   <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="ZipCode" DataValueField="ZipCode" AppendDataBoundItems="True" Width="150px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="0">Vælg postnr.</asp:ListItem>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [ZipCode] FROM [tblZipCode]"></asp:SqlDataSource>
@@ -119,32 +73,32 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">By:</td>
+                <td class="auto-style26">&nbsp; By:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style23">Land:</td>
+                <td class="auto-style26">&nbsp; Land:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox30" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox30" runat="server" Width="150px"></asp:TextBox>
                 </td>
                 <td class="auto-style25">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style23">Tlf:</td>
+                <td class="auto-style26">&nbsp; Tlf:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox27" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="TextBox27" runat="server" Width="150px" TextMode="Number"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox27" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style23">Email:</td>
+                <td class="auto-style26">&nbsp; Email:</td>
                 <td class="auto-style24">
-                    <asp:TextBox ID="TextBox29" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="TextBox29" runat="server" Width="150px" TextMode="Email"></asp:TextBox>
                 </td>
                 <td class="auto-style25">*<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Skal udfyldes" ControlTovalidate="TextBox29" ForeColor="Red">
                                           </asp:RequiredFieldValidator>
@@ -153,10 +107,10 @@
                 </td>
             </tr>
             </table>
-        <br />
-        <br />
-        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" Text=""></asp:Label>
-        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; float: left; position: absolute; left: 342px; top: 524px"/>
-        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; float: left; position: absolute; left: 671px; top: 524px"/>
+
+        
+        <asp:Button runat="server" ID="Button1" CssClass="btn btn-danger" OnClick="Button1_Click" Text="Ryd" CausesValidation="False" style="width: 68px; height: 36px; float: left; position: absolute; left: 477px; top: 635px"/>
+        <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Gem" style="width: 68px; height: 36px; float: left; position: absolute; left: 580px; top: 635px"/>
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style22" style="width: 150px; height: 15px; float: left; position: absolute; left: 680px; top: 646px"></asp:Label>
     </div>
 </asp:Content>

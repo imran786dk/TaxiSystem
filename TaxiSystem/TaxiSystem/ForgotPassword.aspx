@@ -3,10 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Glemt adgangskode
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-     <div class="container">
+     
+    <div class="container">
 
         <div class="page-header">
             <h3>Få tilsendt en ny adgangskode til din mail</h3>
@@ -19,5 +22,7 @@
         <br />
         <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary" OnClick="Button2_Click" Text="Send adgangskode"/>
         <asp:Label ID="Label1" runat="server" CssClass="auto-style21" Text=""></asp:Label>
+    
     </div>
+
 </asp:Content>

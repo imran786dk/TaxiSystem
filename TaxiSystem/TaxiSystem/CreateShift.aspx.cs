@@ -7,19 +7,20 @@ namespace TaxiSystem
 {
     public partial class CreateShift : System.Web.UI.Page
     {
-        int oldVehicleMileage;
-        string permissionNo;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["TaxiOwner"] == null)
-            //{
-            //    Response.Redirect("Inactivity.aspx");
-            //}
+            Button2.Visible = false;
+
+            if (Session["TaxiOwner"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
 
             if (!IsPostBack)
             {
                 Calendar1.Visible = false;
+                Button2.Visible = false;
             }
 
         }
@@ -47,21 +48,17 @@ namespace TaxiSystem
             {
                 try
                 {
-                    string oldUnits = TextBox15.Text;
-                    string oldTrips = TextBox25.Text;
-                    string oldMileage = TextBox26.Text;
-                    string oldOccupiedMileage = TextBox27.Text;
-                    string oldControlMileage = TextBox30.Text;
+                    Taxi taxiNew = new Taxi();
 
-                    string newUnits = TextBox31.Text;
-                    string newTrips = TextBox32.Text;
-                    string newMileage = TextBox33.Text;
-                    string newOccupiedMileage = TextBox34.Text;
-                    string newControlMileage = TextBox35.Text;
-                    string newVehicleMileage = TextBox41.Text;
+                    taxiNew.units = int.Parse(TextBox15.Text);
+                    taxiNew.trips = int.Parse(TextBox25.Text);
+                    taxiNew.mileage = int.Parse(TextBox26.Text);
+                    taxiNew.occupiedMileage = int.Parse(TextBox27.Text);
+                    taxiNew.controlMileage = int.Parse(TextBox30.Text);
+                    taxiNew.vehicleMileage = int.Parse(TextBox41.Text);
+                    taxiNew.taxiId = int.Parse(DropDownList1.SelectedValue);
 
-                    Shift shift = ShiftHandler.CalculateShift(oldUnits, oldTrips, oldMileage, oldOccupiedMileage,
-                                  oldControlMileage, oldVehicleMileage, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage);
+                    Shift shift = new Shift(); ;
 
                     TextBox36.Text = shift.units.ToString();
                     TextBox37.Text = shift.trips.ToString();
@@ -69,26 +66,20 @@ namespace TaxiSystem
                     TextBox39.Text = shift.occupiedMileage.ToString();
                     TextBox40.Text = shift.controlMileage.ToString();
 
-                    string date = TextBox11.Text;
-                    string taxiId = DropDownList1.SelectedValue;
-                    string userId = DropDownList2.SelectedValue;
-                    string drivingBookNo = TextBox2.Text;
-                    string drivingBookPage = TextBox3.Text;
+                    shift.date = TextBox11.Text;
+                    shift.taxiId = int.Parse(DropDownList1.SelectedValue);
+                    shift.userId = int.Parse(DropDownList2.SelectedValue);
+                    shift.drivingBookNo = TextBox2.Text;
+                    shift.drivingBookPage = int.Parse(TextBox3.Text);
+                    shift.withoutMeter = int.Parse(TextBox5.Text);
+                    shift.errorTrips = int.Parse(TextBox6.Text);
+                    shift.onAccount = int.Parse(TextBox8.Text);
+                    shift.vehicleMileage = int.Parse(TextBox41.Text);
 
-                    string withoutMeter = TextBox5.Text;
-                    string errorTrips = TextBox6.Text;
-                    string onAccount = TextBox8.Text;
-
-                    if (TaxiHandler.updateTaxi(taxiId, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage) == true)
+                    if (TaxiHandler.UpdateTaxi(taxiNew) == true)
                     {
-                        string units = TextBox36.Text;
-                        string trips = TextBox37.Text;
-                        string mileage = TextBox38.Text;
-                        string occupiedMileage = TextBox39.Text;
-                        string controlMileage = TextBox40.Text;
 
-                        if (ShiftHandler.AddShift(drivingBookNo, drivingBookPage, date, units, trips, mileage,
-                        occupiedMileage, controlMileage, newVehicleMileage, withoutMeter, errorTrips, onAccount, taxiId, userId) == true)
+                        if (ShiftHandler.AddShift(shift) == true)
                         {
                             Label1.ForeColor = Color.Black;
                             Label1.Text = "Vagten er gemt";
@@ -120,11 +111,6 @@ namespace TaxiSystem
 
         }
 
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
-        {
-
-        }
-
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             if (Calendar1.Visible)
@@ -145,26 +131,23 @@ namespace TaxiSystem
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int taxiId = int.Parse(DropDownList1.SelectedValue);
 
-            Taxi taxi = TaxiHandler.getTaxi(taxiId);
+            Taxi taxi = TaxiHandler.GetTaxi(int.Parse(DropDownList1.SelectedValue));
 
             TextBox31.Text = taxi.units.ToString();
             TextBox32.Text = taxi.trips.ToString();
             TextBox33.Text = taxi.mileage.ToString();
             TextBox34.Text = taxi.occupiedMileage.ToString();
             TextBox35.Text = taxi.controlMileage.ToString();
-            permissionNo = taxi.permissionNo;
-            oldVehicleMileage = taxi.mileage;
+            TextBox4.Text = taxi.vehicleMileage.ToString();
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int userId = int.Parse(DropDownList2.SelectedValue);
 
-            TaxiDriver taxiDriver = TaxiDriverHandler.getTaxiDriver(userId);
+            TaxiDriver taxiDriver = TaxiDriverHandler.GetTaxiDriverById(int.Parse(DropDownList2.SelectedValue));
 
-            string taxiDriverName = taxiDriver.fName + " " + taxiDriver.lName;
+            TextBox1.Text = taxiDriver.fName+" "+taxiDriver.lName;
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -173,21 +156,24 @@ namespace TaxiSystem
             {
                 try
                 {
-                    string oldUnits = TextBox15.Text;
-                    string oldTrips = TextBox25.Text;
-                    string oldMileage = TextBox26.Text;
-                    string oldOccupiedMileage = TextBox27.Text;
-                    string oldControlMileage = TextBox30.Text;
+                    Taxi taxiOld = new Taxi();
+                    Taxi taxiNew = new Taxi();
 
-                    string newUnits = TextBox31.Text;
-                    string newTrips = TextBox32.Text;
-                    string newMileage = TextBox33.Text;
-                    string newOccupiedMileage = TextBox34.Text;
-                    string newControlMileage = TextBox35.Text;
-                    string newVehicleMileage = TextBox41.Text;
+                    taxiOld.units = int.Parse(TextBox31.Text);
+                    taxiOld.trips = int.Parse(TextBox32.Text);
+                    taxiOld.mileage = int.Parse(TextBox33.Text);
+                    taxiOld.occupiedMileage = int.Parse(TextBox34.Text);
+                    taxiOld.controlMileage = int.Parse(TextBox35.Text);
+                    taxiOld.vehicleMileage = int.Parse(TextBox4.Text);
 
-                    Shift shift = ShiftHandler.CalculateShift(oldUnits, oldTrips, oldMileage, oldOccupiedMileage,
-                                  oldControlMileage, oldVehicleMileage, newUnits, newTrips, newMileage, newOccupiedMileage, newControlMileage, newVehicleMileage);
+                    taxiNew.units = int.Parse(TextBox15.Text);
+                    taxiNew.trips = int.Parse(TextBox25.Text);
+                    taxiNew.mileage = int.Parse(TextBox26.Text);
+                    taxiNew.occupiedMileage = int.Parse(TextBox27.Text);
+                    taxiNew.controlMileage = int.Parse(TextBox30.Text);
+                    taxiNew.vehicleMileage = int.Parse(TextBox41.Text);
+
+                    Shift shift = ShiftHandler.CalculateShift(taxiOld, taxiNew);
 
                     TextBox36.Text = shift.units.ToString();
                     TextBox37.Text = shift.trips.ToString();
@@ -197,6 +183,7 @@ namespace TaxiSystem
 
                     Label1.ForeColor = Color.Black;
                     Label1.Text = "Klar til at gemme vagten";
+                    Button2.Visible = true;
                 }
                 catch
                 {

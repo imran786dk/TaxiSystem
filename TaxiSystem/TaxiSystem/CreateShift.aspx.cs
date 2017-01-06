@@ -60,11 +60,11 @@ namespace TaxiSystem
 
                     Shift shift = new Shift(); ;
 
-                    TextBox36.Text = shift.units.ToString();
-                    TextBox37.Text = shift.trips.ToString();
-                    TextBox38.Text = shift.mileage.ToString();
-                    TextBox39.Text = shift.occupiedMileage.ToString();
-                    TextBox40.Text = shift.controlMileage.ToString();
+                    shift.units = int.Parse(TextBox36.Text);
+                    shift.trips = int.Parse(TextBox37.Text);
+                    shift.mileage = int.Parse(TextBox38.Text);
+                    shift.occupiedMileage = int.Parse(TextBox39.Text);
+                    shift.controlMileage = int.Parse(TextBox40.Text);
 
                     shift.date = TextBox11.Text;
                     shift.taxiId = int.Parse(DropDownList1.SelectedValue);

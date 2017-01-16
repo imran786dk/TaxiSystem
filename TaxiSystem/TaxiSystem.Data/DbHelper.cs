@@ -79,9 +79,7 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = owner.lName;
                         cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = owner.street;
                         cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = owner.zipCode;
-                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = owner.email;
                         cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = owner.companyName;
-                        cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = owner.cvrNo;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
 
                         con.Open();
@@ -147,12 +145,11 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = driver.lName;
                         cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = driver.street;
                         cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = driver.zipCode;
-                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = driver.email;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = driver.tel;
-                        cmd.Parameters.Add("@cprNo", SqlDbType.NVarChar).Value = driver.cprNo;
                         cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.NVarChar).Value = driver.drivingLicenseNo;
-                        cmd.Parameters.Add("@taxiDriverNo", SqlDbType.NVarChar).Value = driver.taxiDriverNo;
                         cmd.Parameters.Add("@taxiDriverExp", SqlDbType.NVarChar).Value = driver.taxiDriverExp;
+                        cmd.Parameters.Add("@userId", SqlDbType.Int).Value = driver.userId;
+
 
                         con.Open();
                         cmd.ExecuteNonQuery();

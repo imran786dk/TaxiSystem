@@ -20,18 +20,17 @@ namespace TaxiSystem
             {
                 DropDownList2.ClearSelection();
                 DropDownList2.SelectedValue = (dbOwner.zipCode.ToString());
+
+                TextBox20.Text = dbOwner.cvrNo;
+                TextBox9.Text = dbOwner.companyName;
+                TextBox21.Text = dbOwner.fName;
+                TextBox22.Text = dbOwner.lName;
+                TextBox23.Text = dbOwner.street;
+                TextBox1.Text = dbOwner.city;
+                TextBox30.Text = dbOwner.country;
+                TextBox27.Text = dbOwner.tel;
+                TextBox29.Text = dbOwner.email;
             }
-
-            TextBox20.Text = dbOwner.cvrNo;
-            TextBox9.Text = dbOwner.companyName;
-            TextBox21.Text = dbOwner.fName;
-            TextBox22.Text = dbOwner.lName;
-            TextBox23.Text = dbOwner.street;
-            TextBox1.Text = dbOwner.city;
-            TextBox30.Text = dbOwner.country;
-            TextBox27.Text = dbOwner.tel;
-            TextBox29.Text = dbOwner.email;
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -57,25 +56,19 @@ namespace TaxiSystem
                 {
                     TaxiOwner owner = new TaxiOwner();
 
-                    owner.cvrNo = TextBox20.Text;
                     owner.companyName = TextBox9.Text;
                     owner.fName = TextBox21.Text;
                     owner.lName = TextBox22.Text;
                     owner.street = TextBox23.Text;
                     owner.zipCode = int.Parse(DropDownList2.SelectedValue);
-                    owner.city = TextBox1.Text;
-                    owner.country = TextBox30.Text;
                     owner.tel = TextBox27.Text;
-                    owner.email = TextBox29.Text;
-                    owner.userId = int.Parse(Request.Cookies["userId"].Value);
+                    owner.userId = int.Parse(Request.Cookies["ownerId"].Value);
 
                     if (TaxiOwnerHandler.ChangeOwner(owner) == true)
                     {
                         Label1.ForeColor = Color.Black;
                         Label1.Text = "Brugeren er opdateret";
 
-                        ClearInputs(Page.Controls);
-                        DropDownList2.SelectedIndex = 0;
                     }
                     else
                     {

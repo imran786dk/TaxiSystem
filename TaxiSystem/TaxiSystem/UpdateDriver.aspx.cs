@@ -5,11 +5,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
 
 namespace TaxiSystem
 {
     public partial class UpdateDriver : System.Web.UI.Page
     {
+        private string Text;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["TaxiOwner"] == null)
@@ -26,19 +29,20 @@ namespace TaxiSystem
                 Calendar1.Visible = false;
                 DropDownList2.ClearSelection();
                 DropDownList2.SelectedValue = (dbDriver.zipCode.ToString());
-            }
 
-            TextBox20.Text = dbDriver.cprNo;
-            TextBox21.Text = dbDriver.fName;
-            TextBox22.Text = dbDriver.lName;
-            TextBox23.Text = dbDriver.street;
-            TextBox1.Text = dbDriver.city;
-            TextBox30.Text = dbDriver.country;
-            TextBox27.Text = dbDriver.tel;
-            TextBox29.Text = dbDriver.email;
-            TextBox9.Text = dbDriver.drivingLicenseNo;
-            TextBox10.Text = dbDriver.taxiDriverNo;
-            TextBox11.Text = dbDriver.taxiDriverExp;
+                TextBox20.Text = dbDriver.cprNo;
+                TextBox21.Text = dbDriver.fName;
+                TextBox22.Text = dbDriver.lName;
+                TextBox23.Text = dbDriver.street;
+                TextBox1.Text = dbDriver.city;
+                TextBox30.Text = dbDriver.country;
+                TextBox27.Text = dbDriver.tel;
+                TextBox29.Text = dbDriver.email;
+                TextBox9.Text = dbDriver.drivingLicenseNo;
+                TextBox10.Text = dbDriver.taxiDriverNo;
+                TextBox11.Text = dbDriver.taxiDriverExp;
+            }
+            
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -63,19 +67,14 @@ namespace TaxiSystem
                 {
                     TaxiDriver driver = new TaxiDriver();
 
-                    driver.cprNo = TextBox20.Text;
                     driver.fName = TextBox21.Text;
                     driver.lName = TextBox22.Text;
                     driver.street = TextBox23.Text;
                     driver.zipCode = int.Parse(DropDownList2.SelectedValue);
-                    driver.city = TextBox1.Text;
-                    driver.country = TextBox30.Text;
                     driver.tel = TextBox27.Text;
-                    driver.email = TextBox29.Text;
                     driver.drivingLicenseNo = TextBox9.Text;
-                    driver.taxiDriverNo = TextBox10.Text;
                     driver.taxiDriverExp = TextBox11.Text;
-                    driver.userId = int.Parse(Request.Cookies["userId"].Value);
+                    driver.userId = int.Parse(Request.Cookies["driverId"].Value);
 
 
                     if (TaxiDriverHandler.ChangeDriver(driver) == true)
@@ -83,8 +82,6 @@ namespace TaxiSystem
                         Label1.ForeColor = Color.Black;
                         Label1.Text = "Chaufføren er opdateret";
 
-                        ClearInputs(Page.Controls);
-                        DropDownList2.SelectedIndex = 0;
                     }
                     else
                     {
@@ -140,5 +137,6 @@ namespace TaxiSystem
             TextBox1.Text = user.city;
             TextBox30.Text = user.country;
         }
+
     }
 }

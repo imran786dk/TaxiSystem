@@ -65,7 +65,7 @@
                         <tr>
                             <td class="auto-style96">&nbsp; Chauffør:</td>
                             <td class="auto-style94">
-                                <asp:TextBox ID="TextBox1" runat="server" Width="120px" TextMode="Number" Enabled="false"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" Width="120px" Enabled="false"></asp:TextBox>
                             </td>
                             <td class="auto-style98"></td>
                         </tr>

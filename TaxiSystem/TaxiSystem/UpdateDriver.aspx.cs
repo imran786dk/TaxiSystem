@@ -20,9 +20,11 @@ namespace TaxiSystem
                 Response.Redirect("Inactivity.aspx");
             }
 
-            int userId = int.Parse(Request.Cookies["driverId"].Value);
+            string driverEmail = Request.Cookies["driverEmail"].Value;
 
-            TaxiDriver dbDriver = TaxiDriverHandler.GetTaxiDriverById(userId);
+            TaxiDriver dbDriver = TaxiDriverHandler.GetTaxiDriver(driverEmail);
+
+            Response.Cookies["driverId"].Value = dbDriver.userId.ToString();
 
             if (!IsPostBack)
             {

@@ -17,8 +17,8 @@ namespace TaxiSystem
         {
             GridViewRow row = GridView1.SelectedRow;
 
-            string userId = row.Cells[14].Text;
-            Response.Cookies["driverId"].Value = userId;
+            string email = row.Cells[14].Text;
+            Response.Cookies["driverEmail"].Value = email;
             Response.Redirect("UpdateDriver.aspx");
         }
     }

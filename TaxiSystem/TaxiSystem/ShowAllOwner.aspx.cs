@@ -14,7 +14,7 @@ namespace TaxiSystem
         {
             GridViewRow row = GridView1.SelectedRow;
 
-            string userId = row.Cells[12].Text;
+            string userId = row.Cells[1].Text;
             Response.Cookies["ownerId"].Value = userId;
             Response.Redirect("UpdateOwner.aspx");
         }

@@ -76,6 +76,7 @@
     <Content Include="CreateDriver.aspx" />
     <Content Include="CreateShift.aspx" />
     <Content Include="CreateTaxi.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Images\background1.jpg" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\background3.jpg" />
@@ -231,6 +232,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>

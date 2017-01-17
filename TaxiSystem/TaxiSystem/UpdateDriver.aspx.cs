@@ -11,7 +11,6 @@ namespace TaxiSystem
 {
     public partial class UpdateDriver : System.Web.UI.Page
     {
-        private string Text;
 
         protected void Page_Load(object sender, EventArgs e)
         {

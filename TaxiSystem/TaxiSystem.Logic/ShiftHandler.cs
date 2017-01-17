@@ -8,7 +8,7 @@ namespace TaxiSystem
         public static bool AddShift(Shift shift)
         {
 
-            shift.createDate = DateTime.Now.ToShortDateString();
+            shift.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             
 
             try

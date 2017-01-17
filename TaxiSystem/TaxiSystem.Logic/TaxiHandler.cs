@@ -9,7 +9,7 @@ namespace TaxiSystem
         public static bool AddTaxi(Taxi taxi)
         {
 
-            taxi.createDate = DateTime.Now.ToShortDateString();
+            taxi.createDate = DateTime.Now.ToString("yyyy-MM-dd");
 
             try
             {

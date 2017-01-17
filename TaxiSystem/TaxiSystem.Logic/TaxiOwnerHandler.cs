@@ -10,7 +10,7 @@ namespace TaxiSystem
         {
 
             owner.type = 2;
-            owner.createDate = DateTime.Now.ToShortDateString();
+            owner.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             string plainPassword = PasswordHandler.RandomPassword();
             owner.salt = PasswordHandler.CreateSalt();
             owner.password = PasswordHandler.CreateSHA256Hash(owner.salt, plainPassword);

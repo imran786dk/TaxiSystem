@@ -12,8 +12,8 @@ namespace TaxiSystem
 
             mail.From = new MailAddress("taxisystemdk@gmail.com");
             mail.To.Add(email);
-            mail.Subject = "Din nye login kode til Taxi System";
-            mail.Body = "Din personlige kode er: " + password;
+            mail.Subject = "Dine loginoplysninger til TaxiSystem";
+            mail.Body = "Adgangskode: " + password;
 
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("taxisystemdk@gmail.com", "ThinkPad");

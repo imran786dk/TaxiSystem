@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace TaxiSystem.Test
 {
@@ -62,9 +63,44 @@ namespace TaxiSystem.Test
         }
 
         [TestMethod]
+        public void Test_RandomPassword()
+        {
+            int passwordLength = 8;
+
+            string password = PasswordHandler.RandomPassword();
+
+            Assert.AreEqual(passwordLength, password.Length);
+
+        }
+
+        [TestMethod]
+        public void Test_CompareNewPassword()
+        {
+            string passwordNew = "HelloWorld";
+            string passwordOld = "HelloWorld";
+            bool expected = true;
+
+            bool actual = PasswordHandler.CompareNewPassword(passwordNew,passwordOld);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ValidateNewPassword()
+        {
+            string password = "HelloWorld";
+            bool expected = true;
+
+            bool actual = PasswordHandler.ValidateNewPassword(password);
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
         public void Test_GetTaxi()
         {
-            int id = 5;
+            int id = 8;
             string expected = "1-1264";
             
             Taxi actual = TaxiHandler.GetTaxi(id);
@@ -77,7 +113,7 @@ namespace TaxiSystem.Test
         public void Test_GetTaxiDriverById()
         {
             int id = 14;
-            string expected = "Hans";
+            string expected = "Peter";
 
             TaxiDriver actual = TaxiDriverHandler.GetTaxiDriverById(id);
 

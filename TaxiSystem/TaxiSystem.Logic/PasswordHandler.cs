@@ -45,6 +45,7 @@ namespace TaxiSystem
             return strB.ToString();
 
         }
+
         //Sends a password
         public static bool SendNewPassword(string email)
         {
@@ -89,6 +90,32 @@ namespace TaxiSystem
                 return false;
             }
 
+        }
+
+        //Checks if the new password and repeat password are equal
+        public static bool CompareNewPassword(string passwordNew, string passwordOld)
+        {
+            if(passwordNew == passwordOld)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //validates the new password 
+        public static bool ValidateNewPassword(string passwordNew)
+        {
+            if(passwordNew.Length >= 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

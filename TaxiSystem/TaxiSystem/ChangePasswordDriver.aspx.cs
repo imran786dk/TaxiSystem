@@ -30,9 +30,9 @@ namespace TaxiSystem
             if (LoginHandler.TaxiDriverLogin(email, passwordOld) != null)
             {
 
-                if (passwordNew == passwordRepeat)
+                if (PasswordHandler.CompareNewPassword(passwordNew, passwordOld) == true)
                 {
-                    if (passwordNew.Length >= 8)
+                    if (PasswordHandler.ValidateNewPassword(passwordNew) == true)
                     {
                         try
                         {

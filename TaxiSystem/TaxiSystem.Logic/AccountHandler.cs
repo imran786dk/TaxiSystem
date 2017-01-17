@@ -4,11 +4,7 @@
     {
         public static bool CheckUser(string email)
         {
-
-
                 return true;
-
-
         }
     }
 }

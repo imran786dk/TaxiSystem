@@ -13,6 +13,7 @@
         public int vehicleMileage { get; set; }
         public string createDate { get; set; }
         public int userId { get; set; }
+        public int statusId { get; set; }
 
     }
 }

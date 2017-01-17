@@ -22,7 +22,7 @@ namespace TaxiSystem
                 DropDownList2.SelectedValue = (dbOwner.zipCode.ToString());
 
                 TextBox20.Text = dbOwner.cvrNo;
-                TextBox9.Text = dbOwner.companyName;
+                TextBox9.Text = dbOwner.company;
                 TextBox21.Text = dbOwner.fName;
                 TextBox22.Text = dbOwner.lName;
                 TextBox23.Text = dbOwner.street;
@@ -56,7 +56,7 @@ namespace TaxiSystem
                 {
                     TaxiOwner owner = new TaxiOwner();
 
-                    owner.companyName = TextBox9.Text;
+                    owner.company = TextBox9.Text;
                     owner.fName = TextBox21.Text;
                     owner.lName = TextBox22.Text;
                     owner.street = TextBox23.Text;

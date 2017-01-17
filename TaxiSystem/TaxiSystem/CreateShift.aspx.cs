@@ -66,7 +66,7 @@ namespace TaxiSystem
                     shift.occupiedMileage = int.Parse(TextBox39.Text);
                     shift.controlMileage = int.Parse(TextBox40.Text);
 
-                    shift.date = TextBox11.Text;
+                    shift.shiftDate = TextBox11.Text;
                     shift.taxiId = int.Parse(DropDownList1.SelectedValue);
                     shift.userId = int.Parse(DropDownList2.SelectedValue);
                     shift.drivingBookNo = TextBox2.Text;

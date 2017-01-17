@@ -45,8 +45,8 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = owner.email;
                         cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = owner.password;
                         cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = owner.salt;
-                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = owner.type;
-                        cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = owner.companyName;
+                        cmd.Parameters.Add("@typeId", SqlDbType.Int).Value = owner.typeId;
+                        cmd.Parameters.Add("@company", SqlDbType.NVarChar).Value = owner.company;
                         cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = owner.cvrNo;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
                         cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = owner.createDate;
@@ -79,7 +79,7 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@lName", SqlDbType.NVarChar).Value = owner.lName;
                         cmd.Parameters.Add("@street", SqlDbType.NVarChar).Value = owner.street;
                         cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = owner.zipCode;
-                        cmd.Parameters.Add("@companyName", SqlDbType.NVarChar).Value = owner.companyName;
+                        cmd.Parameters.Add("@company", SqlDbType.NVarChar).Value = owner.company;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
 
                         con.Open();
@@ -110,7 +110,7 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@zipCode", SqlDbType.Int).Value = driver.zipCode;
                         cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = driver.email;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = driver.tel;
-                        cmd.Parameters.Add("@type", SqlDbType.Int).Value = driver.type;
+                        cmd.Parameters.Add("@typeId", SqlDbType.Int).Value = driver.typeId;
                         cmd.Parameters.Add("@cprNo", SqlDbType.NVarChar).Value = driver.cprNo;
                         cmd.Parameters.Add("@drivingLicenseNo", SqlDbType.NVarChar).Value = driver.drivingLicenseNo;
                         cmd.Parameters.Add("@taxiDriverNo", SqlDbType.NVarChar).Value = driver.taxiDriverNo;
@@ -238,7 +238,7 @@ namespace TaxiSystem
 
                         cmd.Parameters.Add("@drivingBookNo", SqlDbType.NVarChar).Value = shift.drivingBookNo;
                         cmd.Parameters.Add("@drivingBookPage", SqlDbType.Int).Value = shift.drivingBookPage;
-                        cmd.Parameters.Add("@date", SqlDbType.NVarChar).Value = shift.date;
+                        cmd.Parameters.Add("@shiftDate", SqlDbType.NVarChar).Value = shift.shiftDate;
                         cmd.Parameters.Add("@units", SqlDbType.Int).Value = shift.units;
                         cmd.Parameters.Add("@trips", SqlDbType.Int).Value = shift.trips;
                         cmd.Parameters.Add("@mileage", SqlDbType.Int).Value = shift.mileage;
@@ -298,8 +298,8 @@ namespace TaxiSystem
                                 taxiOwner.country = row["Country"].ToString();
                                 taxiOwner.tel = row["Tel"].ToString();
                                 taxiOwner.email = row["Email"].ToString();
-                                taxiOwner.type = Convert.ToInt32(row["Type"]);
-                                taxiOwner.companyName = row["CompanyName"].ToString();
+                                taxiOwner.typeId = Convert.ToInt32(row["TypeId"]);
+                                taxiOwner.company = row["Company"].ToString();
                                 taxiOwner.cvrNo = row["CvrNo"].ToString();
                                 taxiOwner.password = row["Password"].ToString();
                                 taxiOwner.salt = row["PasswordSalt"].ToString();
@@ -352,8 +352,8 @@ namespace TaxiSystem
                                 taxiOwner.country = row["Country"].ToString();
                                 taxiOwner.tel = row["Tel"].ToString();
                                 taxiOwner.email = row["Email"].ToString();
-                                taxiOwner.type = Convert.ToInt32(row["Type"]);
-                                taxiOwner.companyName = row["CompanyName"].ToString();
+                                taxiOwner.typeId = Convert.ToInt32(row["TypeId"]);
+                                taxiOwner.company = row["Company"].ToString();
                                 taxiOwner.cvrNo = row["CvrNo"].ToString();
                                 taxiOwner.password = row["Password"].ToString();
                                 taxiOwner.salt = row["PasswordSalt"].ToString();
@@ -407,7 +407,7 @@ namespace TaxiSystem
                                 taxiDriver.country = row["Country"].ToString();
                                 taxiDriver.tel = row["Tel"].ToString();
                                 taxiDriver.email = row["Email"].ToString();
-                                taxiDriver.type = Convert.ToInt32(row["Type"]);
+                                taxiDriver.typeId = Convert.ToInt32(row["TypeId"]);
                                 taxiDriver.cprNo = row["CprNo"].ToString();
                                 taxiDriver.password = row["Password"].ToString();
                                 taxiDriver.salt = row["PasswordSalt"].ToString();
@@ -464,7 +464,7 @@ namespace TaxiSystem
                                 taxiDriver.country = row["Country"].ToString();
                                 taxiDriver.tel = row["Tel"].ToString();
                                 taxiDriver.email = row["Email"].ToString();
-                                taxiDriver.type = Convert.ToInt32(row["Type"]);
+                                taxiDriver.typeId = Convert.ToInt32(row["TypeId"]);
                                 taxiDriver.cprNo = row["CprNo"].ToString();
                                 taxiDriver.password = row["Password"].ToString();
                                 taxiDriver.salt = row["PasswordSalt"].ToString();
@@ -563,7 +563,7 @@ namespace TaxiSystem
                             {
                                 DataRow row = table.Rows[0];
 
-                                type = Convert.ToInt32(row["Type"]);
+                                type = Convert.ToInt32(row["TypeId"]);
                             }
 
                             return type;

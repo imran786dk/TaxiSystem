@@ -9,7 +9,7 @@ namespace TaxiSystem
         public static bool AddOwner(TaxiOwner owner)
         {
 
-            owner.type = 2;
+            owner.typeId = 2;
             owner.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             string plainPassword = PasswordHandler.RandomPassword();
             owner.salt = PasswordHandler.CreateSalt();

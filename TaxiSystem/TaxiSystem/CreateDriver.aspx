@@ -130,7 +130,7 @@
                             </td>
                             <td class="auto-style65">*<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Skal udfyldes" ControlToValidate="TextBox11" ForeColor="Red">
                             </asp:RequiredFieldValidator>
-                                <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Datoformat skal være dd-mm-yy" ControlToValidate="TextBox11" ForeColor="Red" Display="Dynamic" Type="Date" MinimumValue="01-01-1960" MaximumValue="01-01-2060">
+                                <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Datoformat skal være yyyy-MM-dd" ControlToValidate="TextBox11" ForeColor="Red" Display="Dynamic" Type="Date" MinimumValue="01-01-1960" MaximumValue="01-01-2060">
                                 </asp:RangeValidator>
                             </td>
                         </tr>

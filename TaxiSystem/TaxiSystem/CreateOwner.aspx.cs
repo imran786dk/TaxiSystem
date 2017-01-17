@@ -37,7 +37,7 @@ namespace TaxiSystem
                     TaxiOwner owner = new TaxiOwner();
 
                     owner.cvrNo = TextBox20.Text;
-                    owner.companyName = TextBox9.Text;
+                    owner.company = TextBox9.Text;
                     owner.fName = TextBox21.Text;
                     owner.lName = TextBox22.Text;
                     owner.street = TextBox23.Text;

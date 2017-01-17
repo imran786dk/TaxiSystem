@@ -32,7 +32,6 @@
                 <asp:BoundField DataField="Førerkort" HeaderText="Førerkort" SortExpression="Førerkort" />
                 <asp:BoundField DataField="Førerkort udløb" HeaderText="Førerkort udløb" SortExpression="Førerkort udløb" />
                 <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
-                <asp:BoundField DataField="Bruger Id" HeaderText="Bruger Id" SortExpression="Bruger Id" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />

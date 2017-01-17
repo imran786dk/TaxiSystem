@@ -15,10 +15,11 @@
             <h3>Liste over vognmænd</h3>
         </div>
 
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="Both" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True"  SelectText="Vis/Rediger" />
+                <asp:CommandField ShowSelectButton="True" SelectText="Vis/Rediger"/>
+                <asp:BoundField DataField="Bruger Id" HeaderText="Bruger Id" SortExpression="Bruger Id" />
                 <asp:BoundField DataField="CVR" HeaderText="CVR" SortExpression="CVR" />
                 <asp:BoundField DataField="Firma" HeaderText="Firma" SortExpression="Firma" />
                 <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
@@ -30,7 +31,6 @@
                 <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
-                <asp:BoundField DataField="Bruger Id" HeaderText="Bruger Id" SortExpression="Bruger Id" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -42,7 +42,7 @@
             <SortedAscendingHeaderStyle BackColor="#506C8C" />
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-            </asp:GridView>
+        </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT * FROM [vTaxiOwner]"></asp:SqlDataSource>
     </div>
 

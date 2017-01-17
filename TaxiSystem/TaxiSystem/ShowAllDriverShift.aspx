@@ -29,6 +29,7 @@
                 <asp:BoundField DataField="Fejlture" HeaderText="Fejlture" SortExpression="Fejlture" />
                 <asp:BoundField DataField="A_conto" HeaderText="A conto" SortExpression="A_conto" />
                 <asp:BoundField DataField="Vogn_Km" HeaderText="Vogn km" SortExpression="Vogn_Km" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -41,9 +42,9 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Dato], [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Uden meter] AS Uden_meter, [Fejlture], [A conto] AS A_conto, [Vogn Km] AS Vogn_Km FROM [vShift] WHERE ([Bruger Id] = @Bruger_Id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Dato], [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Uden meter] AS Uden_meter, [Fejlture], [A conto] AS A_conto, [Vogn Km] AS Vogn_Km, [Oprettet] FROM [vShift] WHERE ([Bruger Id] = @Bruger_Id)">
             <SelectParameters>
-                <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiDriver" Type="Int32" />
+                <asp:CookieParameter CookieName="TaxiDriver" Name="Bruger_Id" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
 

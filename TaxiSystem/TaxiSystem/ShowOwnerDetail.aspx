@@ -30,7 +30,7 @@
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Løn_dato" HeaderText="Løn dato" SortExpression="Løn_dato" />
                 <asp:BoundField DataField="column1" HeaderText="Løn %" SortExpression="column1" />
-                <asp:BoundField DataField="Oprettet" DataFormatString="{0:yyyy/MM/dd}" HeaderText="Oprettet" SortExpression="Oprettet" />
+                <asp:BoundField DataField="Oprettet" DataFormatString="{0:yyyy-MM-dd}" HeaderText="Oprettet" SortExpression="Oprettet" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />

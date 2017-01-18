@@ -25,8 +25,8 @@
                 <asp:BoundField DataField="Km" HeaderText="Km" SortExpression="Km" />
                 <asp:BoundField DataField="Besatte" HeaderText="Besatte" SortExpression="Besatte" />
                 <asp:BoundField DataField="Kontrol" HeaderText="Kontrol" SortExpression="Kontrol" />
-                <asp:BoundField DataField="Taxi_km" HeaderText="Taxi_km" SortExpression="Taxi_km" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy:MM:dd}" />
+                <asp:BoundField DataField="Taxi_km" HeaderText="Taxi km" SortExpression="Taxi_km" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy-MM-dd}" />
 
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
 

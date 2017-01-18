@@ -26,7 +26,7 @@
                 <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy/MM/dd}" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy-MM-dd}" />
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
             <EditRowStyle BackColor="#999999" />

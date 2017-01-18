@@ -18,7 +18,7 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333">
     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
     <Columns>
-        <asp:BoundField DataField="Dato" HeaderText="Dato" SortExpression="Dato" DataFormatString="{0:yyyy/MM/dd}" />
+        <asp:BoundField DataField="Dato" HeaderText="Dato" SortExpression="Dato" DataFormatString="{0:yyyy-MM-dd}" />
         <asp:BoundField DataField="Bevilling" HeaderText="Bevilling" SortExpression="Bevilling" />
         <asp:BoundField DataField="Trafikbog" HeaderText="Trafikbog" SortExpression="Trafikbog" />
         <asp:BoundField DataField="column1" HeaderText="Trafikbog s." SortExpression="column1" />
@@ -29,8 +29,8 @@
         <asp:BoundField DataField="Kontrol" HeaderText="Kontrol" SortExpression="Kontrol" />
         <asp:BoundField DataField="column2" HeaderText="U. meter" SortExpression="column2" />
         <asp:BoundField DataField="Fejlture" HeaderText="Fejlture" SortExpression="Fejlture" />
-        <asp:BoundField DataField="A_conto" HeaderText="A_conto" SortExpression="A_conto" />
-        <asp:BoundField DataField="Taxi_km" HeaderText="Taxi_km" SortExpression="Taxi_km" />
+        <asp:BoundField DataField="A_conto" HeaderText="A conto" SortExpression="A_conto" />
+        <asp:BoundField DataField="Taxi_km" HeaderText="Taxi km" SortExpression="Taxi_km" />
         <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
         <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
         <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />

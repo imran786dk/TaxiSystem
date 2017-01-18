@@ -20,12 +20,12 @@
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="Vis/Rediger"/>
                 <asp:BoundField DataField="Cpr" HeaderText="Cpr" SortExpression="Cpr" />
-                <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
                 <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
                 <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
+                <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy/mm/dd}" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy-MM-dd}" />
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
             <EditRowStyle BackColor="#999999" />

@@ -13,6 +13,8 @@
 
         <div class="jumbotron">
             <p>
+                <b>Kontakt oplysninger</b><br />
+                Tlf: 50 310 310<br />
                 Email: <a href="mailto:taxisystemdk@gmail.com">taxisystemdk@gmail.com</a>
             </p>
         </div>

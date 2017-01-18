@@ -14,7 +14,7 @@
         <div class="jumbotron">
             <p>
                 <b>Kontakt oplysninger</b><br />
-                Tlf: 50 310 310 (mellem kl. 10:00-16.00 på hverdage)<br />
+                Tlf: 50 310 310 (mellem kl. 10:00 - 16.00 på hverdage)<br />
                 Email: <a href="mailto:taxisystemdk@gmail.com">taxisystemdk@gmail.com</a>
             </p>
         </div>

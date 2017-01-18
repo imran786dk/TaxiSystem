@@ -42,16 +42,18 @@
                                 <asp:MenuItem NavigateUrl="~/ChangePasswordOwner.aspx" Text="Skift adgangskode" Value="Skift adgangskode"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Taxi" Value="Taxi">
-                                <asp:MenuItem Text="Vis taxier" Value="Vis taxier" NavigateUrl="~/ShowAllTaxi.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret taxi" Value="Opret taxi" NavigateUrl="~/CreateTaxi.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Vis vagter" Value="Vis vagter" NavigateUrl="~/ShowAllTaxi.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Ny taxi" Value="Ny taxi" NavigateUrl="~/CreateTaxi.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Chauffør" Value="Chauffør">
-                                <asp:MenuItem Text="Vis chauffører" Value="Vis chauffører" NavigateUrl="~/ShowAllDriver.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret chauffør" Value="Opret chauffør" NavigateUrl="~/CreateDriver.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/ShowAllDriversShift.aspx" Text="Vis vagter" Value="Vis vagter"></asp:MenuItem>
+                                <asp:MenuItem Text="Vis/Rediger chauffør" Value="Vis/Rediger chauffør" NavigateUrl="~/ShowAllDriver.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Ny chauffør" Value="Ny chauffør" NavigateUrl="~/CreateDriver.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Vagt" Value="Vagt">
-                                <asp:MenuItem Text="Vis vagter" Value="Vis vagter" NavigateUrl="~/ShowAllShift.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Opret vagt" Value="Opret vagt" NavigateUrl="~/CreateShift.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Vis alle vagter" Value="Vis alle vagter" NavigateUrl="~/ShowAllShift.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Ny vagt" Value="Ny vagt" NavigateUrl="~/CreateShift.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CalculateDriverShift.aspx" Text="Beregn indkørsel" Value="Beregn indkørsel"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/Inactivity.aspx" Text="Log ud" Value="Log ud"></asp:MenuItem>
                         </Items>

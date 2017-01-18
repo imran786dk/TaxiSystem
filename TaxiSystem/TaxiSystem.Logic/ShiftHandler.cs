@@ -45,5 +45,11 @@ namespace TaxiSystem
             }
 
         }
+
+        //Returns total shift
+        public static Shift GetTotalShift(string startDate, string endDate, int userId)
+        {
+            return DbHelper.CalcTaxiDriverTotShift(startDate, endDate, userId);
+        }
     }
 }

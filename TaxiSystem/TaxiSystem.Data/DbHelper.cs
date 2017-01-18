@@ -200,7 +200,7 @@ namespace TaxiSystem
                 catch
                 {
                     throw;
-                }           
+                }
             }
         }
 
@@ -270,7 +270,7 @@ namespace TaxiSystem
                 catch
                 {
                     throw;
-                }             
+                }
             }
         }
 
@@ -711,6 +711,57 @@ namespace TaxiSystem
                             da.Fill(table);
 
                             return table;
+                        }
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+
+        //Returns total shift for taxi driver
+        public static Shift CalcTaxiDriverTotShift(string startDate, string endDate, int userId)
+        {
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                try
+                {
+                    Shift totalShift = new Shift();
+
+                    using (SqlCommand cmd = new SqlCommand("spGetTotalShiftDriver", con))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.Add("@userId", SqlDbType.Int).Value = userId;
+                            cmd.Parameters.Add("@startDate", SqlDbType.NVarChar).Value = startDate;
+                            cmd.Parameters.Add("@endDate", SqlDbType.NVarChar).Value = endDate;
+
+                            DataTable table = new DataTable();
+
+                            da.Fill(table);
+
+                            if (table.Rows.Count == 1)
+                            {
+                                DataRow row = table.Rows[0];
+
+                                totalShift.units = Convert.ToInt32(row["Units"]);
+                                totalShift.trips = Convert.ToInt32(row["Trips"]);
+                                totalShift.mileage = Convert.ToInt32(row["Mileage"]);
+                                totalShift.occupiedMileage = Convert.ToInt32(row["OccupiedMileage"]);
+                                totalShift.controlMileage = Convert.ToInt32(row["ControlMileage"]);
+                                totalShift.withoutMeter = Convert.ToInt32(row["WithoutMeter"]);
+                                totalShift.errorTrips = Convert.ToInt32(row["ErrorTrips"]);
+                                totalShift.onAccount = Convert.ToInt32(row["OnAccount"]);
+                                totalShift.vehicleMileage = Convert.ToInt32(row["VehicleMileage"]);
+
+                            }
+
+                            return totalShift;
                         }
                     }
                 }

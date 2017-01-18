@@ -70,6 +70,7 @@
     <Content Include="AccountTaxiDriver.aspx" />
     <Content Include="AccountTaxiOwner.aspx" />
     <Content Include="Bootstrap2.aspx" />
+    <Content Include="CalculateDriverShift.aspx" />
     <Content Include="ChangePasswordDriver.aspx" />
     <Content Include="ChangePasswordOwner.aspx" />
     <Content Include="Contact.aspx" />
@@ -91,11 +92,14 @@
     </Content>
     <Content Include="Product.aspx" />
     <Content Include="ShowAllDriverShift.aspx" />
+    <Content Include="ShowAllDriversShift.aspx" />
     <Content Include="ShowAllOwner.aspx" />
     <Content Include="ShowAllShift.aspx" />
     <Content Include="ShowAllTaxi.aspx" />
     <Content Include="ShowDriverDetail.aspx" />
+    <Content Include="ShowDriverShift.aspx" />
     <Content Include="ShowOwnerDetail.aspx" />
+    <Content Include="ShowTaxiShift.aspx" />
     <Content Include="Styles\CreateOwner.css" />
     <Content Include="Styles\CreateShift.css" />
     <Content Include="CreateOwner.aspx" />
@@ -142,7 +146,6 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Styles\MenuMain.css" />
-    <Content Include="test.aspx" />
     <Content Include="UpdateDriver.aspx" />
     <Content Include="UpdateOwner.aspx" />
     <Content Include="Web.config">
@@ -177,6 +180,13 @@
     </Compile>
     <Compile Include="Bootstrap2.aspx.designer.cs">
       <DependentUpon>Bootstrap2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalculateDriverShift.aspx.cs">
+      <DependentUpon>CalculateDriverShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculateDriverShift.aspx.designer.cs">
+      <DependentUpon>CalculateDriverShift.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangePasswordDriver.aspx.cs">
       <DependentUpon>ChangePasswordDriver.aspx</DependentUpon>
@@ -322,6 +332,13 @@
     <Compile Include="ShowAllDriverShift.aspx.designer.cs">
       <DependentUpon>ShowAllDriverShift.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowAllDriversShift.aspx.cs">
+      <DependentUpon>ShowAllDriversShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllDriversShift.aspx.designer.cs">
+      <DependentUpon>ShowAllDriversShift.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowAllOwner.aspx.cs">
       <DependentUpon>ShowAllOwner.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -350,6 +367,13 @@
     <Compile Include="ShowDriverDetail.aspx.designer.cs">
       <DependentUpon>ShowDriverDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowDriverShift.aspx.cs">
+      <DependentUpon>ShowDriverShift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowDriverShift.aspx.designer.cs">
+      <DependentUpon>ShowDriverShift.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowOwnerDetail.aspx.cs">
       <DependentUpon>ShowOwnerDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -364,12 +388,12 @@
     <Compile Include="Bootstrap.aspx.designer.cs">
       <DependentUpon>Bootstrap.aspx</DependentUpon>
     </Compile>
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="ShowTaxiShift.aspx.cs">
+      <DependentUpon>ShowTaxiShift.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="ShowTaxiShift.aspx.designer.cs">
+      <DependentUpon>ShowTaxiShift.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateDriver.aspx.cs">
       <DependentUpon>UpdateDriver.aspx</DependentUpon>

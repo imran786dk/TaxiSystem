@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTaxiOwner.Master" AutoEventWireup="true" CodeBehind="ShowAllTaxi.aspx.cs" Inherits="TaxiSystem.ShowAllTaxi1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTaxiOwner.Master" AutoEventWireup="true" CodeBehind="ShowAllDriversShift.aspx.cs" Inherits="TaxiSystem.ShowAllDriversShift" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    Taxi - Oversigt</asp:Content>
+    Chauffør - Oversigt
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -11,26 +12,21 @@
     <div class="container">
 
         <div class="page-header">
-            <h3>Liste over taxier</h3>
+            <h3>Liste over chauffører</h3>
         </div>
+
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-
-                <asp:CommandField ShowSelectButton="True" SelectText="Vis vagter" />
-
-                <asp:BoundField DataField="column1" HeaderText="Reg." SortExpression="column1" />
-                <asp:BoundField DataField="Bevilling" HeaderText="Bevilling" SortExpression="Bevilling" />
-                <asp:BoundField DataField="Enheder" HeaderText="Enheder" SortExpression="Enheder" />
-                <asp:BoundField DataField="Ture" HeaderText="Ture" SortExpression="Ture" />
-                <asp:BoundField DataField="Km" HeaderText="Km" SortExpression="Km" />
-                <asp:BoundField DataField="Besatte" HeaderText="Besatte" SortExpression="Besatte" />
-                <asp:BoundField DataField="Kontrol" HeaderText="Kontrol" SortExpression="Kontrol" />
-                <asp:BoundField DataField="Taxi_km" HeaderText="Taxi km" SortExpression="Taxi_km" />
+                <asp:CommandField ShowSelectButton="True" SelectText="Vis vagter"/>
+                <asp:BoundField DataField="Cpr" HeaderText="Cpr" SortExpression="Cpr" />
+                <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
+                <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
+                <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
                 <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy-MM-dd}" />
-
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -43,13 +39,8 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Reg.] AS column1, [Enheder], [Bevilling], [Ture], [Km], [Besatte], [Kontrol], [Taxi km] AS Taxi_km, [Oprettet], [Status] FROM [vTaxi] WHERE ([Bruger] = @Bruger)">
-            <SelectParameters>
-                <asp:SessionParameter Name="Bruger" SessionField="TaxiOwner" Type="Int32" />
-            </SelectParameters>
-        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Cpr], [Fornavn], [Efternavn], [Fører], [Email], [Tlf], [Oprettet], [Status] FROM [VTaxiDriver]"></asp:SqlDataSource>
 
     </div>
 
 </asp:Content>
-

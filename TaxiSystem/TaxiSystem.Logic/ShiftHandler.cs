@@ -7,7 +7,7 @@ namespace TaxiSystem
         //Creates a shift
         public static bool AddShift(Shift shift)
         {
-
+            shift.statusId = 1;
             shift.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             
 

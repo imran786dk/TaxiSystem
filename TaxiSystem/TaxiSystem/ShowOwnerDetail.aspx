@@ -15,20 +15,22 @@
             <h3>Dine oplysninger</h3>
         </div>
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" DataKeyNames="Post" ForeColor="#333333">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" DataKeyNames="Bruger" ForeColor="#333333">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="CVR" HeaderText="CVR" SortExpression="CVR" />
+                <asp:BoundField DataField="Cvr" HeaderText="Cvr" SortExpression="Cvr" />
                 <asp:BoundField DataField="Firma" HeaderText="Firma" SortExpression="Firma" />
                 <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
                 <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
                 <asp:BoundField DataField="Vej" HeaderText="Vej" SortExpression="Vej" />
-                <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" ReadOnly="True" />
+                <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" />
                 <asp:BoundField DataField="By" HeaderText="By" SortExpression="By" />
                 <asp:BoundField DataField="Land" HeaderText="Land" SortExpression="Land" />
                 <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
+                <asp:BoundField DataField="Løn_dato" HeaderText="Løn dato" SortExpression="Løn_dato" />
+                <asp:BoundField DataField="column1" HeaderText="Løn %" SortExpression="column1" />
+                <asp:BoundField DataField="Oprettet" DataFormatString="{0:yyyy/MM/dd}" HeaderText="Oprettet" SortExpression="Oprettet" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -41,9 +43,9 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [CVR], [Firma], [Fornavn], [Efternavn], [Vej], [Post], [By], [Land], [Tlf], [Email], [Oprettet] FROM [vTaxiOwner] WHERE ([Bruger Id] = @Bruger_Id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Cvr], [Firma], [Løn dato] AS Løn_dato, [Løn %] AS column1, [Bruger], [Fornavn], [Efternavn], [Vej], [Post], [Tlf], [Email], [Oprettet], [Status], [By], [Land] FROM [vTaxiOwner] WHERE ([Bruger] = @Bruger)">
             <SelectParameters>
-                <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiOwner" Type="Int32" />
+                <asp:SessionParameter Name="Bruger" SessionField="TaxiOwner" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
 

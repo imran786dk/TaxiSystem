@@ -18,21 +18,24 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333">
     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
     <Columns>
-        <asp:BoundField DataField="Dato" HeaderText="Dato" SortExpression="Dato" />
+        <asp:BoundField DataField="Dato" HeaderText="Dato" SortExpression="Dato" DataFormatString="{0:yyyy/MM/dd}" />
         <asp:BoundField DataField="Bevilling" HeaderText="Bevilling" SortExpression="Bevilling" />
+        <asp:BoundField DataField="Trafikbog" HeaderText="Trafikbog" SortExpression="Trafikbog" />
+        <asp:BoundField DataField="column1" HeaderText="Trafikbog s." SortExpression="column1" />
         <asp:BoundField DataField="Enheder" HeaderText="Enheder" SortExpression="Enheder" />
         <asp:BoundField DataField="Ture" HeaderText="Ture" SortExpression="Ture" />
         <asp:BoundField DataField="Km" HeaderText="Km" SortExpression="Km" />
         <asp:BoundField DataField="Besatte" HeaderText="Besatte" SortExpression="Besatte" />
         <asp:BoundField DataField="Kontrol" HeaderText="Kontrol" SortExpression="Kontrol" />
-        <asp:BoundField DataField="Uden_meter" HeaderText="Uden_meter" SortExpression="Uden_meter" />
+        <asp:BoundField DataField="column2" HeaderText="U. meter" SortExpression="column2" />
         <asp:BoundField DataField="Fejlture" HeaderText="Fejlture" SortExpression="Fejlture" />
-        <asp:BoundField DataField="Vogn_Km" HeaderText="Vogn_Km" SortExpression="Vogn_Km" />
         <asp:BoundField DataField="A_conto" HeaderText="A_conto" SortExpression="A_conto" />
+        <asp:BoundField DataField="Taxi_km" HeaderText="Taxi_km" SortExpression="Taxi_km" />
         <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
         <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
         <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
-        <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
+        <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy-MM-dd}" />
+        <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
     </Columns>
         <EditRowStyle BackColor="#999999" />
     <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -45,7 +48,7 @@
     <SortedDescendingCellStyle BackColor="#FFFDF8" />
     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Dato], [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Uden meter] AS Uden_meter, [Fejlture], [Vogn Km] AS Vogn_Km, [A conto] AS A_conto, [Fører], [Fornavn], [Efternavn], [Oprettet] FROM [vShift]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Trafikbog], [Trafikbog s.] AS column1, [Dato], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [U. meter] AS column2, [Fejlture], [A conto] AS A_conto, [Taxi km] AS Taxi_km, [Oprettet], [Status], [Fornavn], [Efternavn], [Fører], [Bevilling] FROM [vShift]"></asp:SqlDataSource>
 
 </div>
 

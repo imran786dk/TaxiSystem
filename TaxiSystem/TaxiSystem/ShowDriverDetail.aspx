@@ -15,22 +15,26 @@
             <h3>Dine oplysninger</h3>
         </div>
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" DataKeyNames="Post" ForeColor="#333333">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="CPR" HeaderText="CPR" SortExpression="CPR" />
+                <asp:BoundField DataField="Cpr" HeaderText="Cpr" SortExpression="Cpr" />
                 <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
                 <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
                 <asp:BoundField DataField="Vej" HeaderText="Vej" SortExpression="Vej" />
-                <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" ReadOnly="True" />
+                <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" />
                 <asp:BoundField DataField="By" HeaderText="By" SortExpression="By" />
                 <asp:BoundField DataField="Land" HeaderText="Land" SortExpression="Land" />
                 <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Kørekort" HeaderText="Kørekort" SortExpression="Kørekort" />
-                <asp:BoundField DataField="Førerkort" HeaderText="Førerkort" SortExpression="Førerkort" />
-                <asp:BoundField DataField="Førerkort_udløb" HeaderText="Udløb" SortExpression="Førerkort_udløb" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
+                <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
+                <asp:BoundField DataField="Fører_udløb" HeaderText="Fører udløb" SortExpression="Fører_udløb" DataFormatString="{0:yyyy-MM-dd}" />
+                <asp:BoundField DataField="column1" HeaderText="Skat %" SortExpression="column1" />
+                <asp:BoundField DataField="Fradrag" HeaderText="Fradrag" SortExpression="Fradrag" />
+                <asp:BoundField DataField="column2" HeaderText="Reg." SortExpression="column2" />
+                <asp:BoundField DataField="Konto" HeaderText="Konto" SortExpression="Konto" />
+                <asp:BoundField DataField="Oprettet" DataFormatString="{0:yyyy-MM-dd}" HeaderText="Oprettet" SortExpression="Oprettet" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -43,9 +47,9 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [CPR], [Fornavn], [Efternavn], [Vej], [Post], [By], [Land], [Tlf], [Email], [Kørekort], [Førerkort], [Førerkort udløb] AS Førerkort_udløb, [Oprettet] FROM [vTaxiDriver] WHERE ([Bruger Id] = @Bruger_Id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Cpr], [Kørekort], [Fører], [Fører udløb] AS Fører_udløb, [Skatte %] AS column1, [Fradrag], [Reg.] AS column2, [Konto], [Fornavn], [Efternavn], [Vej], [Tlf], [Email], [Oprettet], [Type], [By], [Land], [Post] FROM [VTaxiDriver] WHERE ([Bruger] = @Bruger)">
             <SelectParameters>
-                <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiDriver" Type="Int32" />
+                <asp:SessionParameter Name="Bruger" SessionField="TaxiDriver" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
 

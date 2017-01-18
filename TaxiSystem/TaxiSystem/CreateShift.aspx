@@ -35,12 +35,12 @@
                         <tr>
                             <td class="auto-style96">&nbsp; Bevilling nr.:</td>
                             <td class="auto-style94">
-                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="True" DataTextField="Bevilling" DataValueField="Taxi_Id" Width="120px" AppendDataBoundItems="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="True" DataTextField="PermissionNo" DataValueField="TaxiId" Width="120px" AppendDataBoundItems="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                     <asp:ListItem Selected="True" Value="0">Vælg taxi</asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Bevilling], [Taxi Id] AS Taxi_Id FROM [vTaxi] WHERE ([Bruger Id] = @Bruger_Id)">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [TaxiId], [PermissionNo] FROM [tblTaxi] WHERE ([UserId] = @UserId)">
                                     <SelectParameters>
-                                        <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiOwner" Type="Int32" />
+                                        <asp:SessionParameter Name="UserId" SessionField="TaxiOwner" Type="Int32" />
                                     </SelectParameters>
                                 </asp:SqlDataSource>
                             </td>
@@ -52,10 +52,10 @@
                         <tr>
                             <td class="auto-style96">&nbsp; Førerkort nr.:</td>
                             <td class="auto-style94">
-                                <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Førerkort" DataValueField="Bruger_Id" Width="120px" AppendDataBoundItems="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                                <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="TaxiDriverNo" DataValueField="UserId" Width="120px" AppendDataBoundItems="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                                     <asp:ListItem Selected="True" Value="0">Vælg chauffør</asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Førerkort], [Bruger Id] AS Bruger_Id FROM [vTaxiDriver]"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [UserId], [TaxiDriverNo] FROM [tblTaxiDriver]"></asp:SqlDataSource>
                             </td>
                             <td class="auto-style98">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Skal vælges" ControlToValidate="DropDownList2" InitialValue="0" ForeColor="Red">

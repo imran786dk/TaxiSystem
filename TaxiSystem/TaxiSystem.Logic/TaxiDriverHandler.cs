@@ -8,6 +8,9 @@ namespace TaxiSystem
         //Add a taxi driver
         public static bool AddDriver(TaxiDriver driver)
         {
+            driver.accountNo = "";
+            driver.accountReg = "";
+            driver.statusId = 1;
             driver.typeId = 3;
             driver.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             string plainPassword = PasswordHandler.RandomPassword();

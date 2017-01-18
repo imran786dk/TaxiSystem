@@ -4,8 +4,8 @@
     {
         public string cvrNo { get; set; }
         public string company { get; set; }
-        public int PayCheckStart { get; set; }
-        public int PayShare { get; set; }
+        public int payCheckStart { get; set; }
+        public int payShare { get; set; }
 
     }
 }

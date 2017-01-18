@@ -1,4 +1,5 @@
-﻿namespace TaxiSystem
+﻿using System;
+namespace TaxiSystem
 {
     public class User
     {

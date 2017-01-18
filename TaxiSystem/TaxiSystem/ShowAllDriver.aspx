@@ -19,19 +19,14 @@
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="Vis/Rediger"/>
-                <asp:BoundField DataField="CPR" HeaderText="CPR" SortExpression="CPR" />
+                <asp:BoundField DataField="Cpr" HeaderText="Cpr" SortExpression="Cpr" />
+                <asp:BoundField DataField="Fører" HeaderText="Fører" SortExpression="Fører" />
                 <asp:BoundField DataField="Fornavn" HeaderText="Fornavn" SortExpression="Fornavn" />
                 <asp:BoundField DataField="Efternavn" HeaderText="Efternavn" SortExpression="Efternavn" />
-                <asp:BoundField DataField="Vej" HeaderText="Vej" SortExpression="Vej" />
-                <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" />
-                <asp:BoundField DataField="By" HeaderText="By" SortExpression="By" />
-                <asp:BoundField DataField="Land" HeaderText="Land" SortExpression="Land" />
-                <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="Kørekort" HeaderText="Kørekort" SortExpression="Kørekort" />
-                <asp:BoundField DataField="Førerkort" HeaderText="Førerkort" SortExpression="Førerkort" />
-                <asp:BoundField DataField="Førerkort udløb" HeaderText="Førerkort udløb" SortExpression="Førerkort udløb" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
+                <asp:BoundField DataField="Tlf" HeaderText="Tlf" SortExpression="Tlf" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy/mm/dd}" />
+                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -44,7 +39,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT * FROM [vTaxiDriver]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Cpr], [Fornavn], [Efternavn], [Fører], [Email], [Tlf], [Oprettet], [Status] FROM [VTaxiDriver]"></asp:SqlDataSource>
 
     </div>
 

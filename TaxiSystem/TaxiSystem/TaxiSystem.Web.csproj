@@ -142,6 +142,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Styles\MenuMain.css" />
+    <Content Include="test.aspx" />
     <Content Include="UpdateDriver.aspx" />
     <Content Include="UpdateOwner.aspx" />
     <Content Include="Web.config">
@@ -362,6 +363,13 @@
     </Compile>
     <Compile Include="Bootstrap.aspx.designer.cs">
       <DependentUpon>Bootstrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateDriver.aspx.cs">
       <DependentUpon>UpdateDriver.aspx</DependentUpon>

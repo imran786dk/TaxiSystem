@@ -10,6 +10,7 @@ namespace TaxiSystem
         {
 
             taxi.createDate = DateTime.Now.ToString("yyyy-MM-dd");
+            taxi.statusId = 1;
 
             try
             {

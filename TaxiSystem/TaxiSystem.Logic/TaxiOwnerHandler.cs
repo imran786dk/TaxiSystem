@@ -10,6 +10,7 @@ namespace TaxiSystem
         {
 
             owner.typeId = 2;
+            owner.statusId = 1;
             owner.createDate = DateTime.Now.ToString("yyyy-MM-dd");
             string plainPassword = PasswordHandler.RandomPassword();
             owner.salt = PasswordHandler.CreateSalt();

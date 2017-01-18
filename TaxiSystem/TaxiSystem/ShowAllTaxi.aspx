@@ -18,15 +18,17 @@
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
 
+                <asp:BoundField DataField="column1" HeaderText="Reg." SortExpression="column1" />
                 <asp:BoundField DataField="Bevilling" HeaderText="Bevilling" SortExpression="Bevilling" />
                 <asp:BoundField DataField="Enheder" HeaderText="Enheder" SortExpression="Enheder" />
                 <asp:BoundField DataField="Ture" HeaderText="Ture" SortExpression="Ture" />
                 <asp:BoundField DataField="Km" HeaderText="Km" SortExpression="Km" />
                 <asp:BoundField DataField="Besatte" HeaderText="Besatte" SortExpression="Besatte" />
                 <asp:BoundField DataField="Kontrol" HeaderText="Kontrol" SortExpression="Kontrol" />
-                <asp:BoundField DataField="Vogn_Km" HeaderText="Vogn km" SortExpression="Vogn_Km" />
-                <asp:BoundField DataField="Reg" HeaderText="Reg. nr." SortExpression="Reg" />
-                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" />
+                <asp:BoundField DataField="Taxi_km" HeaderText="Taxi_km" SortExpression="Taxi_km" />
+                <asp:BoundField DataField="Oprettet" HeaderText="Oprettet" SortExpression="Oprettet" DataFormatString="{0:yyyy:MM:dd}" />
+
+                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
 
             </Columns>
             <EditRowStyle BackColor="#999999" />
@@ -40,9 +42,9 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Bevilling], [Enheder], [Ture], [Km], [Besatte], [Kontrol], [Vogn Km] AS Vogn_Km, [Reg], [Oprettet] FROM [vTaxi] WHERE ([Bruger Id] = @Bruger_Id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TaxiSystemCS %>" SelectCommand="SELECT [Reg.] AS column1, [Enheder], [Bevilling], [Ture], [Km], [Besatte], [Kontrol], [Taxi km] AS Taxi_km, [Oprettet], [Status] FROM [vTaxi] WHERE ([Bruger] = @Bruger)">
             <SelectParameters>
-                <asp:SessionParameter Name="Bruger_Id" SessionField="TaxiOwner" Type="Int32" />
+                <asp:SessionParameter Name="Bruger" SessionField="TaxiOwner" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
 

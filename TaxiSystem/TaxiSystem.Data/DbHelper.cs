@@ -49,7 +49,10 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@company", SqlDbType.NVarChar).Value = owner.company;
                         cmd.Parameters.Add("@cvrNo", SqlDbType.NVarChar).Value = owner.cvrNo;
                         cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = owner.tel;
-                        cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = owner.createDate;
+                        cmd.Parameters.Add("@createDate", SqlDbType.Date).Value = owner.createDate;
+                        cmd.Parameters.Add("@statusId", SqlDbType.Int).Value = owner.statusId;
+                        cmd.Parameters.Add("@payCheckStart", SqlDbType.Int).Value = owner.payCheckStart;
+                        cmd.Parameters.Add("@payShare", SqlDbType.Int).Value = owner.payShare;
 
 
                         con.Open();
@@ -118,6 +121,11 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = driver.createDate;
                         cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = driver.password;
                         cmd.Parameters.Add("@salt", SqlDbType.NVarChar).Value = driver.salt;
+                        cmd.Parameters.Add("@statusId", SqlDbType.Int).Value = driver.statusId;
+                        cmd.Parameters.Add("@taxPercent", SqlDbType.Int).Value = driver.taxPercent;
+                        cmd.Parameters.Add("@taxDeduction", SqlDbType.Int).Value = driver.taxDeduction;
+                        cmd.Parameters.Add("@accountReg", SqlDbType.NVarChar).Value = driver.accountReg;
+                        cmd.Parameters.Add("@accountNo", SqlDbType.NVarChar).Value = driver.accountReg;
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -183,6 +191,7 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@vehicleMileage", SqlDbType.Int).Value = taxi.vehicleMileage;
                         cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = taxi.createDate;
                         cmd.Parameters.Add("@userId", SqlDbType.Int).Value = taxi.userId;
+                        cmd.Parameters.Add("@statusId", SqlDbType.Int).Value = taxi.statusId;
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -251,6 +260,8 @@ namespace TaxiSystem
                         cmd.Parameters.Add("@createDate", SqlDbType.NVarChar).Value = shift.createDate;
                         cmd.Parameters.Add("@taxiId", SqlDbType.Int).Value = shift.taxiId;
                         cmd.Parameters.Add("@userId", SqlDbType.Int).Value = shift.userId;
+                        cmd.Parameters.Add("@statusId", SqlDbType.Int).Value = shift.statusId;
+
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -303,7 +314,7 @@ namespace TaxiSystem
                                 taxiOwner.cvrNo = row["CvrNo"].ToString();
                                 taxiOwner.password = row["Password"].ToString();
                                 taxiOwner.salt = row["PasswordSalt"].ToString();
-                                taxiOwner.createDate = row["CreateDate"].ToString();
+                                taxiOwner.createDate = (row["CreateDate"].ToString());
                             }
 
                             return taxiOwner;
@@ -414,7 +425,8 @@ namespace TaxiSystem
                                 taxiDriver.createDate = row["CreateDate"].ToString();
                                 taxiDriver.drivingLicenseNo = row["DrivingLicenseNo"].ToString();
                                 taxiDriver.taxiDriverNo = row["TaxiDriverNo"].ToString();
-                                taxiDriver.taxiDriverExp = row["TaxiDriverExp"].ToString();
+                                DateTime date = Convert.ToDateTime(row["TaxiDriverExp"]);
+                                taxiDriver.taxiDriverExp = date.ToString("yyyy-MM-dd");
 
                             }
 

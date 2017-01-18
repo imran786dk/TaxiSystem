@@ -93,10 +93,10 @@ namespace TaxiSystem
         }
 
         //Checks if the new password and repeat password are equal
-        public static bool CompareNewPassword(string passwordNew, string passwordOld)
+        public static bool CompareNewPassword(string passwordNew, string passwordRepeat)
         {
-            if(passwordNew == passwordOld)
-            {
+            if(passwordNew == passwordRepeat)
+            { 
                 return true;
             }
             else

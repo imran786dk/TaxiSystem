@@ -29,6 +29,7 @@
             left: 300px;
             top: 200px;
         }
+
         .auto-style100 {
             border-style: solid;
             border-width: 3px;
@@ -40,11 +41,14 @@
             left: 300px;
             top: 395px;
         }
+
         .auto-style101 {
             position: absolute;
-            top: 728px;
-            left: 853px;
-            z-index: 1;
+            top: 528px;
+            left: 176px;
+            float: left;
+            width: 150px;
+            height: 22px;
         }
     </style>
 </asp:Content>
@@ -142,13 +146,13 @@
                 <td class="auto-style90">&nbsp; Ture:</td>
                 <td class="auto-style90">
                     <asp:TextBox ID="TextBox3" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
-                </td>              
-                            </tr>
+                </td>
+            </tr>
             <tr>
                 <td class="auto-style90">&nbsp; Km:</td>
                 <td class="auto-style90">
                     <asp:TextBox ID="TextBox4" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
-                </td>               
+                </td>
             </tr>
             <tr>
                 <td class="auto-style90">&nbsp; Besatte</td>
@@ -156,11 +160,11 @@
                     <asp:TextBox ID="TextBox7" runat="server" Width="90px" Enabled="false"></asp:TextBox>
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td class="auto-style90">&nbsp; Kontrol</td>
                 <td class="auto-style90">
                     <asp:TextBox ID="TextBox9" runat="server" Width="90px" Enabled="false"></asp:TextBox>
-                </td>             
+                </td>
             </tr>
         </table>
 

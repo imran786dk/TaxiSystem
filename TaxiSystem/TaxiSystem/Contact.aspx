@@ -13,7 +13,7 @@
 
         <div class="jumbotron">
             <p>
-                Email: taxisystemdk@gmail.com
+                Email: <asp:HyperLink ID="HyperLink1" runat="server">taxisystemdk@gmail.com</asp:HyperLink>
             </p>
         </div>
 

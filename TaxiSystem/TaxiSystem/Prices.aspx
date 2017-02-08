@@ -12,7 +12,7 @@
     <div class="container">
 
         <div class="page-header">
-            <h3>Der kommer snart priser op her</h3>
+            <h3>Under ombygning!</h3>
         </div>
     </div>
 

@@ -12,6 +12,11 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Admin"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
+
             int userId = int.Parse(Request.Cookies["ownerId"].Value);
 
             TaxiOwner dbOwner = TaxiOwnerHandler.GetTaxiOwnerById(userId);

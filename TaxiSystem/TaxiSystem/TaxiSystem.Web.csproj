@@ -135,6 +135,7 @@
     <Content Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Styles\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Styles\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\taxisystem - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\TaxiSystem - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -419,6 +420,9 @@
       <Project>{9a559f54-268f-4344-b909-c6297645712a}</Project>
       <Name>TaxiSystem.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,7 +7,10 @@ namespace TaxiSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Admin"] == null)
+            {
+                Response.Redirect("Inactivity.aspx");
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

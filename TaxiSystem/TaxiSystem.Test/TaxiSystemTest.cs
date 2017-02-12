@@ -114,11 +114,11 @@ namespace TaxiSystem.Test
         [TestMethod]
         public void Test_CalculateUnitPerMile()
         {
-            int units = 4000;
-            int withoutMeter = 500;
-            int errorTrips = 500;
+            int units = 5000;
+            int withoutMeter = 1000;
+            int errorTrips = 1000;
             int mileage = 400;
-            double expected = 10.00;
+            double expected = 12.50;
 
             double actual = ShiftHandler.CalculateUnitPerMile(units, withoutMeter, errorTrips, mileage);
 

@@ -115,10 +115,12 @@ namespace TaxiSystem.Test
         public void Test_CalculateUnitPerMile()
         {
             int units = 4000;
+            int withoutMeter = 500;
+            int errorTrips = 500;
             int mileage = 400;
             double expected = 10.00;
 
-            double actual = ShiftHandler.CalculateUnitPerMile(units, mileage);
+            double actual = ShiftHandler.CalculateUnitPerMile(units, withoutMeter, errorTrips, mileage);
 
             Assert.AreEqual(expected, actual);
 

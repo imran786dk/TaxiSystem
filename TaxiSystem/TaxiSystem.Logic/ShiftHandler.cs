@@ -57,15 +57,15 @@ namespace TaxiSystem
         {
             double payShare = 0.50;
 
-            double pay = ((units+withoutMeter-errorTrips)*payShare)-onAccount;
+            double pay = ((units + withoutMeter - errorTrips) * payShare) - onAccount;
 
             return pay;
         }
 
         //Returns pay
-        public static double CalculateUnitPerMile(int units, int mileage)
+        public static double CalculateUnitPerMile(int units, int withoutMeter, int errorTrips, int mileage)
         {
-            double UnitPerMile = units/mileage;
+            double UnitPerMile = (units + withoutMeter - errorTrips) / mileage;
 
             return UnitPerMile;
         }

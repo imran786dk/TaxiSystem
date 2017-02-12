@@ -207,7 +207,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style90">&nbsp; Kr pr.km:</td>
+                <td class="auto-style90">&nbsp; Kr pr km:</td>
                 <td class="auto-style90">
                     <asp:TextBox ID="TextBox12" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
                 </td>

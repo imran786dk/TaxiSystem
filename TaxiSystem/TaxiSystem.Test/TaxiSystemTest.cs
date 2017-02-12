@@ -97,39 +97,29 @@ namespace TaxiSystem.Test
         }
 
         [TestMethod]
-        public void Test_GetTaxi()
+        public void Test_CalculatePay()
         {
-            int id = 8;
-            string expected = "1-1264";
+            int units = 37113;
+            double expected = 18556.50;
             
-            Taxi actual = TaxiHandler.GetTaxi(id);
-
-            Assert.AreEqual(expected, actual.permissionNo);
-
-        }
-
-        [TestMethod]
-        public void Test_GetTaxiDriverById()
-        {
-            int id = 14;
-            string expected = "Peter";
-
-            TaxiDriver actual = TaxiDriverHandler.GetTaxiDriverById(id);
-
-            Assert.AreEqual(expected, actual.fName);
-
-        }
-
-        [TestMethod]
-        public void Test_CheckTaxi()
-        {
-            bool expected = true;
-            string permissionNo = "1-0163";
-
-            bool actual = DbHelper.CheckTaxi(permissionNo);
+            double actual = ShiftHandler.CalculatePay(units);
 
             Assert.AreEqual(expected, actual);
 
         }
+
+        [TestMethod]
+        public void Test_CalculateUnitPerMile()
+        {
+            int units = 4000;
+            int mileage = 400;
+            double expected = 10.00;
+
+            double actual = ShiftHandler.CalculateUnitPerMile(units, mileage);
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
     }
 }

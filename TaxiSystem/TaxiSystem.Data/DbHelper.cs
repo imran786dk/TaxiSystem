@@ -757,7 +757,6 @@ namespace TaxiSystem
                                 totalShift.withoutMeter = Convert.ToInt32(row["WithoutMeter"]);
                                 totalShift.errorTrips = Convert.ToInt32(row["ErrorTrips"]);
                                 totalShift.onAccount = Convert.ToInt32(row["OnAccount"]);
-                                totalShift.vehicleMileage = Convert.ToInt32(row["VehicleMileage"]);
 
                             }
 

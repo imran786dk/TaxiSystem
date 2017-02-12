@@ -81,7 +81,6 @@ namespace TaxiSystem
                     TextBox5.Text = "0";
                     TextBox6.Text = "0";
                     TextBox8.Text = "0";
-                    TextBox41.Text = "0";
 
                     string startDate = TextBox11.Text;
                     string endDate = TextBox42.Text;
@@ -97,7 +96,9 @@ namespace TaxiSystem
                     TextBox5.Text = totalShift.withoutMeter.ToString();
                     TextBox6.Text = totalShift.errorTrips.ToString();
                     TextBox8.Text = totalShift.onAccount.ToString();
-                    TextBox41.Text = totalShift.vehicleMileage.ToString();
+
+                    TextBox10.Text = ShiftHandler.CalculatePay(totalShift.units).ToString("0.00");
+                    TextBox12.Text = ShiftHandler.CalculateUnitPerMile(totalShift.units, totalShift.mileage).ToString("0.00");
 
                     Label1.ForeColor = Color.Black;
                     Label1.Text = "Total indkørt beregnet";

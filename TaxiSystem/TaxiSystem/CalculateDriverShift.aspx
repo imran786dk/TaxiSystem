@@ -12,12 +12,22 @@
             padding: 1px 4px;
             width: 300px;
             float: left;
-            height: 140px;
+            height: 110px;
             position: absolute;
             left: 300px;
             top: 610px;
         }
-
+        .auto-style112 {
+            border-style: solid;
+            border-width: 3px;
+            padding: 1px 4px;
+            width: 300px;
+            float: left;
+            height: 70px;
+            position: absolute;
+            left: 635px;
+            top: 610px;
+        }
         .auto-style99 {
             border-style: solid;
             border-width: 3px;
@@ -64,7 +74,7 @@
                 <td>
                     <table class="auto-style99">
                         <tr>
-                            <td class="auto-style96">&nbsp;Start dato:</td>
+                            <td class="auto-style96">&nbsp; Start dato:</td>
                             <td class="auto-style94">
                                 <asp:TextBox ID="TextBox11" runat="server" Width="120px"></asp:TextBox><span><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/Calendar.png" OnClick="ImageButton1_Click" CausesValidation="False" ImageAlign="Bottom" Height="18px" Width="18px" /></span>
                             </td>
@@ -187,10 +197,19 @@
                     <asp:TextBox ID="TextBox8" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
                 </td>
             </tr>
+        </table>
+
+         <table class="auto-style112">
             <tr>
-                <td class="auto-style90">&nbsp; Taxi km</td>
+                <td class="auto-style90">&nbsp; Løngrundlag:</td>
                 <td class="auto-style90">
-                    <asp:TextBox ID="TextBox41" runat="server" Width="90px" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="TextBox10" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style90">&nbsp; Kr pr.km:</td>
+                <td class="auto-style90">
+                    <asp:TextBox ID="TextBox12" runat="server" Width="90px" TextMode="Number" Enabled="false"></asp:TextBox>
                 </td>
             </tr>
         </table>

@@ -51,5 +51,23 @@ namespace TaxiSystem
         {
             return DbHelper.CalcTaxiDriverTotShift(startDate, endDate, userId);
         }
+
+        //Returns pay
+        public static double CalculatePay(int units)
+        {
+            double payShare = 0.50;
+
+            double pay = units*payShare;
+
+            return pay;
+        }
+
+        //Returns pay
+        public static double CalculateUnitPerMile(int units, int mileage)
+        {
+            double UnitPerMile = units/mileage;
+
+            return UnitPerMile;
+        }
     }
 }

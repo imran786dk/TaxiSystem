@@ -65,7 +65,7 @@ namespace TaxiSystem
         //Returns pay
         public static double CalculateUnitPerMile(int units, int withoutMeter, int errorTrips, int mileage)
         {
-            double UnitPerMile = (units + withoutMeter - errorTrips) / mileage;
+            double UnitPerMile = (double) (units + withoutMeter - errorTrips) / mileage;
 
             return UnitPerMile;
         }

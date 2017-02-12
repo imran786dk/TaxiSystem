@@ -100,9 +100,12 @@ namespace TaxiSystem.Test
         public void Test_CalculatePay()
         {
             int units = 37113;
-            double expected = 18556.50;
+            int withoutMeter = 4000;
+            int errorTrips = 500;
+            int onAccount = 1000;
+            double expected = 19306.50;
             
-            double actual = ShiftHandler.CalculatePay(units);
+            double actual = ShiftHandler.CalculatePay(units, withoutMeter, errorTrips, onAccount);
 
             Assert.AreEqual(expected, actual);
 

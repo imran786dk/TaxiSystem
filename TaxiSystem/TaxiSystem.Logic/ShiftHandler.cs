@@ -53,11 +53,11 @@ namespace TaxiSystem
         }
 
         //Returns pay
-        public static double CalculatePay(int units)
+        public static double CalculatePay(int units, int withoutMeter, int errorTrips, int onAccount)
         {
             double payShare = 0.50;
 
-            double pay = units*payShare;
+            double pay = ((units+withoutMeter-errorTrips)*payShare)-onAccount;
 
             return pay;
         }

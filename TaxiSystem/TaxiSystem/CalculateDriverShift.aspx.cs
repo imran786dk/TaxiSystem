@@ -97,8 +97,8 @@ namespace TaxiSystem
                     TextBox6.Text = totalShift.errorTrips.ToString();
                     TextBox8.Text = totalShift.onAccount.ToString();
 
-                    TextBox10.Text = ShiftHandler.CalculatePay(totalShift.units, totalShift.withoutMeter, totalShift.errorTrips, totalShift.onAccount).ToString("0.00");
-                    TextBox12.Text = ShiftHandler.CalculateUnitPerMile(totalShift.units, totalShift.withoutMeter, totalShift.errorTrips, totalShift.mileage).ToString("0.00");
+                    TextBox10.Text = ShiftHandler.CalculatePay(totalShift.units, totalShift.withoutMeter, totalShift.errorTrips, totalShift.onAccount).ToString("#.##");
+                    TextBox12.Text = ShiftHandler.CalculateUnitPerMile(totalShift.units, totalShift.withoutMeter, totalShift.errorTrips, totalShift.mileage).ToString("#.##");
 
                     Label1.ForeColor = Color.Black;
                     Label1.Text = "Total indkørt beregnet";
